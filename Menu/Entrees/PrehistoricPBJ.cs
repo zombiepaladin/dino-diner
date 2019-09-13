@@ -4,7 +4,14 @@ namespace DinoDiner.Menu.Entrees
 {
     public class PrehistoricPBJ
     {
+        /// <summary>
+        /// Represents whether or not peanutButter is added to PBJ
+        /// </summary>
         private bool peanutButter = true;
+
+        /// <summary>
+        /// Represents whether or not jelly is added to PBJ
+        /// </summary>
         private bool jelly = true;
 
         public double Price { get; set; }
