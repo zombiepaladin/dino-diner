@@ -39,6 +39,7 @@ namespace DinoDiner.Menu.Entrees
         public void HoldDressing()
         {
             this.dressing = false;
+            this.Ingredients.Remove("Ceasar Dressing");
         }
         /// <summary>
         /// Void method that removes Romaine Lettuce from ingredients list
@@ -46,6 +47,7 @@ namespace DinoDiner.Menu.Entrees
         public void HoldLettuce()
         {
             this.lettuce = false;
+            this.Ingredients.Remove("Romaine Lettuce");
         }
         /// <summary>
         /// Void method that removes Parmesan Cheese from ingredients list 
@@ -53,6 +55,7 @@ namespace DinoDiner.Menu.Entrees
         public void HoldCheese()
         {
             this.cheese = false;
+            this.Ingredients.Remove("Parmesan Cheese");
         }
     }
 }

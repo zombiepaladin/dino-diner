@@ -54,7 +54,7 @@ namespace DinoDiner.Menu.Entrees
 
             if (peppers) Ingredients.Add("Peppers");
 
-            if (onions) Ingredients.Add("Onions");
+            if (onions) Ingredients.Add("Onion");
             
         }
         /// <summary>
@@ -63,6 +63,7 @@ namespace DinoDiner.Menu.Entrees
         public void HoldBun()
         {
             this.bun = false;
+            this.Ingredients.Remove("Whole Wheat Bun");
         }
         /// <summary>
         /// Void method that removes Peppers from ingredients list
@@ -70,6 +71,7 @@ namespace DinoDiner.Menu.Entrees
         public void HoldPeppers()
         {
             this.peppers = false;
+            this.Ingredients.Remove("Peppers");
         }
         /// <summary>
         /// Void method that removes Onions from ingredients list
@@ -77,6 +79,7 @@ namespace DinoDiner.Menu.Entrees
         public void HoldOnion()
         {
             this.onions = false;
+            this.Ingredients.Remove("Onion");
         }
     }
 }

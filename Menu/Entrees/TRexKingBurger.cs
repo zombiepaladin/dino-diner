@@ -46,7 +46,8 @@ namespace DinoDiner.Menu.Entrees
             this.Calories = 728;
             this.Ingredients = new List<string>()
             {
-                "Three Steakburger Patties"
+                "Steakburger Pattie","Steakburger Pattie",
+                "Steakburger Pattie"
             };
 
             //Conditionals for ingredients
@@ -65,6 +66,7 @@ namespace DinoDiner.Menu.Entrees
         public void HoldBun()
         {
             this.bun = false;
+            this.Ingredients.Remove("Whole Wheat Bun");
         }
         /// <summary>
         /// Void method that removes Lettuce from ingredients list
@@ -72,6 +74,7 @@ namespace DinoDiner.Menu.Entrees
         public void HoldLettuce()
         {
             this.lettuce = false;
+            this.Ingredients.Remove("Lettuce");
         }
         /// <summary>
         /// Void method that removes Tomato from ingredients list
@@ -79,6 +82,7 @@ namespace DinoDiner.Menu.Entrees
         public void HoldTomato()
         {
             this.tomato = false;
+            this.Ingredients.Remove("Tomato");
         }
         /// <summary>
         /// Void method that removes Onion from ingredients list
@@ -86,6 +90,7 @@ namespace DinoDiner.Menu.Entrees
         public void HoldOnion()
         {
             this.onion = false;
+            this.Ingredients.Remove("Onion");
         }
         /// <summary>
         /// Void method that removes Pickele from ingredients list
@@ -93,6 +98,7 @@ namespace DinoDiner.Menu.Entrees
         public void HoldPickle()
         {
             this.pickle = false;
+            this.Ingredients.Remove("Pickle");
         }
         /// <summary>
         /// Void method that removes Mustard from ingredients list
@@ -100,6 +106,7 @@ namespace DinoDiner.Menu.Entrees
         public void HoldMustard()
         {
             this.mustard = false;
+            this.Ingredients.Remove("Mustard");
         }
         /// <summary>
         /// Void method that removes the Mustard from ingredients list 
@@ -107,6 +114,7 @@ namespace DinoDiner.Menu.Entrees
         public void HoldKetchup()
         {
             this.ketchup = false;
+            this.Ingredients.Remove("Ketchup");
         }
         /// <summary>
         /// Void method that removes Mayo from the ingredients list
@@ -114,6 +122,7 @@ namespace DinoDiner.Menu.Entrees
         public void HoldMayo()
         {
             this.mayo = false;
+            this.Ingredients.Remove("Mayo");
         }
     }
 }

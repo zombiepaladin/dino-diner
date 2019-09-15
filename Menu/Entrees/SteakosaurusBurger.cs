@@ -56,6 +56,7 @@ namespace DinoDiner.Menu.Entrees
         public void HoldBun()
         {
             this.bun = false;
+            this.Ingredients.Remove("Whole Wheat Bun");
         }
         /// <summary>
         /// Void method that removes Pickle from ingredients list
@@ -63,6 +64,7 @@ namespace DinoDiner.Menu.Entrees
         public void HoldPickle()
         {
             this.pickle = false;
+            this.Ingredients.Remove("Pickle");
         }
         /// <summary>
         /// Void method that removes Ketchup from ingredients list
@@ -70,6 +72,7 @@ namespace DinoDiner.Menu.Entrees
         public void HoldKetchup()
         {
             this.ketchup = false;
+            this.Ingredients.Remove("Ketchup");
         }
         /// <summary>
         /// Void method that removes Mustard from ingredients list
@@ -77,6 +80,7 @@ namespace DinoDiner.Menu.Entrees
         public void HoldMustard()
         {
             this.mustard = false;
+            this.Ingredients.Remove("Mustard");
         }
 
     }
