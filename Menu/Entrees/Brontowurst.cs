@@ -8,13 +8,13 @@ namespace DinoDiner.Menu.Entrees
         private bool bun = true;
         private bool peppers = true;
 
-        public double price { get; set; }
-        public uint calories { get; set; }
+        public double Price { get; set; }
+        public uint Calories { get; set; }
 
         public Brontowurst()
         {
-            this.price = 5.36;
-            this.calories = 498;
+            this.Price = 5.36;
+            this.Calories = 498;
         }
 
         public List<string> Ingredients
@@ -39,7 +39,7 @@ namespace DinoDiner.Menu.Entrees
             this.bun = false;
         }
 
-        public void HoldOnions()
+        public void HoldOnion()
         {
             this.onions = false;
         }

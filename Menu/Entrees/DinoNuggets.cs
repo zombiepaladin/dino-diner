@@ -1,19 +1,46 @@
-﻿using System;
+﻿using System.Collections.Generic;
 
-public class DinoNuggets
+namespace DinoDiner.Menu.Entrees
 {
-    public double price { get; set; }
-
-    public uint calories { get; set; }
-
-    public DinoNuggets()
-	{
-        this.price = 4.25;
-        this.calories = 59;
-	}
-
-    public double AddNugget()
+    public class DinoNuggets
     {
-        
+
+        public double Price { get; set; }
+
+        public uint Calories { get; set; }
+
+        private bool addNugget = false;
+
+        public DinoNuggets()
+        {
+            this.Price = 4.25;
+            this.Calories = 59;
+        }
+
+        public List<string> Ingredients
+        {
+            get
+            {
+                List<string> ingredients = new List<string> { "6 Chicken Nuggets" };
+                return ingredients;
+            }
+        }
+
+        public void AddNugget()
+        {
+            if (addNugget == true)
+            {
+                Price = Price + .25;
+                Calories = Calories + 59;
+            }
+        }
+
+
+
+        public void Nugget()
+        {
+            this.addNugget = true;
+        }
     }
 }
+
