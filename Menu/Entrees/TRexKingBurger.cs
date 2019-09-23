@@ -7,94 +7,72 @@ namespace DinoDiner.Menu.Entrees
     /// <summary>
     /// This class is for the TRexKingBurger and is used to setup and modify it
     /// </summary>
-    public class TRexKingBurger
+    public class TRexKingBurger : Entree
     {
-        private bool bun = true;
-        private bool patties = true;
-        private bool lettuce = true;
-        private bool tomato = true;
-        private bool onion = true;
-        private bool pickle = true;
-        private bool ketchup = true;
-        private bool mustard = true;
-        private bool mayo = true;
-
-
 
 
         /// <summary>
-        /// gets and sets price and calories
+        /// Sets base price, Calories, and Ingredients for TRexKingBurger
         /// </summary>
-        public double Price { get; set; }
-        public uint Calories { get; set; }
-
-
-
-        // this is the list of Ingredients
-        public List<string> Ingredients
-        {
-            get
-            {
-                List<string> ingredients = new List<string>() { "Steakburger Pattie" , };
-                ingredients.Add("Steakburger Pattie");
-                ingredients.Add("Steakburger Pattie"); 
-                if (bun) ingredients.Add("Whole Wheat Bun");
-                if (lettuce) ingredients.Add("Lettuce");
-                if (tomato) ingredients.Add("Tomato");
-                if (onion) ingredients.Add("Onion");
-                if (pickle) ingredients.Add("Pickle");
-                if (ketchup) ingredients.Add("Ketchup");
-                if (mustard) ingredients.Add("Mustard");
-                if (mayo) ingredients.Add("Mayo");
-                return ingredients;
-            }
-        }
-
-        /// This sets the price and calories
         public TRexKingBurger()
         {
+            this.Ingredients = new List<string>() { "Steakburger Pattie", "Steakburger Pattie", "Steakburger Pattie", "Whole Wheat Bun", "Lettuce","Tomato","Onion","Pickle", "Ketchup", "Mustard", "Mayo" };
             this.Price = 8.45;
             this.Calories = 728;
         }
-        /// this is used to hold the item
+         
         public void HoldBun()
         {
-            this.bun = false;
+            this.Ingredients.Remove("Whole Wheat Bun");
         }
-        /// this is used to hold the item
+        /// <summary>
+        /// Holds the Lettuce from the TRexKingBurger
+        /// </summary>
         public void HoldLettuce()
         {
-            this.lettuce = false;
+            this.Ingredients.Remove("Lettuce");
         }
-        /// this is used to hold the item
+        /// <summary>
+        /// Holds the Tomato from the TRexKingBurger
+        /// </summary>
         public void HoldTomato()
         {
-            this.tomato = false;
+            this.Ingredients.Remove("Tomato");
         }
-        /// this is used to hold the item
+        /// <summary>
+        /// Holds the Onion from the TRexKingBurger
+        /// </summary>
         public void HoldOnion()
         {
-            this.onion = false;
+            this.Ingredients.Remove("Onion");
         }
-        /// this is used to hold the item
+        /// <summary>
+        /// Holds the Pickle from the TRexKingBurger
+        /// </summary>
         public void HoldPickle()
         {
-            this.pickle = false;
+            this.Ingredients.Remove("Pickle");
         }
-        /// this is used to hold the item
+        /// <summary>
+        /// Holds the Ketchup from the TRexKingBurger
+        /// </summary>
         public void HoldKetchup()
         {
-            this.ketchup = false;
+            this.Ingredients.Remove("Ketchup");
         }
-        /// this is used to hold the item
+        /// <summary>
+        /// Holds the Mustard from the TRexKingBurger
+        /// </summary>
         public void HoldMustard()
         {
-            this.mustard = false;
-        } 
-        /// this is used to hold the item
+            this.Ingredients.Remove("Mustard");
+        }
+        /// <summary>
+        /// Holds the Mayo from the TRexKingBurger
+        /// </summary>
         public void HoldMayo()
         {
-            this.mayo = false;
+            this.Ingredients.Remove("Mayo");
         }
     }
 }

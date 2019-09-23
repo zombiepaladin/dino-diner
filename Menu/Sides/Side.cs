@@ -5,14 +5,17 @@ using System.Text;
 namespace DinoDiner.Menu.Sides
 {
 
-    public enum Size
+    /// <summary>
+    /// Enum to defign size into three Strings
+    /// </summary>
+    public  enum Size
     {
         Small,
         Medium, 
         Large
     }
 
-    public abstract class Side
+    public  class Side
     {
         /// <summary>
         /// Gets and sets the price
@@ -22,17 +25,17 @@ namespace DinoDiner.Menu.Sides
         /// <summary>
         /// Gets and sets the calories
         /// </summary>
-        public uint Calories { get; set; }
+        public  uint Calories { get; set; }
 
         /// <summary>
         /// Gets the ingredients list
         /// </summary>
-        public List<string> Ingredients { get; }
+        public List<string> Ingredients { get; protected set; }
 
         /// <summary>
         /// Gets or sets the size
         /// </summary>
-        public Size Size { get; set; }
+        public  virtual Size Size {  get; set; }
 
     }
 }

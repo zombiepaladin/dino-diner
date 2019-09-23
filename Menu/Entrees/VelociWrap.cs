@@ -7,58 +7,39 @@ namespace DinoDiner.Menu.Entrees
     /// <summary>
     /// This class is for the VelociWrap and is used to setup and modify it
     /// </summary>
-    public class VelociWrap
+    public class VelociWrap : Entree
     {
-        private bool flourTortilla = true;
-        private bool chickenBreast = true;
-        private bool romaineLettuce = true;
-        private bool ceasarDressing = true;
-        private bool parmesanCheese = true;
-
-
 
         /// <summary>
-        /// gets and sets price and calories
+        /// Sets base price, Calories, and Ingredients for VelociWrap
         /// </summary>
-        public double Price { get; set; }
-        public uint Calories { get; set; }
-
-
-
-        // this is the list of Ingredients
-        public List<string> Ingredients
-        {
-            get
-            {
-                List<string> ingredients = new List<string>() { "Flour Tortilla" };
-                if (flourTortilla) ingredients.Add("Chicken Breast");
-                if (romaineLettuce) ingredients.Add("Romaine Lettuce");
-                if (ceasarDressing) ingredients.Add("Ceasar Dressing");
-                if (parmesanCheese) ingredients.Add("Parmesan Cheese");
-                              
-                return ingredients;
-            }
-        }
-        /// this is used to hold the item
         public VelociWrap()
         {
+         
+            this.Ingredients = new List<string>() { "Flour Tortilla", "Chicken Breast", "Romaine Lettuce", "Ceasar Dressing", "Parmesan Cheese" };
             this.Price = 6.86;
             this.Calories = 356;
         }
-        /// this is used to hold the item
+        /// <summary>
+        /// Used to hold the dressing
+        /// </summary>
         public void HoldDressing()
         {
-            this.ceasarDressing = false;
+            this.Ingredients.Remove("Ceasar Dressing");
         }
-        /// this is used to hold the item
+        /// <summary>
+        /// Used to Hold the lettuce
+        /// </summary>
         public void HoldLettuce()
         {
-            this.romaineLettuce = false;
+            this.Ingredients.Remove("Romaine Lettuce");
         }
-        /// this is used to hold the item
-        public void holdCheese()
-        {
-            this.parmesanCheese = false;
+        /// <summary>
+        /// Used to hold the cheese
+        /// </summary>
+        public void HoldCheese()
+        { 
+            this.Ingredients.Remove("Parmesan Cheese");
         }
     }
 }

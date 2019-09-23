@@ -3,44 +3,30 @@
 namespace DinoDiner.Menu.Entrees
 {
     /// <summary>
-    /// THis class is for the DinoNuggets and is used to setup and modify it
+    /// This class is for the DinoNuggets and is used to setup and modify it
     /// </summary>
-    public class DinoNuggets
+    public class DinoNuggets : Entree
     {
-        private bool nuggets = true;
+       
+
 
         /// <summary>
-        /// gets and sets price and calories
+        /// Sets base price, Calories, and Ingredients for DinoNuggets
         /// </summary>
-        public double Price { get; set; }
-        public uint Calories { get; set; }
-
-
-
-        // this is the list of Ingredients
-        public List<string> Ingredients
-        {
-            get
-            {
-                List<string> ingredients = new List<string>() { "Chicken Nugget" };
-                for(int i = 0; i < 5; i++)
-                {
-                    ingredients.Add("Chicken Nugget");
-                }
-
-                return ingredients;
-            }
-        }
-
-        /// This sets the price and calories
         public DinoNuggets()
         {
             this.Price = 4.25;
             this.Calories = 59*6;
+            this.Ingredients = new List<string>() { "Chicken Nugget", "Chicken Nugget" , "Chicken Nugget" , "Chicken Nugget" , "Chicken Nugget" , "Chicken Nugget" };
         }
-        /// this is used to add one nugget
+        /// <summary>
+        /// Adds an extra nugget to the meal and adds price and Calories of that one nugget 
+        /// </summary>
         public void AddNugget()
         {
+
+
+            this.Ingredients.Add( "Chicken Nugget");
             this.Price += .25;
             this.Calories += 59;
             

@@ -7,62 +7,46 @@ namespace DinoDiner.Menu.Entrees
     /// <summary>
     /// This class is for the SteakosaurusBurger and is used to setup and modify it
     /// </summary>
-    public class SteakosaurusBurger
+    public class SteakosaurusBurger : Entree
     {
-        private bool bun = true;
-        private bool pattie = true;
-        private bool pickle = true;
-        private bool ketchup = true;
-        private bool mustard = true;
-
 
         /// <summary>
-        /// gets and sets price and calories
+        /// Sets base price, Calories, and Ingredients for SteakosaurusBurger
         /// </summary>
-        public double Price { get; set; }
-        public uint Calories { get; set; }
-
-
-
-        // this is the list of Ingredients
-        public List<string> Ingredients
-        {
-            get
-            {
-                List<string> ingredients = new List<string>() { "Steakburger Pattie" };
-                if (bun) ingredients.Add("Whole Wheat Bun");
-                if (pickle) ingredients.Add("Pickle");
-                if (ketchup) ingredients.Add("Ketchup");
-                if (mustard) ingredients.Add("Mustard");
-                return ingredients;
-            }
-        }
-
-        /// This sets the price and calories
         public SteakosaurusBurger()
         {
+           
+            this.Ingredients = new List<string>() { "Steakburger Pattie", "Whole Wheat Bun", "Pickle", "Ketchup", "Mustard" };
             this.Price = 5.15;
             this.Calories = 621;
         }
-        /// this is used to hold the item
+        /// <summary>
+        /// Holds the bun from the SteakosaurusBurger
+        /// </summary>
         public void HoldBun()
         {
-            this.bun = false;
+            this.Ingredients.Remove("Whole Wheat Bun");
         }
-        /// this is used to hold the item
+        /// <summary>
+        /// Holds the Pickle from the SteakosaurusBurger
+        /// </summary>
         public void HoldPickle()
         {
-            this.pickle = false;
+            this.Ingredients.Remove("Pickle");
         }
-        /// this is used to hold the item
+        /// <summary>
+        /// Holds the Ketchup from the SteakosaurusBurger
+        /// </summary>
         public void HoldKetchup()
         {
-            this.ketchup = false;
+            this.Ingredients.Remove("Ketchup"); ;
         }
-        /// this is used to hold the item
+        /// <summary>
+        /// Holds the Mustard from the SteakosaurusBurger
+        /// </summary>
         public void HoldMustard()
         {
-            this.mustard = false;
+            this.Ingredients.Remove("Mustard");
         }
     }
 }
