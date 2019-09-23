@@ -1,19 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using DinoDiner.Menu.Entrees;
 
 namespace Menu.Entrees
 {
-    public class VelociWrap
+    public class VelociWrap : Entree
     {
+        /// <summary>
+        /// Represents the existence of dressing
+        /// </summary>
         private bool dressing = true;
+        /// <summary>
+        /// Represents the existence of lettuce
+        /// </summary>
         private bool lettuce = true;
+        /// <summary>
+        /// Represents the existence of cheese
+        /// </summary>
         private bool cheese = true;
-
-        public double Price { get; set; }
-        public uint Calories { get; set; }
-
-        public List<string> Ingredients
+        /// <summary>
+        /// Gets and sets the price
+        /// </summary>
+     
+        /// <summary>
+        /// Creates the wrap
+        /// </summary>
+        public override List<string> Ingredients
         {
             get
             {
@@ -27,22 +40,31 @@ namespace Menu.Entrees
                 return ingredients;
             }
         }
-
+        /// <summary>
+        /// Initial price and calories of wrap
+        /// </summary>
         public VelociWrap()
         {
             this.Price = 6.86;
             this.Calories = 356;
         }
-
+        /// <summary>
+        /// Called when dressing is withheld
+        /// </summary>
         public void HoldDressing()
         {
             this.dressing = false;
         }
-
+        /// <summary>
+        /// Called when lettuce is withheld
+        /// </summary>
         public void HoldLettuce()
         {
             this.lettuce = false;
         }
+        /// <summary>
+        /// Called when cheese is withheld
+        /// </summary>
         public void HoldCheese()
         {
             this.cheese = false;

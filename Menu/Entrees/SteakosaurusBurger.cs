@@ -1,20 +1,33 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-
+using DinoDiner.Menu.Entrees;
 namespace Menu.Entrees
 {
-    public class SteakosaurusBurger
+    public class SteakosaurusBurger : Entree
     {
+        /// <summary>
+        /// Represents the existence of bun
+        /// </summary>
         private bool bun = true;
+        /// <summary>
+        /// Represents the existence of pickle
+        /// </summary>
         private bool pickle = true;
+        /// <summary>
+        /// Represents the existence of ketchup
+        /// </summary>
         private bool ketchup = true;
+        /// <summary>
+        /// Represents the existence of mustard
+        /// </summary>
         private bool mustard = true;
 
-        public double Price { get; set; }
-        public uint Calories { get; set; }
-
-        public List<string> Ingredients
+     
+        /// <summary>
+        /// Creates the burger
+        /// </summary>
+        public override List<string> Ingredients
         {
             get
             {
@@ -27,25 +40,38 @@ namespace Menu.Entrees
             }
         }
 
+        /// <summary>
+        /// Initial price and calories of burger
+        /// </summary>
         public SteakosaurusBurger()
         {
             this.Price = 5.15;
             this.Calories = 621;
         }
-
+        /// <summary>
+        /// Called when bun is withheld
+        /// </summary>
         public void HoldBun()
         {
             this.bun = false;
         }
-
+        /// <summary>
+        /// Called when pickle is withheld
+        /// </summary>
         public void HoldPickle()
         {
             this.pickle = false;
         }
+        /// <summary>
+        /// Called when ketchup is withheld
+        /// </summary>
         public void HoldKetchup()
         {
             this.ketchup = false;
         }
+        /// <summary>
+        /// Called when mustard is withheld
+        /// </summary>
         public void HoldMustard()
         {
             this.mustard = false;

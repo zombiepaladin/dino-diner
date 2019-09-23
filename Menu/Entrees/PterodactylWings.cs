@@ -1,31 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-
+using DinoDiner.Menu.Entrees;
 namespace Menu.Entrees
 {
-    public class PterodactylWings
+    public class PterodactylWings : Entree
     {
-
+        /// <summary>
+        /// Represents the existence of chicken
+        /// </summary>
         private bool chicken = true;
 
-
+        /// <summary>
+        /// Represents the existence of jelly
+        /// </summary>
         private bool jelly = true;
 
-        /// <summary>
-        /// Gets or sets the price
-        /// </summary>
-        public double Price { get; set; }
-
-        /// <summary>
-        /// Gets or sets the calories
-        /// </summary>
-        public uint Calories { get; set; }
+  
 
         /// <summary>
         /// Creates a list of ingredients
         /// </summary>
-        public List<string> Ingredients
+        public override List<string> Ingredients
         {
             get
             {
@@ -36,6 +32,9 @@ namespace Menu.Entrees
             }
         }
 
+        /// <summary>
+        /// Initial price and calories of wings
+        /// </summary>
         public PterodactylWings()
         {
             this.Price = 7.21;

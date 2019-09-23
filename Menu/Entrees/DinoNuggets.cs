@@ -1,20 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using DinoDiner.Menu.Entrees;
 
 namespace Menu.Entrees
 {
-    public class DinoNuggets
+    public class DinoNuggets : Entree
     {
         
-
-        public double Price { get; set; }
-        public uint Calories { get; set; }
-
-
+      
+        /// <summary>
+        /// Represents the number of nuggets
+        /// </summary>
         public int Count = 6;
 
-        public List<string> Ingredients
+        /// <summary>
+        /// Creates the order of dino nuggets
+        /// </summary>
+        public override List<string> Ingredients
         {
             get
             {
@@ -27,12 +30,18 @@ namespace Menu.Entrees
             }
         }
 
+        /// <summary>
+        /// Initial price and calories of dino nugget
+        /// </summary>
         public DinoNuggets()
         {
             this.Price = 4.25;
             this.Calories = 354;
         }
 
+        /// <summary>
+        /// Called when nugget is added
+        /// </summary>
         public void AddNugget()
         {
             this.Price += 0.25;
