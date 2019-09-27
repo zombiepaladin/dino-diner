@@ -4,19 +4,13 @@ using System.Text;
 
 namespace DinoDiner.Menu.Drinks
 {
-    public enum SodasaurusFlavor
-    {
-        Cola,
-        Orange,
-        Vanilla,
-        Chocolate,
-        RootBeer,
-        Cherry,
-        Lime
-    }
+    
 
     public class Sodasaurus : Drink
     {
+        /// <summary>
+        /// Gets or sets 
+        /// </summary>
         public SodasaurusFlavor Flavor { get; set; }
 
         private Size size;

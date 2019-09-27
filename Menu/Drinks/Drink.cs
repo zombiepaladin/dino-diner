@@ -6,15 +6,6 @@ namespace DinoDiner.Menu.Drinks
 {
 
 
-    /// <summary>
-    /// Represents 3 different sizes for each side
-    /// </summary>
-    public enum Size
-    {
-        Small,
-        Medium,
-        Large
-    }
 
     /// <summary>
     /// Framework for each side
@@ -25,6 +16,7 @@ namespace DinoDiner.Menu.Drinks
         /// Represents each side
         /// </summary>
         protected List<string> ingredients = new List<string>();
+        
         /// <summary>
         /// Gets and sets the price
         /// </summary>
@@ -45,7 +37,18 @@ namespace DinoDiner.Menu.Drinks
         /// </summary>
         public virtual Size Size { get; set; } = Size.Small;
 
-        public bool Ice { get; set; } = false;
+        /// <summary>
+        /// Represents if ice exists
+        /// </summary>
+        public bool Ice { get; set; } = true;
+
+        /// <summary>
+        /// Leaves ice out
+        /// </summary>
+        public void HoldIce()
+        {
+            Ice = false;
+        }
 
 
 

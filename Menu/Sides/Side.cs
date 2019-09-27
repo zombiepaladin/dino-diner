@@ -4,16 +4,7 @@ using System.Text;
 
 namespace DinoDiner.Menu.Sides
 {
-    /// <summary>
-    /// Represents 3 different sizes for each side
-    /// </summary>
-    public enum Size
-    {
-        Small,
-        Medium, 
-        Large
-    }
-
+ 
     /// <summary>
     /// Framework for each side
     /// </summary>
