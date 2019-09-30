@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DinoDiner.Menu
 {
-    public enum Size
+    public  enum Size
     {
         Small,
         Medium,

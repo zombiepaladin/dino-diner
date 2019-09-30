@@ -2,21 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-
-namespace DinoDiner.Menu.Sides
+namespace DinoDiner.Menu.Drinks
 {
-
-    /// <summary>
-    /// Enum to defign size into three Strings
-    /// </summary>
-    public  enum Size
-    {
-        Small,
-        Medium, 
-        Large
-    }
-
-    public  class Side
+    public abstract class Drinks
     {
         /// <summary>
         /// Gets and sets the price
@@ -26,17 +14,19 @@ namespace DinoDiner.Menu.Sides
         /// <summary>
         /// Gets and sets the calories
         /// </summary>
-        public  uint Calories { get; set; }
+        public uint Calories { get; set; }
 
         /// <summary>
         /// Gets the ingredients list
         /// </summary>
         public List<string> Ingredients { get; protected set; }
 
-        /// <summary>
-        /// Gets or sets the size
-        /// </summary>
-        public  virtual Size Size {  get; set; }
+        public  bool HoldIce()
+        {
+            
+            return false;
+        }
+
 
     }
 }
