@@ -7,70 +7,9 @@ using DinoDiner.Menu;
 
 namespace MenuTest.Drinks
 {
-    public class SodasaurusTest
+    public class JurassicJava
     {
-        ///The ability to set each possible flavor
-        [Fact]
-        public void ShouldBeAbleToSetFlavorToCola()
-        {
-            Sodasaurus soda = new DinoDiner.Menu.Drinks.Sodasaurus();
-            soda.Flavor = SodasaurusFlavor.Cola;
-            Assert.Equal<SodasaurusFlavor>(SodasaurusFlavor.Cola, soda.Flavor);
-
-        }
-        [Fact]
-        public void ShouldBeAbleToSetFlavorToCherry()
-        {
-            Sodasaurus s = new DinoDiner.Menu.Drinks.Sodasaurus();
-            s.Flavor = SodasaurusFlavor.Cherry;
-            Assert.Equal<SodasaurusFlavor>(SodasaurusFlavor.Cherry, s.Flavor);
-
-        }
-        
-        [Fact]
-        public void ShouldBeAbleToSetFlavorToLime()
-        {
-            Sodasaurus s = new DinoDiner.Menu.Drinks.Sodasaurus();
-            s.Flavor = SodasaurusFlavor.Lime;
-            Assert.Equal<SodasaurusFlavor>(SodasaurusFlavor.Lime, s.Flavor);
-
-        }
-
-        [Fact]
-        public void ShouldBeAbleToSetFlavorToOrange()
-        {
-            Sodasaurus s = new DinoDiner.Menu.Drinks.Sodasaurus();
-            s.Flavor = SodasaurusFlavor.Orange;
-            Assert.Equal<SodasaurusFlavor>(SodasaurusFlavor.Orange, s.Flavor);
-
-        }
-
-        [Fact]
-        public void ShouldBeAbleToSetFlavorToVanilla()
-        {
-            Sodasaurus s = new DinoDiner.Menu.Drinks.Sodasaurus();
-            s.Flavor = SodasaurusFlavor.Vanilla;
-            Assert.Equal<SodasaurusFlavor>(SodasaurusFlavor.Vanilla, s.Flavor);
-
-        }
-
-        [Fact]
-        public void ShouldBeAbleToSetFlavorToChocolate()
-        {
-            Sodasaurus s = new DinoDiner.Menu.Drinks.Sodasaurus();
-            s.Flavor = SodasaurusFlavor.Chocolate;
-            Assert.Equal<SodasaurusFlavor>(SodasaurusFlavor.Chocolate, s.Flavor);
-
-        }
-
-        [Fact]
-        public void ShouldBeAbleToSetFlavorToRootBeer()
-        {
-            Sodasaurus s = new DinoDiner.Menu.Drinks.Sodasaurus();
-            s.Flavor = SodasaurusFlavor.RootBeer;
-            Assert.Equal<SodasaurusFlavor>(SodasaurusFlavor.RootBeer, s.Flavor);
-
-        }
+       
 
         //The correct default price, calories, ice, and size
         [Fact]
@@ -171,7 +110,9 @@ namespace MenuTest.Drinks
             Assert.Contains("Water", soda.Ingredients);
             Assert.Contains("Natural Flavors", soda.Ingredients);
             Assert.Contains("Sugar", soda.Ingredients);
-            
+
         }
+
+
     }
 }

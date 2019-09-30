@@ -6,16 +6,7 @@ namespace Menu.Entrees
 {
     public class PterodactylWings : Entree
     {
-        /// <summary>
-        /// Represents the existence of chicken
-        /// </summary>
-        private bool chicken = true;
-
-        /// <summary>
-        /// Represents the existence of jelly
-        /// </summary>
-        private bool jelly = true;
-
+     
   
 
         /// <summary>
