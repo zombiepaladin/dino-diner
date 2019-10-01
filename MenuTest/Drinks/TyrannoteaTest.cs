@@ -23,7 +23,7 @@ namespace MenuTest.Drinks
         {
             Tyrannotea tea = new Tyrannotea();
             tea.Size = Size.Small;
-            Assert.Equal<double>(1.50, tea.Price);
+            Assert.Equal<double>(.99, tea.Price);
 
         }
 
@@ -32,7 +32,7 @@ namespace MenuTest.Drinks
         {
             Tyrannotea tea = new Tyrannotea();
             tea.Size = Size.Medium;
-            Assert.Equal<double>(2.00, tea.Price);
+            Assert.Equal<double>(1.49, tea.Price);
         }
 
         [Fact]
@@ -40,16 +40,16 @@ namespace MenuTest.Drinks
         {
             Tyrannotea tea = new Tyrannotea();
             tea.Size = Size.Large;
-            Assert.Equal<double>(2.50, tea.Price);
+            Assert.Equal<double>(1.99, tea.Price);
         }
-
+        
         //The correct price and calories after changing to small, medium, and large sizes.
         [Fact]
         public void ShouldHaveCorrectCaloriesForSmall()
         {
             Tyrannotea tea = new Tyrannotea();
             tea.Size = Size.Small;
-            Assert.Equal<double>(112, tea.Calories);
+            Assert.Equal<double>(8, tea.Calories);
 
         }
 
@@ -58,7 +58,7 @@ namespace MenuTest.Drinks
         {
             Tyrannotea tea = new Tyrannotea();
             tea.Size = Size.Medium;
-            Assert.Equal<double>(156, tea.Calories);
+            Assert.Equal<double>(16, tea.Calories);
         }
 
         [Fact]
@@ -66,7 +66,7 @@ namespace MenuTest.Drinks
         {
             Tyrannotea tea = new Tyrannotea();
             tea.Size = Size.Large;
-            Assert.Equal<double>(208, tea.Calories);
+            Assert.Equal<double>(32, tea.Calories);
         }
 
         [Fact]
@@ -81,8 +81,9 @@ namespace MenuTest.Drinks
         {
             Tyrannotea tea = new Tyrannotea();
             Assert.True(tea.Ice);
-            Assert.Equal<double>(2.50, tea.Price);
+            Assert.Equal<double>(.99, tea.Price);
         }
+
         [Fact]
         public void ShouldHaveDefaultSize()
         {
@@ -90,6 +91,7 @@ namespace MenuTest.Drinks
             
             Assert.True(tea.Size == Size.Small);
         }
+
         [Fact]
         public void ShouldHaveDefaultCalories()
         {
@@ -107,13 +109,62 @@ namespace MenuTest.Drinks
         }
 
         [Fact]
+        public void ShouldHaveLemon()
+        {
+            Tyrannotea tea = new Tyrannotea();
+            
+            Assert.False(tea.Lemon);
+        }
+
+        [Fact]
+        public void ShouldHaveSweet()
+        {
+            Tyrannotea tea = new Tyrannotea();
+
+            Assert.False(tea.Sweet);
+        }
+
+        [Fact]
+        public void ShouldHaveSweetSetTrue()
+        {
+            Tyrannotea tea = new Tyrannotea();
+            tea.Sweet = true;
+            tea.Size = Size.Small;
+            Assert.Equal<double>(16, tea.Calories);
+            tea.Size = Size.Medium;
+            Assert.Equal<double>(32, tea.Calories);
+            tea.Size = Size.Large;
+            Assert.Equal<double>(64, tea.Calories);
+
+
+
+        }
+
+        [Fact]
+        public void ShouldHaveSweetSetFalse()
+        {
+            Tyrannotea tea = new Tyrannotea();
+            tea.Sweet = true;
+            tea.Sweet = false;
+
+            tea.Size = Size.Small;
+            Assert.Equal<double>(8, tea.Calories);
+            tea.Size = Size.Medium;
+            Assert.Equal<double>(16, tea.Calories);
+            tea.Size = Size.Large;
+            Assert.Equal<double>(32, tea.Calories);
+
+
+        }
+
+        [Fact]
         public void ShouldHaveCorrectIngredients()
         {
             Tyrannotea tea = new Tyrannotea();
             Assert.Contains("Water", tea.Ingredients);
-            Assert.Contains("Natural Flavors", tea.Ingredients);
-            Assert.Contains("Sugar", tea.Ingredients);
-
+            Assert.Contains("Tea", tea.Ingredients);
+            if(tea.Sweet) Assert.Contains("Cane Sugar", tea.Ingredients);
+            if(tea.Lemon) Assert.Contains("Lemon", tea.Ingredients);
         }
     }
 }
