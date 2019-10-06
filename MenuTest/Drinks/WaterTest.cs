@@ -7,7 +7,7 @@ namespace MenuTest.Drinks
 {
     public class WaterTest
     {
-        // The correct default price, calories, ice, and size
+        
         [Fact]
         public void ShouldHaveCorrectDefaultPrice()
         {
@@ -40,7 +40,7 @@ namespace MenuTest.Drinks
 
 
 
-        //The correct price and calories after changing to small, medium, and large sizes.
+        
         [Fact]
         public void ShouldHaveCorrectPriceForSmall()
         {
@@ -117,7 +117,7 @@ namespace MenuTest.Drinks
 
         }
 
-        //That invoking HoldIce() results in the Ice property being false.
+       
 
         [Fact]
         public void ShouldHaveCorrectIngedients()

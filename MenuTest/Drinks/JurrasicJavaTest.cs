@@ -41,7 +41,7 @@ namespace MenuTest.Drinks
 
 
 
-        //The correct price and calories after changing to small, medium, and large sizes.
+        
         [Fact]
         public void ShouldHaveCorrectPriceForSmall()
         {
