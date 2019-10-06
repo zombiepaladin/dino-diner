@@ -2,10 +2,16 @@
 
 namespace DinoDiner.Menu.Drinks
 {
+
+    /// <summary>
+    /// THis is the class for the Tea and inherits from Drinks
+    /// </summary>
     public class Tyrannotea : Drinks
     {
       
-
+        /// <summary>
+        /// public constructor for Tyranotea that sets Cal., Ing., and price
+        /// </summary>
         public Tyrannotea()
         {
 
@@ -16,12 +22,28 @@ namespace DinoDiner.Menu.Drinks
 
 
         }
+
+        /// <summary>
+        /// This variable is default to make tea non sweet
+        /// </summary>
         public bool Sweet = false;
+        /// <summary>
+        /// This indicates there is no lemon in tea by default
+        /// </summary>
         public bool Lemon = false;
-        public bool Ice = false;
+        /// <summary>
+        /// This indicates that ice is default true in tea
+        /// </summary>
+        public bool Ice = true;
 
-
+        /// <summary>
+        /// This variable is of type Size and is used to access class size
+        /// </summary>
         public Size size;
+
+        /// <summary>
+        /// Getter and setter for Size and sets the calories and price for each size
+        /// </summary>
         public Size Size
         {
             get
@@ -52,6 +74,11 @@ namespace DinoDiner.Menu.Drinks
             }
 
         }
+
+
+        /// <summary>
+        /// This adds Lemon in the tea
+        /// </summary>
         public void AddLemon()
         {
             Ingredients.Add("Lemon");
@@ -60,6 +87,11 @@ namespace DinoDiner.Menu.Drinks
 
 
         }
+
+
+        /// <summary>
+        /// This makes The tea sweet
+        /// </summary>
         public void AddSweet()
         {
             Ingredients.Add("Cane Sugar");
@@ -69,10 +101,26 @@ namespace DinoDiner.Menu.Drinks
 
 
         }
-        public void AddIce()
+
+        //This makes the tea Back to normal
+        public void RemoveSweet()
         {
-            Ice = true;
-            
+            Ingredients.Add("Cane Sugar");
+            this.Calories = this.Calories;
+
+            Sweet = false;
+
+
+        }
+        /// <summary>
+        /// This holds the ice in the tea
+        /// </summary>
+        /// <returns>false to show that the ice is held</returns>
+        public override bool HoldIce()
+        {
+             Ice = false;
+            return false;
+
         }
 
     }

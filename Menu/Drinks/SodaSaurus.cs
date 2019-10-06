@@ -7,10 +7,22 @@ using System.Text;
 
 namespace DinoDiner.Menu.Drinks
 {
-    public class TyrannoTea : Drinks
+
+    /// <summary>
+    /// Class for SodaSauris that inherits Drinks
+    /// </summary>
+    public class SodaSaurus : Drinks
     {
+
+        /// <summary>
+        /// Shows that Ice is in by default
+        /// </summary>
         public bool Ice = true;
-        public TyrannoTea()
+
+        /// <summary>
+        /// Constructor for SodaSaurus that sets def Cal.,Ing., and Price
+        /// </summary>
+        public SodaSaurus()
         {
             
             this.Calories = 112;
@@ -19,9 +31,15 @@ namespace DinoDiner.Menu.Drinks
             
             
         }
-       
 
+        /// <summary>
+        /// Private varriable that accesses SodasaurusFlavor to set the Default flavor
+        /// </summary>
         private SodasaurusFlavor flavor = SodasaurusFlavor.Cola;
+
+        /// <summary>
+        /// The getter and setter for SodasaurusFlavor to make it pick a flavor or get the flavor that is set
+        /// </summary>
         public SodasaurusFlavor Flavor
         {
             get
@@ -35,7 +53,14 @@ namespace DinoDiner.Menu.Drinks
 
         }
         
+
+        /// <summary>
+        /// Variable of type Size that is used to acces Size class
+        /// </summary>
         public Size size;
+        /// <summary>
+        /// The getter and setter that sets Price and Cal. based on size
+        /// </summary>
         public Size Size
         {
             get
@@ -67,9 +92,15 @@ namespace DinoDiner.Menu.Drinks
 
         }
 
-        public new void HoldIce()
+
+        /// <summary>
+        /// Hold the ice in the drink
+        /// </summary>
+        /// <returns>Returns false to show there is no ice</returns>
+        public override bool HoldIce()
         {
             Ice = false;
+            return false;
         }
 
 

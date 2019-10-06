@@ -9,16 +9,33 @@ namespace MenuTest.Drinks
 
 
 
-
-        // The correct default price, calories, ice, and size
         [Fact]
         public void ShouldHaveCorrectDefaultPrice()
         {
-            JurrasicJava tea = new JurrasicJava();
-            Assert.Equal<double>(.59, tea.Price);
+            JurrasicJava cof = new JurrasicJava();
+            Assert.Equal<double>(0.59, cof.Price);
+        }
+        [Fact]
+        public void ShouldHaveCorrectDefaultCalories()
+        {
+            JurrasicJava cof = new JurrasicJava();
+            Assert.Equal<double>(2, cof.Calories);
+        }
+        [Fact]
+        public void ShouldHaveCorrectDefaultIce()
+        {
+            JurrasicJava cof = new JurrasicJava();
+            Assert.False(cof.Ice);
+
         }
 
+        [Fact]
+        public void ShouldHaveCorrectDefaultSize()
+        {
+            JurrasicJava cof = new JurrasicJava();
+            Assert.Equal(Size.Small, cof.Size);
 
+        }
 
 
 
@@ -51,25 +68,6 @@ namespace MenuTest.Drinks
             Assert.Equal<double>(1.49, tea.Price);
 
         }
-        //That invoking HoldIce() results in the Ice property being false.
-
-        [Fact]
-        public void ShouldHaveDefaultPrice()
-        {
-            JurrasicJava tea = new JurrasicJava();
-
-            Assert.Equal<double>(.59, tea.Price);
-
-        }
-        [Fact]
-        public void ShouldHaveCorrectIngedients()
-        {
-            JurrasicJava ch = new JurrasicJava();
-            Assert.Contains<string>("Coffee", ch.Ingredients);
-            Assert.Contains<string>("Water", ch.Ingredients);
-            Assert.Equal<int>(2, ch.Ingredients.Count);
-          
-        }
         [Fact]
         public void ShouldLeaveRoomForCream()
         {
@@ -86,6 +84,18 @@ namespace MenuTest.Drinks
             Assert.True(ch.Ice);
 
         }
+
+
+        [Fact]
+        public void ShouldHaveCorrectIngedients()
+        {
+            JurrasicJava ch = new JurrasicJava();
+            Assert.Contains<string>("Coffee", ch.Ingredients);
+            Assert.Contains<string>("Water", ch.Ingredients);
+            Assert.Equal<int>(2, ch.Ingredients.Count);
+          
+        }
+        
 
 
     }

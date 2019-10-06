@@ -4,6 +4,9 @@ using System.Text;
 
 namespace DinoDiner.Menu.Drinks
 {
+    /// <summary>
+    /// Enum that is used to show flavors for the soda and ise used to pick one
+    /// </summary>
     public enum SodasaurusFlavor
     {
         Cola,

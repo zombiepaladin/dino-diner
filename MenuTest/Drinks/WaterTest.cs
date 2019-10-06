@@ -11,27 +11,27 @@ namespace MenuTest.Drinks
         [Fact]
         public void ShouldHaveCorrectDefaultPrice()
         {
-            Water tea = new Water();
-            Assert.Equal<double>(.10, tea.Price);
+            Water wat = new Water();
+            Assert.Equal<double>(.10, wat.Price);
         }
         [Fact]
         public void ShouldHaveCorrectDefaultCalories()
         {
-            Water tea = new Water();
-            Assert.Equal<double>(0, tea.Calories);
+            Water wat = new Water();
+            Assert.Equal<double>(0, wat.Calories);
         }
         [Fact]
         public void ShouldHaveCorrectDefaultIce()
         {
-            TyrannoTea tea = new TyrannoTea();
-            Assert.True(tea.Ice);
+            Water wat = new Water();
+            Assert.True(wat.Ice);
 
         }
         [Fact]
         public void ShouldHaveCorrectDefaultLemon()
         {
-            Water tea = new Water();
-            Assert.False(tea.Lemon);
+            Water wat = new Water();
+            Assert.False(wat.Lemon);
 
         }
 
@@ -44,9 +44,9 @@ namespace MenuTest.Drinks
         [Fact]
         public void ShouldHaveCorrectPriceForSmall()
         {
-            Water tea = new Water();
-            tea.Size = Size.Small;
-            Assert.Equal<double>(.10, tea.Price);
+            Water wat = new Water();
+            wat.Size = Size.Small;
+            Assert.Equal<double>(.10, wat.Price);
 
 
         }
@@ -54,17 +54,17 @@ namespace MenuTest.Drinks
         [Fact]
         public void ShouldHaveCorrectPriceForMedium()
         {
-            Water tea = new Water();
-            tea.Size = Size.Medium;
-            Assert.Equal<double>(.10, tea.Price);
+            Water wat = new Water();
+            wat.Size = Size.Medium;
+            Assert.Equal<double>(.10, wat.Price);
 
         }
         [Fact]
         public void ShouldHaveCorrectPriceForLarge()
         {
-            Water tea = new Water();
-            tea.Size = Size.Large;
-            Assert.Equal<double>(.10, tea.Price);
+            Water wat = new Water();
+            wat.Size = Size.Large;
+            Assert.Equal<double>(.10, wat.Price);
 
         }
 
@@ -73,9 +73,9 @@ namespace MenuTest.Drinks
         [Fact]
         public void ShouldHaveCorrectCaloriesForSmall()
         {
-            Water tea = new Water();
-            tea.Size = Size.Small;
-            Assert.Equal<uint>(0, tea.Calories);
+            Water wat = new Water();
+            wat.Size = Size.Small;
+            Assert.Equal<uint>(0, wat.Calories);
 
 
         }
@@ -83,26 +83,37 @@ namespace MenuTest.Drinks
         [Fact]
         public void ShouldHaveCorrectCaloriesForMedium()
         {
-            Water tea = new Water();
-            tea.Size = Size.Medium;
-            Assert.Equal<uint>(0, tea.Calories);
+            Water wat = new Water();
+            wat.Size = Size.Medium;
+            Assert.Equal<uint>(0, wat.Calories);
 
         }
         [Fact]
         public void ShouldHaveCorrectCaloriesForLarge()
         {
-            Water tea = new Water();
-            tea.Size = Size.Large;
-            Assert.Equal<uint>(0, tea.Calories);
+            Water wat = new Water();
+            wat.Size = Size.Large;
+            Assert.Equal<uint>(0, wat.Calories);
 
         }
 
         [Fact]
         public void ShouldHoldIce()
         {
-            Water tea = new Water();
-            tea.HoldIce();
-            Assert.False(tea.Ice);
+            Water wat = new Water();
+            wat.HoldIce();
+            Assert.False(wat.Ice);
+
+        }
+        [Fact]
+        public void ShouldAddLemon()
+        {
+            Water wat = new Water();
+            wat.AddLemon();
+            Assert.True(wat.Lemon);
+            Assert.Contains<string>("Water", wat.Ingredients);
+            Assert.Contains<string>("Lemon", wat.Ingredients);
+            Assert.Equal<int>(2, wat.Ingredients.Count);
 
         }
 
@@ -111,12 +122,9 @@ namespace MenuTest.Drinks
         [Fact]
         public void ShouldHaveCorrectIngedients()
         {
-            Water ch = new Water();
-            Assert.Contains<string>("Water", ch.Ingredients);
-
-
-
-            Assert.Single(ch.Ingredients);
+            Water wat = new Water();
+            Assert.Contains<string>("Water", wat.Ingredients);
+            Assert.Single(wat.Ingredients);
 
         }
     }

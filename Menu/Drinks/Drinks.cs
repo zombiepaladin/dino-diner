@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace DinoDiner.Menu.Drinks
-{
+{/// <summary>
+/// THis clas is used and inherited by other classes
+/// </summary>
     public abstract class Drinks
     {
         /// <summary>
@@ -21,7 +23,11 @@ namespace DinoDiner.Menu.Drinks
         /// </summary>
         public List<string> Ingredients { get; protected set; }
 
-        public  bool HoldIce()
+        /// <summary>
+        /// Holds the ice
+        /// </summary>
+        /// <returns></returns>
+        public virtual bool HoldIce()
         {
             
             return false;
