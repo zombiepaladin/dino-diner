@@ -52,10 +52,45 @@ namespace DinoDiner.Menu.Sides
         {
             Price = 0.99;
             Calories = 540;
-            Ingredients.Add("Cheese Product");
-            Ingredients.Add("Breading");
-            Ingredients.Add("Vegetable Oil");
+            
         }
 
+        public override string ToString()
+        {
+            StringBuilder item = new StringBuilder();
+            switch (size)
+            {
+                case Size.Small:
+                    item.Append("Small ");
+
+                    break;
+                case Size.Medium:
+                    item.Append("Medium ");
+
+                    break;
+                case Size.Large:
+                    item.Append("Large ");
+
+                    break;
+                default:
+                    break;
+
+
+            }
+            item.Append("Mezzorella Sticks");
+            return item.ToString();
+        }
+         public override List<string> Ingredients
+        {
+            get
+            {
+                List<string> ingredients = new List<string>() { };
+                Ingredients.Add("Cheese Product");
+                Ingredients.Add("Breading");
+                Ingredients.Add("Vegetable Oil");
+
+                return ingredients;
+            }
+        }
     }
 }

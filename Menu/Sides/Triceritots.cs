@@ -37,7 +37,7 @@ namespace DinoDiner.Menu.Sides
 
 
                 }
-                
+
 
 
             }
@@ -51,14 +51,50 @@ namespace DinoDiner.Menu.Sides
         {
             Price = 0.99;
             Calories = 352;
-            Ingredients.Add("Potato");
-            Ingredients.Add("Salt");
-            Ingredients.Add("Vegetable Oil");
+
         }
 
 
+        public override string ToString()
+        {
+            StringBuilder item = new StringBuilder();
+            switch (size)
+            {
+                case Size.Small:
+                    item.Append("Small ");
+
+                    break;
+                case Size.Medium:
+                    item.Append("Medium ");
+
+                    break;
+                case Size.Large:
+                    item.Append("Large ");
+
+                    break;
+                default:
+                    break;
+
+
+            }
+            item.Append("Triceritots");
+            return item.ToString();
+        }
+        public override List<string> Ingredients
+        {
+            get
+            {
+                List<string> ingredients = new List<string>() { };
+                ingredients.Add("Potato");
+                ingredients.Add("Salt");
+                ingredients.Add("Vegetable Oil");
+
+                return ingredients;
 
 
 
+
+            }
+        }
     }
 }

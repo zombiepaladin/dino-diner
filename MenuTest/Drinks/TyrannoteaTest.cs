@@ -128,8 +128,9 @@ namespace MenuTest.Drinks
         public void ShouldHaveSweetSetTrue()
         {
             Tyrannotea tea = new Tyrannotea();
-            tea.Sweet = true;
             tea.Size = Size.Small;
+            tea.Sweet = true;
+            
             Assert.Equal<double>(16, tea.Calories);
             tea.Size = Size.Medium;
             Assert.Equal<double>(32, tea.Calories);

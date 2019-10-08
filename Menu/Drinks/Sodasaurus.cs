@@ -11,6 +11,7 @@ namespace DinoDiner.Menu.Drinks
         /// <summary>
         /// Gets or sets 
         /// </summary>
+        /// 
         public SodasaurusFlavor Flavor { get; set; }
 
         private Size size;
@@ -49,9 +50,121 @@ namespace DinoDiner.Menu.Drinks
         {
             Price = 1.50;
             Calories = 112;
-            Ingredients.Add("Water");
-            Ingredients.Add("Natural Flavors");
-            Ingredients.Add("Cane Sugar");
+            
+        }
+
+        public override string ToString()
+        {
+            StringBuilder item = new StringBuilder();
+            switch (size)
+            {
+                case Size.Small:
+                    item.Append("Small ");
+                    switch(Flavor)
+                    {
+                        case SodasaurusFlavor.Cherry:
+                            item.Append("Cherry ");
+                            break;
+                        case SodasaurusFlavor.Lime:
+                            item.Append("Lime ");
+                            break;
+                        case SodasaurusFlavor.Cola:
+                            item.Append("Cola ");
+                            break;
+                        case SodasaurusFlavor.Vanilla:
+                            item.Append("Vanilla ");
+                            break;
+                        case SodasaurusFlavor.RootBeer:
+                            item.Append("RootBeer ");
+                            break;
+                        case SodasaurusFlavor.Chocolate:
+                            item.Append("Chocolate ");
+                            break;
+                        case SodasaurusFlavor.Orange:
+                            item.Append("Orange ");
+                            break;
+
+                    }
+                    break;   
+                  
+                case Size.Medium:
+                    item.Append("Medium ");
+                    switch (Flavor)
+                    {
+                        case SodasaurusFlavor.Cherry:
+                            item.Append("Cherry ");
+                            break;
+                        case SodasaurusFlavor.Lime:
+                            item.Append("Lime ");
+                            break;
+                        case SodasaurusFlavor.Cola:
+                            item.Append("Cola ");
+                            break;
+                        case SodasaurusFlavor.Vanilla:
+                            item.Append("Vanilla ");
+                            break;
+                        case SodasaurusFlavor.RootBeer:
+                            item.Append("RootBeer ");
+                            break;
+                        case SodasaurusFlavor.Chocolate:
+                            item.Append("Chocolate ");
+                            break;
+                        case SodasaurusFlavor.Orange:
+                            item.Append("Orange ");
+                            break;
+
+                    }
+                    break;
+                case Size.Large:
+                    item.Append("Large ");
+                    switch (Flavor)
+                    {
+                        case SodasaurusFlavor.Cherry:
+                            item.Append("Cherry ");
+                            break;
+                        case SodasaurusFlavor.Lime:
+                            item.Append("Lime ");
+                            break;
+                        case SodasaurusFlavor.Cola:
+                            item.Append("Cola ");
+                            break;
+                        case SodasaurusFlavor.Vanilla:
+                            item.Append("Vanilla ");
+                            break;
+                        case SodasaurusFlavor.RootBeer:
+                            item.Append("RootBeer ");
+                            break;
+                        case SodasaurusFlavor.Chocolate:
+                            item.Append("Chocolate ");
+                            break;
+                        case SodasaurusFlavor.Orange:
+                            item.Append("Orange ");
+                            break;
+
+                    }
+                    break;
+                default:
+                    
+                    break;
+
+
+
+            }
+            item.Append("Sodasaurus");
+            return item.ToString();
+
+        }
+        public override List<string> Ingredients
+        {
+            get
+            {
+                List<string> ingredients = new List<string>() { };
+                Ingredients.Add("Water");
+                Ingredients.Add("Natural Flavors");
+                Ingredients.Add("Cane Sugar");
+
+                return ingredients;
+            }
         }
     }
 }

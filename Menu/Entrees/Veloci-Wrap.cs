@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using DinoDiner.Menu.Entrees;
 
-namespace Menu.Entrees
+namespace DinoDiner.Menu.Entrees
 {
     public class VelociWrap : Entree
     {
@@ -68,6 +68,10 @@ namespace Menu.Entrees
         public void HoldCheese()
         {
             this.cheese = false;
+        }
+        public override string ToString()
+        {
+            return ("Veloci-Wrap");
         }
     }
     }

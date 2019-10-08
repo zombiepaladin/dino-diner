@@ -1,9 +1,9 @@
-﻿using DinoDiner.Menu.Entrees;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Menu.Entrees
+namespace DinoDiner.Menu.Entrees
 {
     public class Brontowurst : Entree
     {
@@ -20,8 +20,8 @@ namespace Menu.Entrees
         /// </summary>
         private bool onions = true;
 
-        
-        
+
+
 
         /// <summary>
         /// Constructs the brontworst
@@ -33,7 +33,7 @@ namespace Menu.Entrees
                 List<string> ingredients = new List<string>() { "Brautwurst" };
                 if (bun) ingredients.Add("Whole Wheat Bun");
                 if (peppers) ingredients.Add("Peppers");
-                if(onions) ingredients.Add("Onion");
+                if (onions) ingredients.Add("Onion");
                 return ingredients;
             }
         }
@@ -68,5 +68,9 @@ namespace Menu.Entrees
         {
             this.onions = false;
         }
+        public override string ToString()
+        {
+            return ("Brontowurst");
+        }
     }
-    }
+}

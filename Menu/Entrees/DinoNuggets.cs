@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using DinoDiner.Menu.Entrees;
 
-namespace Menu.Entrees
+namespace DinoDiner.Menu.Entrees
 {
     public class DinoNuggets : Entree
     {
@@ -47,6 +45,10 @@ namespace Menu.Entrees
             this.Price += 0.25;
             this.Calories += 59;
             Count++;
+        }
+        public override string ToString()
+        {
+            return ("Dino-Nuggets");
         }
     }
     }

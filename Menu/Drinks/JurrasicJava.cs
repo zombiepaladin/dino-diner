@@ -12,7 +12,7 @@ namespace DinoDiner.Menu.Drinks
         /// </summary>
         public bool RoomForCream { get; set; } = false;
 
-        public bool Decaf { get; set; } = false;
+        public bool Decaf { get; set; }
 
        
 
@@ -58,14 +58,60 @@ namespace DinoDiner.Menu.Drinks
         }
         public JurrasicJava()
         {
-            Price = .59;
-            Calories = 2;
+            this.Price = .59;
+            this.Calories = 2;
             Ice = false;
             RoomForCream = false;
-            Ingredients.Add("Water");
-            Ingredients.Add("Coffee");
+            
             
         }
+        public override string ToString()
+        {
+            StringBuilder item = new StringBuilder();
+            switch(size)
+            {
+                case Size.Small:
+                    item.Append("Small ");
+                    if(Decaf)
+                    {
+                        item.Append("Decaf ");
+                    }
+                    break;
+                case Size.Medium:
+                    item.Append("Medium ");
+                    if (Decaf)
+                    {
+                        item.Append("Decaf ");
+                    }
+                    break;
+                case Size.Large:
+                    item.Append("Large ");
+                    if (Decaf)
+                    {
+                        item.Append("Decaf ");
+                    }
+                    break;
+                default:
+                    break;
+
+
+            }
+            item.Append("Jurassic Java");
+            return item.ToString();
+        }
+
+        public override List<string> Ingredients
+        {
+            get
+            {
+                List<string> ingredients = new List<string>() { };
+                Ingredients.Add("Water");
+                Ingredients.Add("Coffee");
+
+                return ingredients;
+            }
+        }
     }
+    
 }
 

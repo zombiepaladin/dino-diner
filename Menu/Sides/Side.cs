@@ -8,7 +8,7 @@ namespace DinoDiner.Menu.Sides
     /// <summary>
     /// Framework for each side
     /// </summary>
-    public abstract class Side
+    public abstract class Side : IMenuItem
     {
         /// <summary>
         /// Represents each side
@@ -27,7 +27,7 @@ namespace DinoDiner.Menu.Sides
         /// <summary>
         /// Gets the ingredients for each side
         /// </summary>
-        public List<string> Ingredients { get { return ingredients; } }
+        public virtual List<string> Ingredients { get { return ingredients; } }
 
         /// <summary>
         /// Gets or sets the size

@@ -6,7 +6,7 @@ namespace DinoDiner.Menu.Drinks
 {
     public class Tyrannotea : Drink
     {
-        
+
         private Size size;
 
         public bool Lemon { get; set; } = false;
@@ -21,15 +21,18 @@ namespace DinoDiner.Menu.Drinks
                 {
                     case Size.Small:
                         Price = .99;
-                        Calories = 8;
+                        if (Sweet) Calories = 16;
+                        else Calories = 8;
                         break;
                     case Size.Medium:
                         Price = 1.49;
-                        Calories = 16;
+                        if (Sweet) Calories = 32;
+                        else Calories = 16;
                         break;
                     case Size.Large:
                         Price = 1.99;
-                        Calories = 32;
+                        if (Sweet) Calories = 64;
+                        else Calories = 32;
                         break;
 
 
@@ -51,33 +54,69 @@ namespace DinoDiner.Menu.Drinks
         {
             Price = 0.99;
             Calories = 8;
-            Ingredients.Add("Water");
-            Ingredients.Add("Tea");
+            
             if (Lemon) Ingredients.Add("Lemon");
-            if(Sweet)
+            if (Sweet)
             {
                 Ingredients.Add("Cane Sugar");
-                switch (size)
-                {
-                    case Size.Small:
-                        
-                        Calories = 16;
-                        break;
-                    case Size.Medium:
-                       
-                        Calories = 32;
-                        break;
-                    case Size.Large:
-                        
-                        Calories = 64;
-                        break;
-
-
-
-                }
-            }
                 
+            }
+           
 
+
+        }
+        public override string ToString()
+        {
+            StringBuilder item = new StringBuilder();
+            switch (size)
+            {
+                case Size.Small:
+                    item.Append("Small ");
+                    if (Sweet)
+                    {
+                        item.Append("Sweet ");
+                    }
+                    break;
+                case Size.Medium:
+                    item.Append("Medium ");
+                    if (Sweet)
+                    {
+                        item.Append("Sweet ");
+                    }
+                    break;
+                case Size.Large:
+                    item.Append("Large ");
+                    if (Sweet)
+                    {
+                        item.Append("Sweet ");
+                    }
+                    break;
+                default:
+                    break;
+
+
+            }
+            item.Append("Tyrannotea");
+            return item.ToString();
+
+        }
+        public override List<string> Ingredients
+        {
+            get
+            {
+                List<string> ingredients = new List<string>() { };
+                
+                Ingredients.Add("Water");
+                Ingredients.Add("Tea");
+                if (Lemon) Ingredients.Add("Lemon");
+                if (Sweet)
+                {
+                    Ingredients.Add("Cane Sugar");
+                }
+                   
+                
+                return ingredients;
+            }
         }
     }
 }

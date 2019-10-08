@@ -54,5 +54,30 @@ namespace DinoDiner.Menu.Drinks
             Ingredients.Add("Water");
             if (Lemon) Ingredients.Add("Lemon");
         }
+        public override string ToString()
+        {
+            StringBuilder item = new StringBuilder();
+            switch (size)
+            {
+                case Size.Small:
+                    item.Append("Small ");
+                    
+                    break;
+                case Size.Medium:
+                    item.Append("Medium ");
+                    
+                    break;
+                case Size.Large:
+                    item.Append("Large ");
+                    
+                    break;
+                default:
+                    break;
+
+
+            }
+            item.Append("Water");
+            return item.ToString();
+        }
     }
 }
