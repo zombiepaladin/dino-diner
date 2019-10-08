@@ -104,7 +104,7 @@ namespace MenuTest.Drinks
         {
             Sodasaurus soda = new Sodasaurus();
             soda.Size = Size.Large;
-            Assert.Equal<double>(2.00, soda.Price);
+            Assert.Equal<double>(2.50, soda.Price);
         }
 
         //The correct price and calories after changing to small, medium, and large sizes.
@@ -113,7 +113,7 @@ namespace MenuTest.Drinks
         {
             Sodasaurus soda = new Sodasaurus();
             soda.Size = Size.Small;
-            Assert.Equal<double>(1.50, soda.Calories);
+            Assert.Equal<double>(112, soda.Calories);
 
         }
 
@@ -122,7 +122,7 @@ namespace MenuTest.Drinks
         {
             Sodasaurus soda = new Sodasaurus();
             soda.Size = Size.Medium;
-            Assert.Equal<double>(2.00, soda.Calories);
+            Assert.Equal<double>(156, soda.Calories);
         }
 
         [Fact]
@@ -130,7 +130,7 @@ namespace MenuTest.Drinks
         {
             Sodasaurus soda = new Sodasaurus();
             soda.Size = Size.Large;
-            Assert.Equal<double>(2.00, soda.Calories);
+            Assert.Equal<double>(208, soda.Calories);
         }
 
         [Fact]
@@ -145,7 +145,7 @@ namespace MenuTest.Drinks
         {
             Sodasaurus soda = new Sodasaurus();
 
-            Assert.True(soda.Calories == 8);
+            Assert.True(soda.Calories == 112);
         }
 
         [Fact]
@@ -170,7 +170,7 @@ namespace MenuTest.Drinks
             Sodasaurus soda = new Sodasaurus();
             Assert.Contains("Water", soda.Ingredients);
             Assert.Contains("Natural Flavors", soda.Ingredients);
-            Assert.Contains("Sugar", soda.Ingredients);
+            Assert.Contains("Cane Sugar", soda.Ingredients);
             
         }
     }
