@@ -10,7 +10,7 @@ namespace DinoDiner.Menu.Drinks
     /// <summary>
     /// Framework for each side
     /// </summary>
-    public abstract class Drink
+    public abstract class Drink : IMenuItem
     {
         /// <summary>
         /// Represents each side

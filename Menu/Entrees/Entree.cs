@@ -7,7 +7,7 @@ namespace DinoDiner.Menu.Entrees
     /// <summary>
     /// Framework for each entree
     /// </summary>
-    public abstract class Entree
+    public abstract class Entree : IMenuItem
     {
         /// <summary>
         /// Represents ingredients for each entree
