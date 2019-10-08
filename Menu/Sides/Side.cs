@@ -3,20 +3,15 @@ using System.Collections.Generic;
 using System.Text;
 
 
-namespace DinoDiner.Menu.Sides
+namespace DinoDiner.Menu
 {
 
     /// <summary>
     /// Enum to defign size into three Strings
     /// </summary>
-    public  enum Size
-    {
-        Small,
-        Medium, 
-        Large
-    }
+    
 
-    public  class Side
+    public  class Side : IMenuItem
     {
         /// <summary>
         /// Gets and sets the price

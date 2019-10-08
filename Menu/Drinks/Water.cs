@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
 
     /// <summary>
@@ -17,6 +17,28 @@ namespace DinoDiner.Menu.Drinks
         /// This is to indicate if ice is in the drink by default
         /// </summary>
         public bool Ice = true;
+
+
+        /// <summary>
+        /// Used to print the name for combos
+        /// </summary>
+        /// <returns>The name of Item for menu</returns>
+        public override string ToString()
+        {
+            if (size == Size.Large)
+            {
+                return "Large Water";
+            }
+            if (size == Size.Medium)
+            {
+                return "Medium Water";
+            }
+
+            return "Small Water";
+
+
+        }
+
 
         /// <summary>
         /// This is the water constructor to setup def Cal.,Ing., and Price.

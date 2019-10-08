@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
 
 
@@ -9,6 +9,16 @@ namespace DinoDiner.Menu.Entrees
     /// </summary>
     public class VelociWrap : Entree
     {
+
+
+        /// <summary>
+        /// Used to print the name for combos
+        /// </summary>
+        /// <returns>The name of Item for menu</returns>
+        public override string ToString()
+        {
+            return "Veloci-Wrap";
+        }
 
         /// <summary>
         /// Sets base price, Calories, and Ingredients for VelociWrap

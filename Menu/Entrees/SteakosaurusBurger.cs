@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
 
 
@@ -10,6 +10,16 @@ namespace DinoDiner.Menu.Entrees
     public class SteakosaurusBurger : Entree
     {
 
+
+
+        /// <summary>
+        /// Used to print the name for combos
+        /// </summary>
+        /// <returns>The name of Item for menu</returns>
+        public override string ToString()
+        {
+            return "Steakosaurus Burger";
+        }
         /// <summary>
         /// Sets base price, Calories, and Ingredients for SteakosaurusBurger
         /// </summary>

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Sides
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// Class for the side MeteorMacAndCheese
@@ -10,6 +10,25 @@ namespace DinoDiner.Menu.Sides
     public class MeteorMacAndCheese : Side
     {
 
+        /// <summary>
+        /// Used to print the name for combos
+        /// </summary>
+        /// <returns>The name of Item for menu</returns>
+        public override string ToString()
+        {
+            if (size == Size.Large)
+            {
+                return "Large Meteor Mac and Cheese";
+            }
+            if (size == Size.Medium)
+            {
+                return "Medium Meteor Mac and Cheese";
+            }
+
+            return "Small Meteor Mac and Cheese";
+
+
+        }
 
 
         /// <summary>

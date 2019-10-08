@@ -5,24 +5,43 @@ using System.Text;
 
 
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
 
     /// <summary>
     /// Class for SodaSauris that inherits Drinks
     /// </summary>
-    public class SodaSaurus : Drinks
+    public class Sodasaurus : Drinks
     {
 
         /// <summary>
         /// Shows that Ice is in by default
         /// </summary>
         public bool Ice = true;
+        /// <summary>
+        /// Used to print the name for combos
+        /// </summary>
+        /// <returns>The name of Item for menu</returns>
+        public override string ToString()
+        {
+            if (size == Size.Large)
+            {
+                return "Large " + flavor + " Sodasaurus";
+            }
+            if (size == Size.Medium)
+            {
+                return "Medium "+ flavor + " Sodasaurus";
+            }
 
+            return "Small " + flavor + " Sodasaurus";
+
+
+        }
+       
         /// <summary>
         /// Constructor for SodaSaurus that sets def Cal.,Ing., and Price
         /// </summary>
-        public SodaSaurus()
+        public Sodasaurus()
         {
             
             this.Calories = 112;

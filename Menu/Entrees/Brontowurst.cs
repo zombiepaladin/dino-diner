@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
 
     /// <summary>
@@ -11,10 +11,19 @@ namespace DinoDiner.Menu.Entrees
 
 
         /// <summary>
+        /// Used to print the name for combos
+        /// </summary>
+        /// <returns>The name of Item for menu</returns>
+        public override string ToString()
+        {
+            return "Brontowurst";
+        }
+        /// <summary>
         /// Sets base price, Calories, and Ingredients for Brontowurst
         /// </summary>
         public Brontowurst()
         {
+            
             this.Price = 5.36;
             this.Calories = 498;
             this.Ingredients = new List<string>() { "Brautwurst", "Whole Wheat Bun", "Peppers","Onion"};

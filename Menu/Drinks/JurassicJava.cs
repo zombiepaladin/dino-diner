@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// THis is the JurrasicJava that inherits Drinks
     /// </summary>
-    public class JurrasicJava : Drinks
+    public class JurassicJava : Drinks
     {
         /// <summary>
         /// THis is to leave room for cream which is false by Def.
@@ -21,11 +21,44 @@ namespace DinoDiner.Menu.Drinks
         /// </summary>
         public bool Ice = false;
 
+        /// <summary>
+        /// Used to print the name for combos
+        /// </summary>
+        /// <returns>The name of Item for menu</returns>
+        public override string ToString()
+        {
+            if (size == Size.Large && Decaf == true)
+            {
+                return "Large Decaf Jurassic Java";
+            }
+            if (size == Size.Medium && Decaf == true)
+            {
+                return "Medium Decaf Jurassic Java";
+            }
+            if (size == Size.Small && Decaf == true)
+            {
+                return "Small Decaf Jurassic Java";
+            }
+            if (size == Size.Large)
+            {
+                return "Large Jurassic Java";
+            }
+            if (size == Size.Medium)
+            {
+                return "Medium Jurassic Java";
+            }
+           
+
+
+            return "Small Jurassic Java";
+
+
+        }
 
         /// <summary>
         /// The constructor for JurrasicJava that sets Cal., Ing., and price
         /// </summary>
-        public JurrasicJava()
+        public JurassicJava()
         {
 
             this.Calories = 2;

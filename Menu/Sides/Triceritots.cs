@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Sides
+namespace DinoDiner.Menu
 {
 
     /// <summary>
@@ -10,6 +10,28 @@ namespace DinoDiner.Menu.Sides
     /// </summary>
     public class Triceritots : Side
     {
+
+
+
+        /// <summary>
+        /// Used to print the name for combos
+        /// </summary>
+        /// <returns>The name of Item for menu</returns>
+        public override string ToString()
+        {
+            if (size == Size.Large)
+            {
+                return "Large Triceritots";
+            }
+            if (size == Size.Medium)
+            {
+                return "Medium Triceritots";
+            }
+
+            return "Small Triceritots";
+
+
+        }
 
 
 

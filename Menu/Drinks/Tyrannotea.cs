@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
 
     /// <summary>
@@ -8,10 +8,44 @@ namespace DinoDiner.Menu.Drinks
     /// </summary>
     public class Tyrannotea : Drinks
     {
-      
+
+        /// <summary>
+        /// Used to print the name for combos
+        /// </summary>
+        /// <returns>The name of Item for menu</returns>
+        public override string ToString()
+        {
+            if (size == Size.Large && Sweet == true)
+            {
+                return "Large Sweet Tyrannotea";
+            }
+            if (size == Size.Medium && Sweet == true)
+            {
+                return "Medium Sweet Tyrannotea";
+            }
+            if (size == Size.Small && Sweet == true)
+            {
+                return "Small Sweet Tyrannotea";
+            }
+            if (size == Size.Large)
+            {
+                return "Large Tyrannotea";
+            }
+            if (size == Size.Medium)
+            {
+                return "Medium Tyrannotea";
+            }
+
+
+
+            return "Small Tyrannotea";
+
+
+        }
         /// <summary>
         /// public constructor for Tyranotea that sets Cal., Ing., and price
         /// </summary>
+        /// 
         public Tyrannotea()
         {
 

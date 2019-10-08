@@ -24,9 +24,9 @@ namespace MenuTest
         [InlineData(typeof(Water))]
         public void IngredientsShouldBeImmutable(Type type)
         {
-            IMenuItem item = (IMenuItem)Activator.CreateInstance(type);
-            item.Ingredients.Clear();
-            Assert.NotEmpty(item.Ingredients);
+          IMenuItem item = (IMenuItem)Activator.CreateInstance(type);
+          item.Ingredients.Clear();
+          Assert.NotEmpty(item.Ingredients);
         }
     }
 }
