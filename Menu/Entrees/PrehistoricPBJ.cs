@@ -1,40 +1,47 @@
-﻿using System.Collections.Generic;
+﻿ using System.Collections.Generic;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
-    public class PrehistoricPBJ
+
+
+
+    
+    /// <summary>
+    /// This class is for the PrehistoricPBJ and is used to setup and modify it
+    /// </summary>
+    public class PrehistoricPBJ : Entree
     {
-        private bool peanutButter = true;
-        private bool jelly = true;
-
-        public double Price { get; set; }
-        public uint Calories { get; set; }
-
-        public List<string> Ingredients
+        /// <summary>
+        /// Used to print the name for combos
+        /// </summary>
+        /// <returns>The name of Item for menu</returns>
+        public override string ToString()
         {
-            get
-            {
-                List<string> ingredients = new List<string>() { "Bread" };
-                if (peanutButter) ingredients.Add("Peanut Butter");
-                if (jelly) ingredients.Add("Jelly");
-                return ingredients;
-            }
+            return "Prehistoric PB&J";
         }
 
+        /// <summary>
+        /// Sets base price, Calories, and Ingredients for PrehistoricPBJ
+        /// </summary>
         public PrehistoricPBJ()
         {
             this.Price = 6.52;
             this.Calories = 483;
+            this.Ingredients = new List<string>() { "Bread", "Peanut Butter", "Jelly" };
         }
-
+        /// <summary>
+        /// Holds the Peanut Butter from the PrehistoricPBJ
+        /// </summary>
         public void HoldPeanutButter()
         {
-            this.peanutButter = false;
+            this.Ingredients.Remove("Peanut Butter");
         }
-
+        /// <summary>
+        /// Holds the Jelly from the PrehistoricPBJ
+        /// </summary>
         public void HoldJelly()
         {
-            this.jelly = false;
+            this.Ingredients.Remove("Jelly");
         }
     }
 }
