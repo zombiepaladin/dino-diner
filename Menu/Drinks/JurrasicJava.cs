@@ -14,7 +14,7 @@ namespace DinoDiner.Menu.Drinks
 
         public bool Decaf { get; set; }
 
-       
+        
 
         private Size size;
         public override Size Size
@@ -52,6 +52,7 @@ namespace DinoDiner.Menu.Drinks
             Ice = true;
         }
 
+        
         public void LeaveRoomForCream()
         {
             RoomForCream = true;

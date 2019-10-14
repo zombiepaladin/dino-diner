@@ -9,7 +9,7 @@
       d:DesignWidth="800"
       Title="ComboSelection">
 
-    <WrapPanel>
+    <WrapPanel Margin="0,-20,-9,0">
         <WrapPanel.Resources>
             <Style TargetType="Button">
                 <Setter Property="Width"
@@ -19,13 +19,13 @@
             </Style>
 
         </WrapPanel.Resources>
-        <Button>
+        <Button Click="BrontowurstCombo" >
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-01.png"></ImageBrush>
 
             </Button.Background>
             <DockPanel Height="150">
-                
+
                 <TextBlock>
             Brontowurst Combo
                 </TextBlock>
@@ -33,7 +33,7 @@
 
         </Button>
 
-        <Button>
+        <Button Click="DinoNuggetsCombo" >
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-02.png"></ImageBrush>
 
@@ -46,7 +46,7 @@
 
         </Button>
 
-        <Button>
+        <Button Click="PrehistoricPBJCombo" >
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-03.png"></ImageBrush>
 
@@ -59,7 +59,7 @@
 
         </Button>
 
-        <Button>
+        <Button Click="PterodactylWingsCombo" >
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-04.png"></ImageBrush>
 
@@ -72,7 +72,7 @@
 
         </Button>
 
-        <Button>
+        <Button Click="SteakosaurusBurgerCombo">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-05.png"></ImageBrush>
 
@@ -85,7 +85,7 @@
 
         </Button>
 
-        <Button>
+        <Button Click="TRexKingburgerCombo">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-06.png"></ImageBrush>
 
@@ -98,7 +98,7 @@
 
         </Button>
 
-        <Button>
+        <Button Click="VelociWrapCombo">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-07.png"></ImageBrush>
 
@@ -110,6 +110,11 @@
             </DockPanel>
 
         </Button>
+        <Grid>
+            <Grid Margin="65,-32,-65,32">
+                <TextBox TextWrapping="Wrap" Text="Add to Order" Margin="235,-282,278,430" FontSize="20"/>
+            </Grid>
+        </Grid>
 
     </WrapPanel>
 </Page>

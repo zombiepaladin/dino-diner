@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Xunit;
-using Menu.Entrees;
+
+using DinoDiner.Menu.Entrees;
 
 namespace MenuTest.Entrees
 {

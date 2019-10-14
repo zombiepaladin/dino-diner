@@ -23,6 +23,54 @@ namespace PointOfSale
         public DrinkSelection()
         {
             InitializeComponent();
+            RemoveButtons();
+        }
+
+        
+
+        
+
+        void RemoveButtons()
+        {
+            Radio.Children.Remove(Lemon);
+            Radio.Children.Remove(Flavor);
+            Radio.Children.Remove(Decaf);
+            Radio.Children.Remove(Sweet);
+            
+        }
+
+        private void TyrannoteaButton_Click(object sender, RoutedEventArgs e)
+        {
+            RemoveButtons();
+            Radio.Children.Add(Lemon);
+            Radio.Children.Add(Sweet);
+            
+        }
+
+        private void SodasaurusButton_Click(object sender, RoutedEventArgs e)
+        {
+            RemoveButtons();
+            Radio.Children.Add(Flavor);
+            
+        }
+
+        
+
+        private void JurassicButton1_Click(object sender, RoutedEventArgs e)
+        {
+            RemoveButtons();
+            Radio.Children.Add(Decaf);
+        }
+
+        private void WaterButton_Click(object sender, RoutedEventArgs e)
+        {
+            RemoveButtons();
+            Radio.Children.Add(Lemon);
+        }
+
+        private void FlavorButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new FlavorSelection());
         }
     }
 }

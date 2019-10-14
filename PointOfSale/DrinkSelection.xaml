@@ -9,7 +9,7 @@
       d:DesignWidth="800"
       Title="DrinkSelection">
 
-    <WrapPanel>
+    <WrapPanel Name ="Drinks">
         <WrapPanel.Resources>
             <Style TargetType="Button">
                 <Setter Property="Width"
@@ -19,13 +19,13 @@
             </Style>
 
         </WrapPanel.Resources>
-        <Button>
+        <Button x:Name="SodasaurusButton" Click="SodasaurusButton_Click">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-12.png"></ImageBrush>
 
             </Button.Background>
             <DockPanel Height="150">
-                
+
                 <TextBlock>
             Sodasaurus
                 </TextBlock>
@@ -33,7 +33,7 @@
 
         </Button>
 
-        <Button>
+        <Button x:Name="TyrannoteaButton" Click="TyrannoteaButton_Click">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-13.png"></ImageBrush>
 
@@ -46,20 +46,20 @@
 
         </Button>
 
-        <Button>
+        <Button x:Name="JurassicButton1" Click="JurassicButton1_Click">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-14.png"></ImageBrush>
 
             </Button.Background>
             <DockPanel Height="150">
-                <TextBlock>
+                <TextBlock x:Name="JurassicButton">
             Jurassic Java
                 </TextBlock>
             </DockPanel>
 
         </Button>
 
-        <Button>
+        <Button x:Name="WaterButton" Click="WaterButton_Click">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-15.png"></ImageBrush>
 
@@ -71,8 +71,33 @@
             </DockPanel>
 
         </Button>
+        <Button x:Name="FlavorButton" Click="FlavorButton_Click">
 
-        
+            <DockPanel>
+
+                <TextBlock><Run Text="Flavor"/></TextBlock>
+            </DockPanel>
+
+        </Button>
+        <Grid x:Name="Radio" RenderTransformOrigin="0.164,1.429">
+            <RadioButton x:Name="Small" Content="Small" Margin="58,57,-58,-57"/>
+            <RadioButton x:Name="Large" Content="Large" Margin="431,63,-431,-63"/>
+            <RadioButton x:Name="Medium" Content="Medium" Margin="239,58,-239,-58"/>
+            <RadioButton x:Name="Lemon" Content="Lemon" Margin="-106,220,106,-220"/>
+            <RadioButton x:Name="Flavor" Content="Flavor" Margin="115,224,-115,-224"/>
+            <RadioButton x:Name="Decaf" Content="Decaf" Margin="302,224,-302,-224"/>
+            <RadioButton x:Name="Sweet" Content="Sweet" Margin="507,226,-507,-226"/>
+            <TextBox TextWrapping="Wrap" Text="Add to Order" Margin="121,-184,-166,285" FontSize="20"/>
+        </Grid>
+
+
+
+
+
+
+
 
     </WrapPanel>
+
+
 </Page>

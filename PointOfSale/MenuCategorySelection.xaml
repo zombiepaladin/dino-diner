@@ -12,16 +12,19 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
             <ColumnDefinition/>
-            
+
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Button Click="ComboClick" Grid.Row ="0" Grid.Column = "0">Combos</Button>
-        <Button Grid.Row= "0" Grid.Column = "1">Entrees</Button>
-        <Button Grid.Row = "1" Grid.Column= "0">Drinks</Button>
-        <Button Grid.Row = "1" Grid.Column= "1">Sides</Button>
-        
+        <Button Click="EntreeClick" Grid.Row ="0" Grid.Column = "1" Content="Entrees"/>
+
+        <Button Click="DrinkClick" Grid.Row = "1" Grid.Column= "0">Drinks</Button>
+        <Button Click="SideClick" Grid.Row = "1" Grid.Column= "1">Sides</Button>
+        <TextBox TextWrapping="Wrap" Text="Add to Order" Margin="302,-76,263,262" FontSize="20" Grid.ColumnSpan="2"/>
+
+
     </Grid>
 </Page>

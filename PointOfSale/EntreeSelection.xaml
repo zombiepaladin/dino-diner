@@ -25,7 +25,7 @@
 
             </Button.Background>
             <DockPanel Height="150">
-                
+
                 <TextBlock>
             Brontowurst
                 </TextBlock>
@@ -66,7 +66,7 @@
             </Button.Background>
             <DockPanel Height="150">
                 <TextBlock>
-            Pterodactyl Wings 
+            Pterodactyl Wings
                 </TextBlock>
             </DockPanel>
 
@@ -79,7 +79,7 @@
             </Button.Background>
             <DockPanel Height="150">
                 <TextBlock>
-            Steakosaurus Burger 
+            Steakosaurus Burger
                 </TextBlock>
             </DockPanel>
 
@@ -92,7 +92,7 @@
             </Button.Background>
             <DockPanel Height="150">
                 <TextBlock>
-            T-Rex Kingburger 
+            T-Rex Kingburger
                 </TextBlock>
             </DockPanel>
 
@@ -110,6 +110,10 @@
             </DockPanel>
 
         </Button>
+        <Grid>
+            <TextBox TextWrapping="Wrap" Text="Add to Order" FontSize="20" Margin="-242,-206,214,304"/>
+
+        </Grid>
 
     </WrapPanel>
 </Page>
