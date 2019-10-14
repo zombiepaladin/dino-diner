@@ -16,16 +16,16 @@ using System.Windows.Shapes;
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for FlavorSelection.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class FlavorSelection : Page
     {
-        public MainWindow()
+        public FlavorSelection()
         {
             InitializeComponent();
         }
 
-        private void Frame_Navigated(object sender, NavigationEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
 
         }

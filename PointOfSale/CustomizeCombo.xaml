@@ -1,0 +1,22 @@
+﻿<Page x:Class="PointOfSale.CustomizeCombo"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PointOfSale"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="CustomizeCombo">
+
+    <Grid RenderTransformOrigin="0.481,0.5">
+        <TextBlock Text="Customize Combo" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="310,10,328,0"/>
+        <TextBlock Text="Side" FontSize="20" Margin="241,81,492,0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="67" Height="33" RenderTransformOrigin="0.744,0.458"/>
+        <TextBlock Text="Drink" FontSize="20" Margin="543,81,189,0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="68" Height="33"/>
+        <TextBlock Text="Size" FontSize="20" Margin="395,241,358,0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="47" Height="33"/>
+        <Button Click="Button_Click"  FontSize="20" Content="Friceritops" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="196,119,0,253" Height="78" Width="132"/>
+        <Button Click="Button_Click1" FontSize="20" Content="Sodasaurus" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="494,119,0,253" Height="78" Width="145"/>
+        <Button   FontSize="20" Content="Small" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="160,279,0,93" Height="78" Width="172"/>
+        <Button  FontSize="20" Content="Medium" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="332,279,0,93" Height="78" Width="155"/>
+        <Button   FontSize="20" Content="Large" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="487,279,0,93" Height="78" Width="188"/>
+    </Grid>
+</Page>
