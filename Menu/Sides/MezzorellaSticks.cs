@@ -12,6 +12,47 @@ namespace DinoDiner.Menu
     {
 
 
+        private List<string> ingredients;
+
+        public override double Price
+        {
+            get
+            {
+                if (size == Size.Large) return 1.95;
+                if (size == Size.Medium) return 1.45;
+                return .99;
+            }
+        }
+
+        public override uint Calories
+        {
+            get
+            {
+                if (size == Size.Large) return 720;
+                if (size == Size.Medium) return 610;
+                return 540;
+            }
+        }
+
+
+        public override List<string> Ingredients
+        {
+            get
+            {
+                
+
+                List<string> ingredients = new List<string>();
+
+                ingredients.Add("Cheese Product");
+                ingredients.Add("Breading");
+                ingredients.Add("Vegetable Oil");
+
+
+                return ingredients;
+            }
+
+
+        }
 
         /// <summary>
         /// Used to print the name for combos
@@ -46,7 +87,7 @@ namespace DinoDiner.Menu
 
             this.Price = 0.99;
             this.Calories = 540;
-            this.Ingredients = new List<string>() { "Cheese Product", "Breading", "Vegetable Oil" };
+            ingredients = new List<string>() { "Cheese Product", "Breading", "Vegetable Oil" };
         }
         /// <summary>
         /// variable to accsess Size

@@ -9,7 +9,48 @@ namespace DinoDiner.Menu
     /// </summary>
     public class VelociWrap : Entree
     {
+        
 
+        private bool tortilla = true;
+        private bool chicken = true;
+        private bool lettuce = true;
+        private bool ceasar = true;
+        private bool parm = true;
+        private List<string> ingredients;
+
+        public override double Price
+        {
+            get
+            {
+                return 6.86;
+            }
+        }
+
+        public override uint Calories
+        {
+            get
+            {
+                return 356;
+            }
+        }
+
+        public override List<string> Ingredients
+        {
+            get
+            {
+                List<string> ingredients = new List<string>();
+                
+                ingredients.Add("Flour Tortilla");
+                ingredients.Add("Chicken Breast");
+                ingredients.Add("Romaine Lettuce");
+                ingredients.Add("Ceasar Dressing");
+               if(parm) ingredients.Add("Parmesan Cheese");
+                
+                return ingredients;
+            }
+
+
+        }
 
         /// <summary>
         /// Used to print the name for combos
@@ -26,15 +67,15 @@ namespace DinoDiner.Menu
         public VelociWrap()
         {
          
-            this.Ingredients = new List<string>() { "Flour Tortilla", "Chicken Breast", "Romaine Lettuce", "Ceasar Dressing", "Parmesan Cheese" };
-            this.Price = 6.86;
-            this.Calories = 356;
+            ingredients = new List<string>() { "Flour Tortilla", "Chicken Breast", "Romaine Lettuce", "Ceasar Dressing", "Parmesan Cheese" };
+           
         }
         /// <summary>
         /// Used to hold the dressing
         /// </summary>
         public void HoldDressing()
         {
+            ceasar = false;
             this.Ingredients.Remove("Ceasar Dressing");
         }
         /// <summary>
@@ -42,14 +83,16 @@ namespace DinoDiner.Menu
         /// </summary>
         public void HoldLettuce()
         {
+            lettuce = false;
             this.Ingredients.Remove("Romaine Lettuce");
         }
         /// <summary>
         /// Used to hold the cheese
         /// </summary>
         public void HoldCheese()
-        { 
-            this.Ingredients.Remove("Parmesan Cheese");
+        {
+            parm = false;
+            Ingredients.Remove("Parmesan Cheese");
         }
     }
 }

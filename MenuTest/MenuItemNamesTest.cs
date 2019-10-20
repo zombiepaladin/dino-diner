@@ -172,7 +172,7 @@ namespace MenuTest
         {
             Tyrannotea tea = new Tyrannotea();
             tea.Size = size;
-            tea.Sweet = sweet;
+            tea.sweet = sweet;
             if (sweet) Assert.Equal($"{size} Sweet Tyrannotea", tea.ToString());
             else Assert.Equal($"{size} Tyrannotea", tea.ToString());
         }
@@ -202,9 +202,9 @@ namespace MenuTest
         [InlineData(typeof(VelociWrap), "Veloci-Wrap Combo")]
         public void ToStringShouldGiveName(Type type, string name)
         {
-            //Entree entree = (Entree)Activator.CreateInstance(type);
-            //CretaceousCombo combo = new CretaceousCombo(entree);
-           // Assert.Equal(name, combo.ToString());
+            Entree entree = (Entree)Activator.CreateInstance(type);
+            CretaceousCombo combo = new CretaceousCombo(entree);
+            Assert.Equal(name, combo.ToString());
         }
 
         #endregion

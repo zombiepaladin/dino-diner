@@ -9,7 +9,47 @@ namespace DinoDiner.Menu
     /// </summary>
     public class MeteorMacAndCheese : Side
     {
+        private List<string> ingredients;
 
+
+
+        public override double Price
+        {
+            get
+            {
+                if (size == Size.Large) return 1.95;
+                if (size == Size.Medium) return 1.45;
+                return .99;
+            }
+        }
+
+        public override uint Calories
+        {
+            get
+            {
+                if (size == Size.Large) return 520;
+                if (size == Size.Medium) return 490;
+                return 420;
+            }
+        }
+
+        public override List<string> Ingredients
+        {
+            get
+            {
+                
+                List<string> ingredients = new List<string>();
+
+                ingredients.Add("Macaroni Noodles");
+                ingredients.Add("Cheese Product");
+                ingredients.Add("Pork Sausage");
+
+
+                return ingredients;
+            }
+
+
+        }
         /// <summary>
         /// Used to print the name for combos
         /// </summary>
@@ -38,9 +78,8 @@ namespace DinoDiner.Menu
         {
 
 
-            this.Price = 0.99;
-            this.Calories = 420;
-            this.Ingredients = new List<string>() { "Macaroni Noodles", "Cheese Product", "Pork Sausage" };
+           
+            ingredients = new List<string>() { "Macaroni Noodles", "Cheese Product", "Pork Sausage" };
         }
         /// <summary>
         /// variable to accsess Size

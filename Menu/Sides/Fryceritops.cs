@@ -11,9 +11,49 @@ namespace DinoDiner.Menu
     public class Fryceritops : Side
     {
 
+        
+        private List<string> ingredients;
 
 
-       
+
+        public override double Price
+        {
+            get
+            {
+                if (size == Size.Large) return 1.95;
+                if (size == Size.Medium) return 1.45;
+                return .99;
+            }
+        }
+
+        public override uint Calories
+        {
+            get
+            {
+                if (size == Size.Large) return 480;
+                if (size == Size.Medium) return 365;
+                return 222;
+            }
+        }
+
+        public override List<string> Ingredients
+        {
+            get
+            {
+                
+                List<string> ingredients = new List<string>();
+
+                ingredients.Add("Potato");
+                ingredients.Add("Salt");
+                ingredients.Add("Vegetable Oil");
+               
+
+                return ingredients;
+            }
+
+
+        }
+
 
         /// <summary>
         /// This defigns the price, calories, and Ingredients of Fryceritops
@@ -23,9 +63,8 @@ namespace DinoDiner.Menu
           
            
 
-            this.Price = 0.99;
-            this.Calories = 222;
-            this.Ingredients = new List<string>() { "Potato", "Salt", "Vegetable Oil" };
+            
+            ingredients = new List<string>() { "Potato", "Salt", "Vegetable Oil" };
             
         }
         /// <summary>

@@ -8,11 +8,59 @@ using System.Text;
 namespace DinoDiner.Menu
 {
 
+
+
+
     /// <summary>
     /// Class for SodaSauris that inherits Drinks
     /// </summary>
     public class Sodasaurus : Drinks
     {
+
+
+        private List<string> ingredients;
+
+
+
+        public override double Price
+        {
+            get
+            {
+                if (size == Size.Large) return 2.50;
+                if (size == Size.Medium) return 2.00;
+                return 1.50;
+            }
+        }
+
+        public override uint Calories
+        {
+            get
+            {
+                if (size == Size.Large) return 208;
+                if (size == Size.Medium) return 156;
+                return 112;
+            }
+        }
+
+        public override List<string> Ingredients
+        {
+            get
+            {
+                
+                List<string> ingredients = new List<string>();
+
+                ingredients.Add("Water");
+                ingredients.Add("Natural Flavors");
+                ingredients.Add("Cane Sugar");
+
+
+
+                return ingredients;
+            }
+
+
+        }
+
 
         /// <summary>
         /// Shows that Ice is in by default
@@ -45,7 +93,7 @@ namespace DinoDiner.Menu
         {
             
             this.Calories = 112;
-            this.Ingredients = new List<string>() {"Water","Natural Flavors","Cane Sugar" };
+            ingredients = new List<string>() {"Water","Natural Flavors","Cane Sugar" };
             this.Price = 1.50;
             
             

@@ -24,7 +24,7 @@ namespace MenuTest.Drinks
         public void ShouldHaveCorrectDefaultIce()
         {
             Tyrannotea tea = new Tyrannotea();
-            Assert.True(tea.Ice);
+            Assert.True(tea.ice);
 
         }
 
@@ -39,14 +39,14 @@ namespace MenuTest.Drinks
         public void ShouldHaveCorrectDefaultLemon()
         {
             Tyrannotea tea = new Tyrannotea();
-            Assert.False(tea.Lemon);
+            Assert.False(tea.lemon);
 
         }
         [Fact]
         public void ShouldHaveCorrectDefaultSweet()
         {
             Tyrannotea tea = new Tyrannotea();
-            Assert.False(tea.Sweet);
+            Assert.False(tea.sweet);
 
         }
         [Fact]
@@ -54,7 +54,7 @@ namespace MenuTest.Drinks
         {
             Tyrannotea tea = new Tyrannotea();
             tea.HoldIce();
-            Assert.False(tea.Ice);
+            Assert.False(tea.ice);
 
 
         }
@@ -64,7 +64,7 @@ namespace MenuTest.Drinks
         {
             Tyrannotea tea = new Tyrannotea();
             tea.AddLemon();
-            Assert.True(tea.Lemon);
+            Assert.True(tea.lemon);
             Assert.Contains<string>("Water", tea.Ingredients);
             Assert.Contains<string>("Tea", tea.Ingredients);
             Assert.Contains<string>("Lemon", tea.Ingredients);
@@ -78,7 +78,7 @@ namespace MenuTest.Drinks
         {
             Tyrannotea tea = new Tyrannotea();
             tea.AddSweet();
-            Assert.True(tea.Sweet);
+            Assert.True(tea.sweet);
             Assert.Equal<double>(8 * 2, tea.Calories);
             Assert.Contains<string>("Water", tea.Ingredients);
             Assert.Contains<string>("Tea", tea.Ingredients);
@@ -91,7 +91,7 @@ namespace MenuTest.Drinks
         {
             Tyrannotea tea = new Tyrannotea();
             tea.RemoveSweet();
-            Assert.False(tea.Sweet);
+            Assert.False(tea.sweet);
             Assert.Equal<double>(8 , tea.Calories);
 
 
@@ -172,7 +172,7 @@ namespace MenuTest.Drinks
             Assert.Contains<string>("Water", ch.Ingredients);
             Assert.Contains<string>("Tea", ch.Ingredients);
             Assert.Equal<int>(2, ch.Ingredients.Count);
-            Assert.True(ch.Ice);
+            Assert.True(ch.ice);
 
         }
 

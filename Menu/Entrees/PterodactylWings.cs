@@ -10,6 +10,42 @@ namespace DinoDiner.Menu
     public class PterodactylWings : Entree
     {
 
+        private bool bun = true;
+        private bool peanutButter = true;
+        private bool jelly = true;
+        private List<string> ingredients;
+
+
+
+        public override double Price
+        {
+            get
+            {
+                return 7.21;
+            }
+        }
+
+        public override uint Calories
+        {
+            get
+            {
+                return 318;
+            }
+        }
+
+        public override List<string> Ingredients
+        {
+            get
+            {
+                List<string> ingredients = new List<string>();
+                ingredients.Add("Chicken");
+                ingredients.Add("Wing Sauce");
+                
+                return ingredients;
+            }
+
+
+        }
 
         /// <summary>
         /// Used to print the name for combos
@@ -25,9 +61,8 @@ namespace DinoDiner.Menu
         /// </summary>
         public PterodactylWings()
         {
-            this.Price    = 7.21;
-            this.Calories = 318;
-            this.Ingredients = new List<string>() { "Chicken", "Wing Sauce" };
+          
+            ingredients = new List<string>() { "Chicken", "Wing Sauce" };
         }
 
     }

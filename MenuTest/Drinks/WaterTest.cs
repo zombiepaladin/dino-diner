@@ -31,7 +31,7 @@ namespace MenuTest.Drinks
         public void ShouldHaveCorrectDefaultLemon()
         {
             Water wat = new Water();
-            Assert.False(wat.Lemon);
+            Assert.False(wat.lemon);
 
         }
 
@@ -110,7 +110,7 @@ namespace MenuTest.Drinks
         {
             Water wat = new Water();
             wat.AddLemon();
-            Assert.True(wat.Lemon);
+            Assert.True(wat.lemon);
             Assert.Contains<string>("Water", wat.Ingredients);
             Assert.Contains<string>("Lemon", wat.Ingredients);
             Assert.Equal<int>(2, wat.Ingredients.Count);

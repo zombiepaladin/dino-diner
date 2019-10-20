@@ -11,7 +11,47 @@ namespace DinoDiner.Menu
     public class Triceritots : Side
     {
 
+        private List<string> ingredients;
 
+
+        public override double Price
+        {
+            get
+            {
+                if (size == Size.Large) return 1.95;
+                if (size == Size.Medium) return 1.45;
+                return .99;
+            }
+        }
+
+        public override uint Calories
+        {
+            get
+            {
+                if (size == Size.Large) return 590;
+                if (size == Size.Medium) return 410;
+                return 352;
+            }
+        }
+
+
+        public override List<string> Ingredients
+        {
+            get
+            {
+
+                List<string> ingredients = new List<string>();
+
+                ingredients.Add("Potato");
+                ingredients.Add("Salt");
+                ingredients.Add("Vegetable Oil");
+
+
+                return ingredients;
+            }
+
+
+        }
 
         /// <summary>
         /// Used to print the name for combos
@@ -45,7 +85,7 @@ namespace DinoDiner.Menu
 
             this.Price = 0.99;
             this.Calories = 352;
-            this.Ingredients = new List<string>() { "Potato", "Salt", "Vegetable Oil" };
+            ingredients = new List<string>() { "Potato", "Salt", "Vegetable Oil" };
         }
 
         /// <summary>

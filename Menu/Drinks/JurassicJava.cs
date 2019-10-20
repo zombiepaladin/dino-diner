@@ -7,6 +7,50 @@ namespace DinoDiner.Menu
     /// </summary>
     public class JurassicJava : Drinks
     {
+
+
+        private List<string> ingredients;
+
+
+
+        public override double Price
+        {
+            get
+            {
+                if (size == Size.Large) return 1.49;
+                if (size == Size.Medium) return .99;
+                return .59;
+            }
+        }
+
+        public override uint Calories
+        {
+            get
+            {
+                if (size == Size.Large) return 8;
+                if (size == Size.Medium) return 4;
+                return 2;
+            }
+        }
+
+        public override List<string> Ingredients
+        {
+            get
+            {
+                
+                List<string> ingredients = new List<string>();
+
+                ingredients.Add("Water");
+                ingredients.Add("Coffee");
+                
+
+
+                return ingredients;
+            }
+
+
+        }
+
         /// <summary>
         /// THis is to leave room for cream which is false by Def.
         /// </summary>
@@ -61,9 +105,9 @@ namespace DinoDiner.Menu
         public JurassicJava()
         {
 
-            this.Calories = 2;
-            this.Ingredients = new List<string>() { "Water", "Coffee" };
-            this.Price = .59;
+           
+            ingredients = new List<string>() { "Water", "Coffee" };
+           
            
 
         }

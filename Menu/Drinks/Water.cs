@@ -11,12 +11,51 @@ namespace DinoDiner.Menu
         /// <summary>
         /// THis is to indicate wether a lemon is in the drink by default
         /// </summary>
-        public bool Lemon = false;
+        public bool lemon = false;
 
         /// <summary>
         /// This is to indicate if ice is in the drink by default
         /// </summary>
         public bool Ice = true;
+
+
+        private List<string> ingredients;
+
+
+        public override double Price
+        {
+            get
+            {
+                return .10;
+            }
+        }
+
+        public override uint Calories
+        {
+            get
+            {
+                return 0;
+            }
+        }
+
+        public override List<string> Ingredients
+        {
+            get
+            {
+
+                List<string> ingredients = new List<string>();
+
+                ingredients.Add("Water");
+                if(lemon) ingredients.Add("Lemon");
+
+
+
+
+                return ingredients;
+            }
+
+
+        }
 
 
         /// <summary>
@@ -47,7 +86,7 @@ namespace DinoDiner.Menu
         {
 
             this.Calories = 0;
-            this.Ingredients = new List<string>() { "Water" };
+            ingredients = new List<string>() { "Water" };
             this.Price = 0.10;
             
 
@@ -89,7 +128,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public void AddLemon()
         {
-            Lemon = true;
+            lemon = true;
             this.Ingredients.Add("Lemon");
 
 

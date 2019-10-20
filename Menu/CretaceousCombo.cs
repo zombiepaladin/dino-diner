@@ -90,5 +90,18 @@ namespace DinoDiner.Menu
 
         }
 
+        public override string ToString()
+        {
+            if(Entree.ToString() == "Brontowurst") return "Brontowurst Combo";
+            if (Entree.ToString() == "Dino-Nuggets") return "Dino-Nuggets Combo";
+            if (Entree.ToString() == "Prehistoric PB&J") return "Prehistoric PB&J Combo";
+            if (Entree.ToString() == "Pterodactyl Wings") return "Pterodactyl Wings Combo";
+            if (Entree.ToString() == "Steakosaurus Burger") return "Steakosaurus Burger Combo";
+            if (Entree.ToString() == "T-Rex King Burger") return "T-Rex King Burger Combo";
+            if (Entree.ToString() == "Veloci-Wrap") return "Veloci-Wrap Combo";
+            return "combo";
+
+        }
+
     }
 }

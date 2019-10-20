@@ -11,19 +11,19 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets and sets the price
         /// </summary>
-        public double Price { get; set; }
+        public virtual double Price { get; protected set; }
 
         /// <summary>
         /// Gets and sets the calories
         /// </summary>
-        public uint Calories { get; set; }
+        public virtual uint Calories { get; protected set; }
 
         public Size Size;
 
         /// <summary>
         /// Gets the ingredients list
         /// </summary>
-        public List<string> Ingredients { get; protected set; }
+        public abstract List<string> Ingredients { get; }
 
 
         /// <summary>
