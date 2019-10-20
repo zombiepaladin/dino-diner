@@ -7,12 +7,10 @@ namespace DinoDiner.Menu
     /// <summary>
     /// This class is for the PterodactylWings and is used to setup and modify it
     /// </summary>
-    public class PterodactylWings : Entree
+    public class PterodactylWings : Entree, IOrderItem
     {
 
-        private bool bun = true;
-        private bool peanutButter = true;
-        private bool jelly = true;
+        
         private List<string> ingredients;
 
 

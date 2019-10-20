@@ -1,11 +1,13 @@
 ﻿using System.Collections.Generic;
+using System;
+using System.Collections;
 
 namespace DinoDiner.Menu
 {
     /// <summary>
     /// A class representing a combo meal
     /// </summary>
-    public class CretaceousCombo : IMenuItem
+    public class CretaceousCombo : IMenuItem , IOrderItem
     {
         // Backing Variables
         private Size size;
@@ -92,14 +94,31 @@ namespace DinoDiner.Menu
 
         public override string ToString()
         {
-            if(Entree.ToString() == "Brontowurst") return "Brontowurst Combo";
-            if (Entree.ToString() == "Dino-Nuggets") return "Dino-Nuggets Combo";
-            if (Entree.ToString() == "Prehistoric PB&J") return "Prehistoric PB&J Combo";
-            if (Entree.ToString() == "Pterodactyl Wings") return "Pterodactyl Wings Combo";
-            if (Entree.ToString() == "Steakosaurus Burger") return "Steakosaurus Burger Combo";
-            if (Entree.ToString() == "T-Rex King Burger") return "T-Rex King Burger Combo";
-            if (Entree.ToString() == "Veloci-Wrap") return "Veloci-Wrap Combo";
-            return "combo";
+            return $"{Entree} Combo";
+        }
+
+        public string Description
+        {
+
+            get
+            {
+                return this.ToString();
+            }
+        }
+
+        public string[] Special
+        {
+            get
+            {
+                List<string> ingredients = new List<string>();
+                //ingredients.Add(Entree.Special);
+                ingredients.Add(Side.ToString());
+               // ingredients.Add(Side.Special);
+                ingredients.Add(Drink.ToString());
+               // ingredients.Add(Drink.Special);
+
+                return ingredients.ToArray();
+            }
 
         }
 

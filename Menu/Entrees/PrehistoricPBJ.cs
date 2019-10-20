@@ -1,4 +1,5 @@
 ﻿ using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
@@ -9,7 +10,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// This class is for the PrehistoricPBJ and is used to setup and modify it
     /// </summary>
-    public class PrehistoricPBJ : Entree
+    public class PrehistoricPBJ : Entree, INotifyPropertyChanged, IOrderItem
     {
 
 
@@ -18,7 +19,45 @@ namespace DinoDiner.Menu
         private bool jelly = true;
         private List<string> ingredients;
 
+        // <summary>
+        /// gets and sets the description
+        /// </summary>
+        public string Discription
+        {
 
+            get
+            {
+                return this.ToString();
+            }
+        }
+
+        /// <summary>
+        /// PropertyChanged event handeler; notifys of changes to the Price,Description,and Special properties.
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+
+        //Helper Function for notifying of property changes
+        private void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        /// <summary>
+        /// Gets any special preperatoin instruction
+        /// </summary>
+        public string[] Special
+        {
+
+            get
+            {
+                List<string> special = new List<string>();
+                if (!peanutButter) special.Add("Hold Peanut Butter");
+                if (!jelly) special.Add("Hold Jelly");
+
+                return special.ToArray();
+            }
+        }
 
         public override double Price
         {
@@ -79,6 +118,8 @@ namespace DinoDiner.Menu
         {
             peanutButter = false;
             this.Ingredients.Remove("Peanut Butter");
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
         /// <summary>
         /// Holds the Jelly from the PrehistoricPBJ
@@ -87,6 +128,8 @@ namespace DinoDiner.Menu
         {
             jelly = false;
             this.Ingredients.Remove("Jelly");
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
     }
 }

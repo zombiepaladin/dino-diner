@@ -5,7 +5,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// This class is for the DinoNuggets and is used to setup and modify it
     /// </summary>
-    public class DinoNuggets : Entree
+    public class DinoNuggets : Entree , IOrderItem
     {
 
         private bool addNugget = false;
@@ -14,6 +14,15 @@ namespace DinoDiner.Menu
         private uint cals = 59*6;
         private double price = 4.25;
         private List<string> ingredients;
+
+
+
+
+
+
+
+
+
 
         public override double Price
         {

@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-
+using System.ComponentModel;
 namespace DinoDiner.Menu
 {
 
@@ -7,7 +7,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// This class is for the VelociWrap and is used to setup and modify it
     /// </summary>
-    public class VelociWrap : Entree
+    public class VelociWrap : Entree, IOrderItem
     {
         
 
@@ -17,6 +17,52 @@ namespace DinoDiner.Menu
         private bool ceasar = true;
         private bool parm = true;
         private List<string> ingredients;
+
+
+
+
+
+        public string Discription
+        {
+
+            get
+            {
+                return this.ToString();
+            }
+        }
+
+        /// <summary>
+        /// PropertyChanged event handeler; notifys of changes to the Price,Description,and Special properties.
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+
+        //Helper Function for notifying of property changes
+        private void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        /// <summary>
+        /// Gets any special preperatoin instruction
+        /// </summary>
+        public string[] Special
+        {
+            
+        get
+            {
+                List<string> special = new List<string>();
+                if (!tortilla) special.Add("Hold Flour Tortilla");
+                if (!lettuce) special.Add("Hold Romaine Lettuce");
+                if (!ceasar) special.Add("Ceasar Dressing");
+                if (!parm) special.Add("Parmesan Cheese");
+               
+
+                return special.ToArray();
+            }
+        }
+
+
 
         public override double Price
         {
@@ -77,6 +123,8 @@ namespace DinoDiner.Menu
         {
             ceasar = false;
             this.Ingredients.Remove("Ceasar Dressing");
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
         /// <summary>
         /// Used to Hold the lettuce
@@ -85,6 +133,8 @@ namespace DinoDiner.Menu
         {
             lettuce = false;
             this.Ingredients.Remove("Romaine Lettuce");
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
         /// <summary>
         /// Used to hold the cheese
@@ -93,6 +143,8 @@ namespace DinoDiner.Menu
         {
             parm = false;
             Ingredients.Remove("Parmesan Cheese");
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
     }
 }
