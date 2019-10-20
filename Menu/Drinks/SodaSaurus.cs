@@ -14,7 +14,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Class for SodaSauris that inherits Drinks
     /// </summary>
-    public class Sodasaurus : Drinks
+    public class Sodasaurus : Drinks 
     {
 
 
@@ -85,6 +85,41 @@ namespace DinoDiner.Menu
 
 
         }
+
+
+        /// <summary>
+        /// Gets the description of this oder item
+        /// </summary>
+        public string Description
+        {
+
+            get
+            {
+                return this.ToString();
+            }
+        }
+
+        /// <summary>
+        /// Gets any special intructions for this order item
+        /// </summary>
+
+        public string[] Special
+        {
+
+            get
+            {
+                List<string> special = new List<string>();
+                if (!Ice) special.Add("Hold Ice");
+                return special.ToArray();
+                
+
+                
+
+            }
+
+        }
+
+
        
         /// <summary>
         /// Constructor for SodaSaurus that sets def Cal.,Ing., and Price
