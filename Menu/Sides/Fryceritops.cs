@@ -1,16 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace DinoDiner.Menu.Sides
 {
-    public class Fryceritops : Side
+    public class Fryceritops : Side, INotifyPropertyChanged
     {
 
         /// <summary>
         /// represents size of fryceritops
         /// </summary>
         private Size size;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void NotifyOfPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
         /// <summary>
         /// gets and sets the size of frys
         /// </summary>
@@ -24,14 +32,20 @@ namespace DinoDiner.Menu.Sides
                     case Size.Small:
                         Price = 0.99;
                         Calories = 222;
+                        NotifyOfPropertyChanged("Description");
+                        NotifyOfPropertyChanged("Price");
                         break;
                     case Size.Medium:
                         Price = 1.45;
                         Calories = 365;
+                        NotifyOfPropertyChanged("Description");
+                        NotifyOfPropertyChanged("Price");
                         break;
                     case Size.Large:
                         Price = 1.95;
                         Calories = 480;
+                        NotifyOfPropertyChanged("Description");
+                        NotifyOfPropertyChanged("Price");
                         break;
 
 
@@ -51,7 +65,10 @@ namespace DinoDiner.Menu.Sides
         {
             Price = 0.99;
             Calories = 222;
-            
+            ingredients.Add("Potato");
+            ingredients.Add("Salt");
+            ingredients.Add("Vegetable Oil");
+
         }
         public override string ToString()
         {
@@ -78,16 +95,16 @@ namespace DinoDiner.Menu.Sides
             item.Append("Friceritops");
             return item.ToString();
         }
-        public override List<string> Ingredients
+
+        /// <summary>
+        /// Returns a string[] of special requests
+        /// </summary>
+        public override string[] Special
         {
             get
             {
-                List<string> ingredients = new List<string>() { };
-                Ingredients.Add("Potato");
-                Ingredients.Add("Salt");
-                Ingredients.Add("Vegetable Oil");
-
-                return ingredients;
+                List<string> special = new List<string>();
+                return special.ToArray();
             }
         }
 

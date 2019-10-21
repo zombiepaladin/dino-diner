@@ -1,15 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace DinoDiner.Menu.Sides
 {
-    public class MezzorellaSticks : Side
+    public class MezzorellaSticks : Side, INotifyPropertyChanged
     {
         /// <summary>
         /// Represents the size of mezzorella sticks
         /// </summary>
         private Size size;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        /// tracks when property event is changed
+        /// </summary>
+        /// <param name="propertyName"></param>
+        protected void NotifyOfPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
 
         /// <summary>
         /// Gets and sets the size of mezzorella sticks
@@ -52,7 +64,10 @@ namespace DinoDiner.Menu.Sides
         {
             Price = 0.99;
             Calories = 540;
-            
+            ingredients.Add("Cheese Product");
+            ingredients.Add("Breading");
+            ingredients.Add("Vegetable Oil");
+
         }
 
         public override string ToString()
@@ -80,17 +95,17 @@ namespace DinoDiner.Menu.Sides
             item.Append("Mezzorella Sticks");
             return item.ToString();
         }
-         public override List<string> Ingredients
+        /// <summary>
+        /// Returns a string[] that contains strings pertaining to special things to remove or add to the dish.
+        /// </summary>
+        public override string[] Special
         {
             get
             {
-                List<string> ingredients = new List<string>() { };
-                Ingredients.Add("Cheese Product");
-                Ingredients.Add("Breading");
-                Ingredients.Add("Vegetable Oil");
-
-                return ingredients;
+                List<string> special = new List<string>();
+                return special.ToArray();
             }
         }
+
     }
 }

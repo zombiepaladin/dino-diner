@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 using DinoDiner.Menu.Entrees;
 
 namespace DinoDiner.Menu.Entrees
 {
-    public class VelociWrap : Entree
+    public class VelociWrap : Entree, INotifyPropertyChanged
     {
         /// <summary>
         /// Represents the existence of dressing
@@ -19,27 +20,15 @@ namespace DinoDiner.Menu.Entrees
         /// Represents the existence of cheese
         /// </summary>
         private bool cheese = true;
-        /// <summary>
-        /// Gets and sets the price
-        /// </summary>
-     
-        /// <summary>
-        /// Creates the wrap
-        /// </summary>
-        public override List<string> Ingredients
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void NotifyOfPropertyChanged(string propertyName)
         {
-            get
-            {
-                List<string> ingredients = new List<string>() { "Flour Tortilla" };
-                ingredients.Add("Chicken Breast");
-                
-                
-                if (dressing) ingredients.Add("Ceasar Dressing");
-                if (lettuce) ingredients.Add("Romaine Lettuce");
-                if (cheese) ingredients.Add("Parmesan Cheese");
-                return ingredients;
-            }
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+       
+
         /// <summary>
         /// Initial price and calories of wrap
         /// </summary>
@@ -47,6 +36,11 @@ namespace DinoDiner.Menu.Entrees
         {
             this.Price = 6.86;
             this.Calories = 356;
+            ingredients.Add("Flour Tortilla");
+            ingredients.Add("Chicken Breast");
+            ingredients.Add("Ceasar Dressing");
+            ingredients.Add("Romaine Lettuce");
+            ingredients.Add("Parmesan Cheese");
         }
         /// <summary>
         /// Called when dressing is withheld
@@ -54,6 +48,9 @@ namespace DinoDiner.Menu.Entrees
         public void HoldDressing()
         {
             this.dressing = false;
+            ingredients.Remove("Ceasar Dressing");
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
         /// <summary>
         /// Called when lettuce is withheld
@@ -61,6 +58,9 @@ namespace DinoDiner.Menu.Entrees
         public void HoldLettuce()
         {
             this.lettuce = false;
+            ingredients.Remove("Romaine Lettuce");
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
         /// <summary>
         /// Called when cheese is withheld
@@ -68,10 +68,28 @@ namespace DinoDiner.Menu.Entrees
         public void HoldCheese()
         {
             this.cheese = false;
+            ingredients.Remove("Parmesan Cheese");
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
         public override string ToString()
         {
             return ("Veloci-Wrap");
+        }
+
+        /// <summary>
+        /// Returns a string[] of special requests
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!dressing) special.Add("Hold Ceasar Dressing");
+                if (!lettuce) special.Add("Hold Romaine Lettuce");
+                if (!cheese) special.Add("Hold Parmesan Cheese"); ;
+                return special.ToArray();
+            }
         }
     }
     }

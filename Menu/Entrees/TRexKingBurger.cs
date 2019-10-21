@@ -1,9 +1,13 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
 using DinoDiner.Menu.Entrees;
+/* TRexKingBurger.cs
+ * Author: Thomas Paul
+ */
 
 namespace DinoDiner.Menu.Entrees
 {
-    public class TRexKingBurger : Entree
+    public class TRexKingBurger : Entree, INotifyPropertyChanged
     {
         /// <summary>
         /// Represents the existence of bun
@@ -38,28 +42,16 @@ namespace DinoDiner.Menu.Entrees
         /// </summary>
         private bool tomato = true;
 
-       
         /// <summary>
-        /// Creates the T-Rex Burger
+        /// An event handler for PropertyChanged events for Price, Calories, and Specials
         /// </summary>
-        public override List<string> Ingredients
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void NotifyOfPropertyChanged(string propertyName)
         {
-            get
-            {
-                List<string> ingredients = new List<string>() { "Steakburger Pattie" };
-                ingredients.Add("Steakburger Pattie");
-                ingredients.Add("Steakburger Pattie");
-                if (bun) ingredients.Add("Whole Wheat Bun");
-                if (pickle) ingredients.Add("Pickle");
-                if (ketchup) ingredients.Add("Ketchup");
-                if (mustard) ingredients.Add("Mustard");
-                if (lettuce) ingredients.Add("Lettuce");
-                if (onion) ingredients.Add("Onion");
-                if (mayo) ingredients.Add("Mayo");
-                if (tomato) ingredients.Add("Tomato");
-                return ingredients;
-            }
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+        
 
         /// <summary>
         /// Price and Calories of T-Rex Burger
@@ -68,6 +60,17 @@ namespace DinoDiner.Menu.Entrees
         {
             this.Price = 8.45;
             this.Calories = 728;
+            ingredients.Add("Steakburger Pattie");
+            ingredients.Add("Steakburger Pattie");
+            ingredients.Add("Steakburger Pattie");
+            ingredients.Add("Whole Wheat Bun");
+            ingredients.Add("Lettuce");
+            ingredients.Add("Onion");
+            ingredients.Add("Tomato");
+            ingredients.Add("Pickle");
+            ingredients.Add("Ketchup");
+            ingredients.Add("Mustard");
+            ingredients.Add("Mayo");
         }
         /// <summary>
         /// Called when bun is withheld
@@ -75,6 +78,9 @@ namespace DinoDiner.Menu.Entrees
         public void HoldBun()
         {
             this.bun = false;
+            ingredients.Remove("Whole Wheat Bun");
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
         /// <summary>
         /// Called when lettuce is withheld
@@ -82,6 +88,9 @@ namespace DinoDiner.Menu.Entrees
         public void HoldLettuce()
         {
             this.lettuce = false;
+            ingredients.Remove("Lettuce");
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
         /// <summary>
         /// Called when tomato is witheld
@@ -89,6 +98,9 @@ namespace DinoDiner.Menu.Entrees
         public void HoldTomato()
         {
             this.tomato = false;
+            ingredients.Remove("Tomato");
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
         /// <summary>
         /// Called when onion is withheld
@@ -96,6 +108,9 @@ namespace DinoDiner.Menu.Entrees
         public void HoldOnion()
         {
             this.onion = false;
+            ingredients.Remove("Onion");
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
         /// <summary>
         /// Called when pickle is withheld
@@ -103,6 +118,9 @@ namespace DinoDiner.Menu.Entrees
         public void HoldPickle()
         {
             this.pickle = false;
+            ingredients.Remove("Pickle");
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
         /// <summary>
         /// Called when ketchup is witheld
@@ -110,6 +128,9 @@ namespace DinoDiner.Menu.Entrees
         public void HoldKetchup()
         {
             this.ketchup = false;
+            ingredients.Remove("Ketchup");
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
         /// <summary>
         /// Called when mustrard is withheld
@@ -117,6 +138,9 @@ namespace DinoDiner.Menu.Entrees
         public void HoldMustard()
         {
             this.mustard = false;
+            ingredients.Remove("Mustard");
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
         /// <summary>
         /// Called when mayo is withheld
@@ -124,11 +148,34 @@ namespace DinoDiner.Menu.Entrees
         public void HoldMayo()
         {
             this.mayo = false;
+            ingredients.Remove("Mayo");
+            NotifyOfPropertyChanged("Ingredients");
+            NotifyOfPropertyChanged("Special");
         }
 
         public override string ToString()
         {
             return ("T-Rex King Burger");
+        }
+
+        /// <summary>
+        /// Returns a string[] of special requests
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!bun) special.Add("Hold Whole Wheat Bun");
+                if (!lettuce) special.Add("Hold Lettuce");
+                if (!onion) special.Add("Hold Onion");
+                if (!tomato) special.Add("Hold Tomato");
+                if (!pickle) special.Add("Hold Pickle");
+                if (!ketchup) special.Add("Hold Ketchup");
+                if (!mustard) special.Add("Hold Mustard");
+                if (!mayo) special.Add("Hold Mayo");
+                return special.ToArray();
+            }
         }
     }
 }

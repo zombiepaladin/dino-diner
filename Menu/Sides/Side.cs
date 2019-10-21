@@ -27,12 +27,31 @@ namespace DinoDiner.Menu.Sides
         /// <summary>
         /// Gets the ingredients for each side
         /// </summary>
-        public virtual List<string> Ingredients { get { return ingredients; } }
+        public virtual List<string> Ingredients {
+            get
+            {
+                return new List<string>(ingredients);
+
+            }
+        }
+
+        /// <summary>
+        /// Returns a description for the sides 
+        /// </summary>
+        public string Description
+        {
+            get { return this.ToString(); }
+        }
 
         /// <summary>
         /// Gets or sets the size
         /// </summary>
         public virtual Size Size { get; set; }
+
+        /// <summary>
+        /// abstract method that will be implemented by sides to return a string array containing all special requests
+        /// </summary>
+        public abstract string[] Special { get; }
 
     }
 }

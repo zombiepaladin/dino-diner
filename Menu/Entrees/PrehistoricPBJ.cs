@@ -32,15 +32,15 @@ namespace DinoDiner.Menu.Entrees
         /// <summary>
         /// Gets and sets the description
         /// </summary>
-        public string Description
+        public override string Description
         {
             get { return this.ToString(); }
         }
 
         /// <summary>
-        /// Gets any special preparation instructions
+        /// Gets any special requests
         /// </summary>
-        public string[] Special
+        public override string[] Special
         {
             get
             {
@@ -52,19 +52,7 @@ namespace DinoDiner.Menu.Entrees
             }
         }
 
-        /// <summary>
-        /// Creates the PBJ
-        /// </summary>
-        public override List<string> Ingredients
-        {
-            get
-            {
-                List<string> ingredients = new List<string>() { "Bread" };
-                if (peanutButter) ingredients.Add("Peanut Butter");
-                if (jelly) ingredients.Add("Jelly");
-                return ingredients;
-            }
-        }
+        
 
         /// <summary>
         /// Initial price of PBJ
@@ -73,6 +61,9 @@ namespace DinoDiner.Menu.Entrees
         {
             this.Price = 6.52;
             this.Calories = 483;
+            ingredients.Add("Bread");
+            ingredients.Add("Peanut Butter");
+            ingredients.Add("Jelly");
         }
 
         /// <summary>
@@ -81,6 +72,7 @@ namespace DinoDiner.Menu.Entrees
         public void HoldPeanutButter()
         {
             this.peanutButter = false;
+            ingredients.Remove("Peanut Butter");
             NotifyOfPropertyChange("Special");
             NotifyOfPropertyChange("Ingredients");
         }
@@ -90,6 +82,7 @@ namespace DinoDiner.Menu.Entrees
         public void HoldJelly()
         {
             this.jelly = false;
+            ingredients.Remove("Jelly");
             NotifyOfPropertyChange("Special");
             NotifyOfPropertyChange("Ingredients");
         }

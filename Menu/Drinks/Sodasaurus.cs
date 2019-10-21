@@ -1,20 +1,37 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
-
+/*Sodasaurus.cs
+ * Author: Thomas Paul
+ */
 namespace DinoDiner.Menu.Drinks
 {
     
 
-    public class Sodasaurus : Drink
+    public class Sodasaurus : Drink, INotifyPropertyChanged
     {
         /// <summary>
-        /// Gets or sets 
+        /// Private enum for all the flavors of soda
         /// </summary>
-        /// 
-        public SodasaurusFlavor Flavor { get; set; }
-
+        private SodasaurusFlavor flavor;
+        public SodasaurusFlavor Flavor
+        {
+            get { return flavor; }
+            set { flavor = value; }
+        }
         private Size size;
+
+        /// <summary>
+        /// tracks change in property
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void NotifyOfPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
         public override Size Size
         {
             set
@@ -38,7 +55,8 @@ namespace DinoDiner.Menu.Drinks
 
 
                 }
-
+                NotifyOfPropertyChanged("Description");
+                NotifyOfPropertyChanged("Price");
 
 
             }
@@ -46,11 +64,17 @@ namespace DinoDiner.Menu.Drinks
 
         }
 
+        /// <summary>
+        /// Creates sodasaurus object
+        /// </summary>
         public Sodasaurus()
         {
             Price = 1.50;
             Calories = 112;
-            
+            ingredients.Add("Water");
+            ingredients.Add("Natural Flavors");
+            ingredients.Add("Cane Sugar");
+
         }
 
         public override string ToString()
@@ -154,28 +178,13 @@ namespace DinoDiner.Menu.Drinks
             return item.ToString();
 
         }
-        public override List<string> Ingredients
-        {
-            get
-            {
-                List<string> ingredients = new List<string>() { };
-                Ingredients.Add("Water");
-                Ingredients.Add("Natural Flavors");
-                Ingredients.Add("Cane Sugar");
+        
 
-                return ingredients;
-            }
-        }
-
-        public string Description
-        {
-            get { return this.ToString(); }
-        }
-
+        
         /// <summary>
         /// Gets any special instructions for this order item
         /// </summary>
-        public string[] Special
+        public override string[] Special
         {
             get
             {

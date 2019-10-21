@@ -1,17 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace DinoDiner.Menu.Drinks
 {
-    public class Tyrannotea : Drink
+    public class Tyrannotea : Drink, INotifyPropertyChanged
     {
 
-        private Size size;
+        
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        /// tracks change in property
+        /// </summary>
+        /// <param name="propertyName"></param>
+        protected void NotifyOfPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
 
         public bool Lemon { get; set; } = false;
 
         public bool Sweet { get; set; } = false;
+
+        /// <summary>
+        /// private backing variable
+        /// </summary>
+        private Size size;
         public override Size Size
         {
             set
@@ -40,15 +57,19 @@ namespace DinoDiner.Menu.Drinks
                 }
 
 
-
+                NotifyOfPropertyChanged("Description");
+                NotifyOfPropertyChanged("Price");
             }
             get { return size; }
+
 
         }
 
         public void AddLemon()
         {
             Lemon = true;
+            ingredients.Add("Lemon");
+            NotifyOfPropertyChanged("Special");
         }
         public Tyrannotea()
         {
@@ -100,22 +121,19 @@ namespace DinoDiner.Menu.Drinks
             return item.ToString();
 
         }
-        public override List<string> Ingredients
+        
+
+        /// <summary>
+        /// Returns a string[] that contains strings pertaining to special things to remove or add to the dish.
+        /// </summary>
+        public override string[] Special
         {
             get
             {
-                List<string> ingredients = new List<string>() { };
-                
-                Ingredients.Add("Water");
-                Ingredients.Add("Tea");
-                if (Lemon) Ingredients.Add("Lemon");
-                if (Sweet)
-                {
-                    Ingredients.Add("Cane Sugar");
-                }
-                   
-                
-                return ingredients;
+                List<string> special = new List<string>();
+                if (!Ice) special.Add("Hold Ice");
+                if (Lemon) special.Add("Add Lemon");
+                return special.ToArray();
             }
         }
     }

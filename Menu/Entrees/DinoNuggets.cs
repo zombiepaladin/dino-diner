@@ -1,32 +1,30 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
 using DinoDiner.Menu.Entrees;
-
+/*DinoNuggets.cs
+ * Author: Thomas Paul
+ */
 namespace DinoDiner.Menu.Entrees
 {
-    public class DinoNuggets : Entree
+    public class DinoNuggets : Entree, INotifyPropertyChanged
     {
         
       
         /// <summary>
         /// Represents the number of nuggets
         /// </summary>
-        public int Count = 6;
+        public int count = 0;
 
-        /// <summary>
-        /// Creates the order of dino nuggets
-        /// </summary>
-        public override List<string> Ingredients
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void NotifyOfPropertyChanged(string propertyName)
         {
-            get
-            {
-                List<string> ingredients = new List<string>() {  };
-                for(int i = 0; i < Count; i++)
-                {
-                    ingredients.Add("Chicken Nugget");
-                }
-                return ingredients;
-            }
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+
+        
 
         /// <summary>
         /// Initial price and calories of dino nugget
@@ -38,17 +36,31 @@ namespace DinoDiner.Menu.Entrees
         }
 
         /// <summary>
-        /// Called when nugget is added
+        /// Nugget is added
         /// </summary>
         public void AddNugget()
         {
             this.Price += 0.25;
             this.Calories += 59;
-            Count++;
+            ingredients.Add("Chicken Nugget");
+            count++;
         }
         public override string ToString()
         {
             return ("Dino-Nuggets");
+        }
+
+        /// <summary>
+        /// Returns a string[] that contains all special items
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                special.Add(count.ToString() + " " + "Extra Nuggets");
+                return special.ToArray();
+            }
         }
     }
     }

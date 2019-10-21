@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-
+/*Entree.cs
+ * Author: Thomas Paul
+ */
 namespace DinoDiner.Menu.Entrees
 {
     /// <summary>
     /// Framework for each entree
     /// </summary>
-    public abstract class Entree : IMenuItem
+    public abstract class Entree : IMenuItem, IOrderItem
     {
         /// <summary>
         /// Represents ingredients for each entree
@@ -24,11 +26,27 @@ namespace DinoDiner.Menu.Entrees
         public uint Calories { get; set; }
 
         /// <summary>
-        /// Gets the ingredients for each entree
+        /// returns a list containing the ingredients
         /// </summary>
-        public virtual List<string> Ingredients { get { return ingredients; } }
-
-
-
+        public List<string> Ingredients
+        {
+            get
+            {
+                return new List<string>(ingredients);
+            }
         }
+
+        /// <summary>
+        /// string describing each entree
+        /// </summary>
+        public virtual string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        /// <summary>
+        /// string with all special requests
+        /// </summary>
+        public abstract string[] Special { get; }
+    }
 }

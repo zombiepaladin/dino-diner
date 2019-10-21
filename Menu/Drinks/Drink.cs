@@ -20,17 +20,17 @@ namespace DinoDiner.Menu.Drinks
         /// <summary>
         /// Gets and sets the price
         /// </summary>
-        public double Price { get; set; }
+        public double Price { get; protected set; }
 
         /// <summary>
         /// Gets and sets the calories
         /// </summary>
-        public uint Calories { get; set; }
+        public uint Calories { get; protected set; }
 
         /// <summary>
         /// Gets the ingredients for each side
         /// </summary>
-        public virtual List<string> Ingredients { get { return ingredients; } }
+        public virtual List<string> Ingredients { get { return new List<string>(ingredients); }
 
         /// <summary>
         /// Gets or sets the size
@@ -43,13 +43,25 @@ namespace DinoDiner.Menu.Drinks
         public bool Ice { get; set; } = true;
 
         /// <summary>
-        /// Leaves ice out
+        /// Omits ice
         /// </summary>
         public void HoldIce()
         {
             Ice = false;
         }
 
+        /// <summary>
+        /// returns a string describing each drink
+        /// </summary>
+        public string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        /// <summary>
+        /// Returns string of special notes for all drinks
+        /// </summary>
+        public abstract string[] Special { get; }
 
 
     }

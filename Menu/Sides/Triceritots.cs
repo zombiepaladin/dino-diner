@@ -1,15 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace DinoDiner.Menu.Sides
 {
-    public class Triceritots : Side
+    public class Triceritots : Side, INotifyPropertyChanged
     {
         /// <summary>
         /// Represents size of tots
         /// </summary>
         private Size size;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        /// tracks when property event is changed
+        /// </summary>
+        /// <param name="propertyName"></param>
+        protected void NotifyOfPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
 
         /// <summary>
         /// Sets and gets the size of tots
@@ -24,14 +36,20 @@ namespace DinoDiner.Menu.Sides
                     case Size.Small:
                         Price = 0.99;
                         Calories = 352;
+                        NotifyOfPropertyChanged("Description");
+                        NotifyOfPropertyChanged("Price");
                         break;
                     case Size.Medium:
                         Price = 1.45;
                         Calories = 410;
+                        NotifyOfPropertyChanged("Description");
+                        NotifyOfPropertyChanged("Price");
                         break;
                     case Size.Large:
                         Price = 1.95;
                         Calories = 590;
+                        NotifyOfPropertyChanged("Description");
+                        NotifyOfPropertyChanged("Price");
                         break;
 
 
@@ -51,6 +69,9 @@ namespace DinoDiner.Menu.Sides
         {
             Price = 0.99;
             Calories = 352;
+            ingredients.Add("Potato");
+            ingredients.Add("Salt");
+            ingredients.Add("Vegetable Oil");
 
         }
 
@@ -62,15 +83,19 @@ namespace DinoDiner.Menu.Sides
             {
                 case Size.Small:
                     item.Append("Small ");
+                    NotifyOfPropertyChanged("Description");
+                    NotifyOfPropertyChanged("Price");
 
                     break;
                 case Size.Medium:
                     item.Append("Medium ");
-
+                    NotifyOfPropertyChanged("Description");
+                    NotifyOfPropertyChanged("Price");
                     break;
                 case Size.Large:
                     item.Append("Large ");
-
+                    NotifyOfPropertyChanged("Description");
+                    NotifyOfPropertyChanged("Price");
                     break;
                 default:
                     break;
@@ -80,20 +105,14 @@ namespace DinoDiner.Menu.Sides
             item.Append("Triceritots");
             return item.ToString();
         }
-        public override List<string> Ingredients
+       
+
+        public override string[] Special
         {
             get
             {
-                List<string> ingredients = new List<string>() { };
-                ingredients.Add("Potato");
-                ingredients.Add("Salt");
-                ingredients.Add("Vegetable Oil");
-
-                return ingredients;
-
-
-
-
+                List<string> special = new List<string>();
+                return special.ToArray();
             }
         }
     }

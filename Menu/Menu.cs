@@ -9,7 +9,7 @@ namespace DinoDiner.Menu
     public class Menu
     {
         private List<Drinks.Drink> listD = new List<Drinks.Drink>();
-        private Drinks.JurrasicJava j = new Drinks.JurrasicJava();
+        private Drinks.JurassicJava j = new Drinks.JurassicJava();
         private Drinks.Tyrannotea t = new Drinks.Tyrannotea();
         private Drinks.Water w = new Drinks.Water();
         private Drinks.Sodasaurus s = new Drinks.Sodasaurus();
