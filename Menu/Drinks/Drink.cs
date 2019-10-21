@@ -30,7 +30,7 @@ namespace DinoDiner.Menu.Drinks
         /// <summary>
         /// Gets the ingredients for each side
         /// </summary>
-        public virtual List<string> Ingredients { get { return new List<string>(ingredients); }
+        public virtual List<string> Ingredients { get { return new List<string>(ingredients); } }
 
         /// <summary>
         /// Gets or sets the size

@@ -11,7 +11,7 @@ using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
-    public class CretaceousCombo : INotifyPropertyChanged
+    public class CretaceousCombo : INotifyPropertyChanged, IMenuItem
     {
         
 
