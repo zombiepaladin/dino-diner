@@ -6,7 +6,7 @@ namespace DinoDiner.Menu
 {/// <summary>
 /// THis clas is used and inherited by other classes
 /// </summary>
-    public abstract class Drinks : IMenuItem
+    public abstract class Drinks : IMenuItem, IOrderItem
     {
         /// <summary>
         /// Gets and sets the price
@@ -25,7 +25,8 @@ namespace DinoDiner.Menu
         /// </summary>
         public abstract List<string> Ingredients { get; }
 
-
+        public string Description { get; }
+        public string[] Special { get; }
         /// <summary>
         /// Holds the ice
         /// </summary>

@@ -64,6 +64,128 @@ namespace MenuTest.Entrees
             sb.HoldMustard();
             Assert.DoesNotContain<string>("Mustard", sb.Ingredients);
         }
+
+
+
+
+
+        [Fact]
+        public void HoldOnionShouldNotifyOfSpecialChanged()
+        {
+            
+            SteakosaurusBurger pbj = new SteakosaurusBurger();
+
+            System.Action p = () =>
+            {
+                pbj.HoldMustard();
+            };
+
+
+        }
+
+        [Fact]
+        public void HoldPepperShouldNotifyOfSpecialChanged()
+        {
+            SteakosaurusBurger pbj = new SteakosaurusBurger();
+
+            System.Action p = () =>
+               {
+                   pbj.HoldMustard();
+               };
+            
+        }
+
+
+        [Fact]
+        public void ShouldHaveEmptySpecialListByDefault()
+        {
+
+            SteakosaurusBurger pbj = new SteakosaurusBurger();
+            Assert.Empty(pbj.Special);
+        }
+
+        [Fact]
+        public void SpecialShouldHoldKetchup()
+        {
+            SteakosaurusBurger pbj = new SteakosaurusBurger();
+            pbj.HoldKetchup();
+            Assert.Collection<string>(pbj.Special,
+                item =>
+                {
+                    Assert.Equal("Hold Ketchup", item);
+                }
+
+
+
+                );
+        }
+
+
+
+        [Fact]
+        public void SpecialShouldHoldMustaed()
+        {
+            SteakosaurusBurger pbj = new SteakosaurusBurger();
+            pbj.HoldMustard();
+            Assert.Collection<string>(pbj.Special,
+                item =>
+                {
+                    Assert.Equal("Hold Mustard", item);
+                }
+
+
+
+                );
+        }
+
+        [Fact]
+        public void SpecialShouldHoldPickle()
+        {
+            SteakosaurusBurger pbj = new SteakosaurusBurger();
+            pbj.HoldPickle();
+            Assert.Collection<string>(pbj.Special,
+                item =>
+                {
+                    Assert.Equal("Hold Pickles", item);
+                }
+
+
+
+                );
+        }
+
+
+        [Fact]
+        public void SpecialShouldHoldALl()
+        {
+            SteakosaurusBurger pbj = new SteakosaurusBurger();
+            pbj.HoldPickle();
+            pbj.HoldMustard();
+            pbj.HoldKetchup();
+
+            Assert.Collection<string>(pbj.Special,
+                item =>
+                {
+                    Assert.Equal("Hold Pickles", item);
+                },
+                item =>
+                {
+                    Assert.Equal("Hold Ketchup", item);
+                },
+                item =>
+                {
+                    Assert.Equal("Hold Mustard", item);
+                }
+
+
+
+                );
+        }
+
+
     }
+
+
+
 
 }

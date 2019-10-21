@@ -55,6 +55,94 @@ namespace MenuTest.Entrees
             bw.HoldOnion();
             Assert.DoesNotContain<string>("Onion", bw.Ingredients);
         }
+
+        [Fact]
+        public void HoldOnionShouldNotifyOfSpecialChanged()
+        {
+            Brontowurst pbj = new Brontowurst();
+
+            Assert.PropertyChanged(pbj, "Special", () => { pbj.HoldOnion(); });
+            
+        }
+
+        [Fact]
+        public void HoldPepperShouldNotifyOfSpecialChanged()
+        {
+            Brontowurst pbj = new Brontowurst();
+
+            Assert.PropertyChanged(pbj, "Special", () => {
+                pbj.HoldPeppers();
+            });
+        }
+
+
+        [Fact]
+        public void ShouldHaveEmptySpecialListByDefault()
+        {
+
+            Brontowurst pbj = new Brontowurst();
+            Assert.Empty(pbj.Special);
+        }
+
+        [Fact]
+        public void SpecialShouldHoldOnion()
+        {
+            Brontowurst pbj = new Brontowurst();
+            pbj.HoldOnion();
+            Assert.Collection<string>(pbj.Special,
+                item =>
+                {
+                    Assert.Equal("Hold Onions", item);
+                }
+
+
+
+                );
+        }
+
+
+
+        [Fact]
+        public void SpecialShouldHoldPepper()
+        {
+            Brontowurst pbj = new Brontowurst();
+            pbj.HoldPeppers();
+            Assert.Collection<string>(pbj.Special,
+                item =>
+                {
+                    Assert.Equal("Hold Peppers", item);
+                }
+
+
+
+                );
+        }
+
+        [Fact]
+        public void SpecialShouldHoldAll()
+        {
+            Brontowurst pbj = new Brontowurst();
+            pbj.HoldOnion();
+            pbj.HoldPeppers();
+
+            Assert.Collection<string>(pbj.Special,
+                item =>
+                {
+                    Assert.Equal("Hold Peppers", item);
+                },
+                item =>
+                {
+                    Assert.Equal("Hold Onions", item);
+                }
+
+
+
+                );
+        }
+
+
+
+
     }
 
 }

@@ -1,27 +1,82 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
     /// <summary>
     /// Class for the side Fryceritops
     /// </summary>
-    public class Fryceritops : Side
+    public class Fryceritops : Side , IOrderItem
     {
 
         
         private List<string> ingredients;
 
 
+        /// <summary>
+        /// Shows discription in a tostring
+        /// </summary>
+        public string Discription
+        {
+
+            get
+            {
+                return this.ToString();
+            }
+        }
+
+        /// <summary>
+        /// PropertyChanged event handeler; notifys of changes to the Price,Description,and Special properties.
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+
+        //Helper Function for notifying of property changes
+        private void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        /// <summary>
+        /// Gets any special preperatoin instruction
+        /// </summary>
+        public  string[] Special
+        {
+
+            get
+            {
+                List<string> special = new List<string>();
+                special.Add("Size/Price Change");
+                
+                
+
+
+                return special.ToArray();
+            }
+        }
+
 
         public override double Price
         {
             get
             {
-                if (size == Size.Large) return 1.95;
-                if (size == Size.Medium) return 1.45;
+                if (size == Size.Large)
+                {
+                    NotifyOfPropertyChange("Special");
+                    NotifyOfPropertyChange("Price/Size");
+
+                    return 1.95;
+                }
+                if (size == Size.Medium)
+                {
+                    NotifyOfPropertyChange("Special");
+                    NotifyOfPropertyChange("Price/Size");
+                    return 1.45;
+
+                }
+               
                 return .99;
             }
         }
@@ -30,8 +85,19 @@ namespace DinoDiner.Menu
         {
             get
             {
-                if (size == Size.Large) return 480;
-                if (size == Size.Medium) return 365;
+
+                if (size == Size.Large)
+                {
+                    NotifyOfPropertyChange("Special");
+                    NotifyOfPropertyChange("Price/Size");
+                    return 480;
+                }
+                if (size == Size.Medium)
+                {
+                    NotifyOfPropertyChange("Special");
+                    NotifyOfPropertyChange("Price/Size");
+                    return 365;
+                }
                 return 222;
             }
         }
@@ -105,19 +171,25 @@ namespace DinoDiner.Menu
                 {
                     
                     case Size.Large:
-                       // ToString("Large");
+                        // ToString("Large");
+                        NotifyOfPropertyChange("Special");
+                        NotifyOfPropertyChange("Price/Size");
                         base.Size = value;
                         Price = 1.95;
                         Calories = 480;
                         break;
                     case Size.Medium:
-                       // ToString() = "hello";
+                        // ToString() = "hello";
+                        NotifyOfPropertyChange("Special");
+                        NotifyOfPropertyChange("Price/Size");
                         base.Size = value;
                         Price = 1.45;
                         Calories = 365;
                         break;
                     case Size.Small:
-                       // ToString("Small");
+                        // ToString("Small");
+                        NotifyOfPropertyChange("Special");
+                        NotifyOfPropertyChange("Price/Size");
                         base.Size = value;
                         Price =.99;
                         Calories = 222;
@@ -129,10 +201,7 @@ namespace DinoDiner.Menu
 
         }
 
-
-
-
-
+        
     }
 }
 

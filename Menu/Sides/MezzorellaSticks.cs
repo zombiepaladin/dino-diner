@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-
+using System.ComponentModel;
 namespace DinoDiner.Menu
 {
 
@@ -13,6 +13,52 @@ namespace DinoDiner.Menu
 
 
         private List<string> ingredients;
+
+
+
+
+        /// <summary>
+        /// Shows discription in a tostring
+        /// </summary>
+        public string Discription
+        {
+
+            get
+            {
+                return this.ToString();
+            }
+        }
+
+        /// <summary>
+        /// PropertyChanged event handeler; notifys of changes to the Price,Description,and Special properties.
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+
+        //Helper Function for notifying of property changes
+        private void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        /// <summary>
+        /// Gets any special preperatoin instruction
+        /// </summary>
+        public string[] Special
+        {
+
+            get
+            {
+                List<string> special = new List<string>();
+                special.Add("Size/Price Change");
+
+
+
+
+                return special.ToArray();
+            }
+        }
+
 
         public override double Price
         {
@@ -108,11 +154,15 @@ namespace DinoDiner.Menu
                 {
 
                     case Size.Large:
+                        NotifyOfPropertyChange("Special");
+                        NotifyOfPropertyChange("Price/Size");
                         base.Size = value;
                         Price = 1.95;
                         Calories = 720;
                         break;
                     case Size.Medium:
+                        NotifyOfPropertyChange("Special");
+                        NotifyOfPropertyChange("Price/Size");
                         base.Size = value;
                         Price = 1.45;
                         Calories = 610;

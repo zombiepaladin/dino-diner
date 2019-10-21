@@ -61,7 +61,7 @@ namespace DinoDiner.Menu
                 if (!ketchup) special.Add("Hold Ketchup");
                 if (!mustard) special.Add("Hold Mustard");
                 if(!lettuce) special.Add("Hold Lettuce");
-                if (!mayo) special.Add("Hold Ketchup");
+                if (!mayo) special.Add("Hold Mayo");
                 if (!tomato) special.Add("Hold Tomato");
                 if (!onion) special.Add("Hold Onion");
 

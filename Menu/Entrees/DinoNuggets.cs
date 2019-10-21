@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
-
+using System.ComponentModel;
 namespace DinoDiner.Menu
 {
     /// <summary>
     /// This class is for the DinoNuggets and is used to setup and modify it
     /// </summary>
-    public class DinoNuggets : Entree , IOrderItem
+    public class DinoNuggets : Entree , IOrderItem, INotifyPropertyChanged
     {
 
         private bool addNugget = false;
@@ -18,7 +18,42 @@ namespace DinoDiner.Menu
 
 
 
+        public string Discription
+        {
 
+            get
+            {
+                return this.ToString();
+            }
+        }
+
+        /// <summary>
+        /// PropertyChanged event handeler; notifys of changes to the Price,Description,and Special properties.
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+
+        //Helper Function for notifying of property changes
+        private void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        /// <summary>
+        /// Gets any special preperatoin instruction
+        /// </summary>
+        public string[] Special
+        {
+
+            get
+            {
+                List<string> special = new List<string>();
+                 if(addNugget)special.Add("Add Chicken Nugget");
+                 
+
+                return special.ToArray();
+            }
+        }
 
 
 
@@ -110,8 +145,9 @@ namespace DinoDiner.Menu
             if (addNugget) addMore = true;
             addNugget = true;
             ingredients.Add( "Chicken Nugget");
-            
-            
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
+
         }
 
 

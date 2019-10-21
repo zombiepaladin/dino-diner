@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-
+using System.ComponentModel;
 namespace DinoDiner.Menu
 {
 
@@ -11,9 +11,48 @@ namespace DinoDiner.Menu
 
 
         private List<string> ingredients;
+        
 
 
+        public string Discription
+        {
 
+            get
+            {
+                return this.ToString();
+            }
+        }
+
+        /// <summary>
+        /// PropertyChanged event handeler; notifys of changes to the Price,Description,and Special properties.
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+
+        //Helper Function for notifying of property changes
+        private void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        /// <summary>
+        /// Gets any special preperatoin instruction
+        /// </summary>
+        public string[] Special
+        {
+
+            get
+            {
+                List<string> special = new List<string>();
+               if(lemon) special.Add("Add Lemon");
+               if(ice) special.Add("Add Ice");
+               if(sweet) special.Add("Add Cane Sugar");
+               if(!sweet) special.Add("Remove Cane Sugar");
+
+
+                return special.ToArray();
+            }
+        }
 
 
         public override double Price
@@ -181,7 +220,8 @@ namespace DinoDiner.Menu
             lemon = true;
             ingredients.Add("Lemon");
 
-           
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
 
 
         }
@@ -196,7 +236,8 @@ namespace DinoDiner.Menu
             Ingredients.Add("Cane Sugar");
             Calories = this.Calories * 2;
 
-            
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
 
 
         }
@@ -208,7 +249,8 @@ namespace DinoDiner.Menu
             Ingredients.Add("Cane Sugar");
             this.Calories = this.Calories;
 
-            
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
 
 
         }
@@ -221,6 +263,8 @@ namespace DinoDiner.Menu
              ice = false;
             return false;
 
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
 
     }

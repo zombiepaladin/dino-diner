@@ -83,5 +83,32 @@ namespace MenuTest.Sides
             tt.Size = Size.Large;
             Assert.Equal<Size>(Size.Large, tt.Size);
         }
+
+
+        [Fact]
+        public void ShouldHaveEmptySpecialListByDefault()
+        {
+
+            Triceritots pbj = new Triceritots();
+            Assert.Empty(pbj.Special);
+        }
+
+        [Fact]
+        public void SpecialShouldAllPrice()
+        {
+            Triceritots pbj = new Triceritots();
+            pbj.size = Size.Large;
+            Assert.Collection<string>(pbj.Special,
+                item =>
+                {
+                    Assert.Equal("Size/Price Change", item);
+                }
+
+
+
+                );
+        }
+
+
     }
 }

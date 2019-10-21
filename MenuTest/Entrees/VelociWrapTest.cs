@@ -56,5 +56,108 @@ namespace MenuTest.Entrees
             vw.HoldCheese();
             Assert.DoesNotContain<string>("Parmesan Cheese", vw.Ingredients);
         }
+
+
+
+
+
+
+
+
+
+        [Fact]
+        public void ShouldHaveEmptySpecialListByDefault()
+        {
+
+            VelociWrap pbj = new VelociWrap();
+            Assert.Empty(pbj.Special);
+        }
+
+        [Fact]
+        public void SpecialShouldHoldCheese()
+        {
+            VelociWrap pbj = new VelociWrap();
+            pbj.HoldCheese();
+            Assert.Collection<string>(pbj.Special,
+                item =>
+                {
+                    Assert.Equal("Hold Parmesan Cheese", item);
+                }
+
+
+
+                );
+        }
+
+
+
+        [Fact]
+        public void SpecialShouldHoldDressing()
+        {
+            VelociWrap pbj = new VelociWrap();
+            pbj.HoldDressing();
+            Assert.Collection<string>(pbj.Special,
+                item =>
+                {
+                    Assert.Equal("Hold Ceasar Dressing", item);
+                }
+
+
+
+                );
+        }
+
+        [Fact]
+        public void SpecialShouldHoldLettuce()
+        {
+            VelociWrap pbj = new VelociWrap();
+            pbj.HoldLettuce();
+            Assert.Collection<string>(pbj.Special,
+                item =>
+                {
+                    Assert.Equal("Hold Romaine Lettuce", item);
+                }
+
+
+
+                );
+        }
+
+       
+
+
+
+
+        [Fact]
+        public void SpecialShouldHoldAll()
+        {
+            VelociWrap pbj = new VelociWrap();
+            pbj.HoldCheese();
+            pbj.HoldDressing();
+            pbj.HoldLettuce();
+           
+
+            Assert.Collection<string>(pbj.Special,
+                item =>
+                {
+                    Assert.Equal("Hold Romaine Lettuce", item);
+                },
+                 item =>
+                 {
+                     Assert.Equal("Hold Ceasar Dressing", item);
+                 },
+                 item =>
+                 {
+                     Assert.Equal("Hold Parmesan Cheese", item);
+                 }
+                
+
+
+                );
+        }
+
+
+
+
     }
 }

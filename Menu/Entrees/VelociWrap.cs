@@ -54,8 +54,8 @@ namespace DinoDiner.Menu
                 List<string> special = new List<string>();
                 if (!tortilla) special.Add("Hold Flour Tortilla");
                 if (!lettuce) special.Add("Hold Romaine Lettuce");
-                if (!ceasar) special.Add("Ceasar Dressing");
-                if (!parm) special.Add("Parmesan Cheese");
+                if (!ceasar) special.Add("Hold Ceasar Dressing");
+                if (!parm) special.Add("Hold Parmesan Cheese");
                
 
                 return special.ToArray();

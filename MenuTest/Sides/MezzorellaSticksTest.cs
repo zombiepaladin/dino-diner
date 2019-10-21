@@ -83,5 +83,32 @@ namespace MenuTest.Sides
             ms.Size = Size.Large;
             Assert.Equal<Size>(Size.Large, ms.Size);
         }
+
+
+
+        [Fact]
+        public void ShouldHaveEmptySpecialListByDefault()
+        {
+
+            MezzorellaSticks pbj = new MezzorellaSticks();
+            Assert.Empty(pbj.Special);
+        }
+
+        [Fact]
+        public void SpecialShouldAllPrice()
+        {
+            MezzorellaSticks pbj = new MezzorellaSticks();
+            pbj.size = Size.Large;
+            Assert.Collection<string>(pbj.Special,
+                item =>
+                {
+                    Assert.Equal("Size/Price Change", item);
+                }
+
+
+
+                );
+        }
+
     }
 }

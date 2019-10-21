@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-
+using System.ComponentModel;
 namespace DinoDiner.Menu
 {
 
@@ -8,6 +8,50 @@ namespace DinoDiner.Menu
     /// </summary>
     public class Water : Drinks
     {
+
+
+
+
+        /// <summary>
+        /// this sends the description as a tostring
+        /// </summary>
+        public string Discription
+        {
+
+            get
+            {
+                return this.ToString();
+            }
+        }
+
+        /// <summary>
+        /// PropertyChanged event handeler; notifys of changes to the Price,Description,and Special properties.
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+
+        //Helper Function for notifying of property changes
+        private void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        /// <summary>
+        /// Gets any special preperatoin instruction
+        /// </summary>
+        public string[] Special
+        {
+
+            get
+            {
+                List<string> special = new List<string>();
+                
+               if(Ice) special.Add("Add Ice");
+               if(lemon) special.Add("Add Lemon");
+                return special.ToArray();
+            }
+        }
+
         /// <summary>
         /// THis is to indicate wether a lemon is in the drink by default
         /// </summary>
@@ -130,6 +174,8 @@ namespace DinoDiner.Menu
         {
             lemon = true;
             this.Ingredients.Add("Lemon");
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
 
 
         }
@@ -142,6 +188,8 @@ namespace DinoDiner.Menu
         {
             Ice = false;
             return false;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
 
         }
     }
