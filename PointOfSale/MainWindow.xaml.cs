@@ -26,21 +26,31 @@ namespace PointOfSale
         public MainWindow()
         {
             InitializeComponent();
-            Order order = DataContext as Order;
-            if (order != null)
+            OrderControl.NavigationService = OrderUI.NavigationService;
+            
+
+
+            
+            
+            
+
+        }
+
+        private void BindDataContextToPage()
+        {
+            if(OrderUI.Content is FrameworkElement element)
             {
-                order.Items.Add(new Sodasaurus());
-                order.Items.Add(new PrehistoricPBJ());
-                SteakosaurusBurger sb = new SteakosaurusBurger();
-                sb.HoldPickle();
-                sb.HoldBun();
-                order.Items.Add(sb);
-                DataContext = order;
-
-
+                element.DataContext = OrderUI.DataContext;
             }
-            
-            
+        }
+
+        private void OnLoadComplete(object sender, NavigationEventArgs args)
+        {
+            BindDataContextToPage();
+        }
+
+        private void OnDataContextChanged(object sender, DependencyPropertyChangedEventArgs args)
+        {
 
         }
     }

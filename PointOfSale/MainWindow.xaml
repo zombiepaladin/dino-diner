@@ -10,6 +10,6 @@
         <local:OrderList DockPanel.Dock="Right"
                          Width="200"></local:OrderList>
         
-        <Frame />
+        <Frame Name ="OrderUI" />
     </DockPanel>
 </Window>

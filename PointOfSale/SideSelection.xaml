@@ -19,7 +19,7 @@
             </Style>
 
         </WrapPanel.Resources>
-        <Button>
+        <Button x:Name="SelectionFryceritops">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-08.png"></ImageBrush>
 
@@ -33,7 +33,7 @@
 
         </Button>
 
-        <Button>
+        <Button x:Name="SelectionTriceritots">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-09.png"></ImageBrush>
 
@@ -52,7 +52,7 @@
 
             </Button.Background>
             <DockPanel Height="150">
-                <TextBlock>
+                <TextBlock x:Name="SelectionMeteorMac_Cheese">
             Meteor Mac &amp; Cheese
                 </TextBlock>
             </DockPanel>
@@ -65,9 +65,7 @@
 
             </Button.Background>
             <DockPanel Height="150">
-                <TextBlock>
-            Mozzerlla Sticks
-                </TextBlock>
+                <TextBlock x:Name="Mezzorella" Text="Mezzorella Sticks" Width="93"/>
             </DockPanel>
 
         </Button>
