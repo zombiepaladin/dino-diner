@@ -37,6 +37,7 @@ namespace PointOfSale
         {
             CustomizeCombo c = new CustomizeCombo();
             NavigationService.Navigate(c);
+            //
         }
     }
 }

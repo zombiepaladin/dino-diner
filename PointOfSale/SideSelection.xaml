@@ -10,17 +10,17 @@
 
     <Grid  HorizontalAlignment="Left" VerticalAlignment="Center" Margin="150" Height="50">
 
-        <Button  Margin="-20,-18,-33,11"  Grid.ColumnSpan="2" >Fryceritops</Button>
-        <Button  Margin="-20,-80,-33,73" Grid.ColumnSpan="2" >Meteor Mac &amp; Cheese</Button>
-        <Button  Margin="-20,45,-33,-51" Grid.ColumnSpan="2">Mezzorella Sticks</Button>
-        <Button  Margin="-20,107,-33,-122" Grid.ColumnSpan="2">Triceritops</Button>
+        <Button Click="OnSelectFryceritops" Margin="-20,-18,-33,11"  Grid.ColumnSpan="2" >Fryceritops</Button>
+        <Button  Click ="OnSelectMac"  Margin="-20,-80,-33,73" Grid.ColumnSpan="2" >Meteor Mac &amp; Cheese</Button>
+        <Button  Click ="OnSelectMezzorella" Margin="-20,45,-33,-51" Grid.ColumnSpan="2">Mezzorella Sticks</Button>
+        <Button  Click ="OnSelectTriceritops" Margin="-20,107,-33,-122" Grid.ColumnSpan="2">Triceritops</Button>
         <Label  Margin="13,-121,-3,135" >Side</Label>
-        <Button  Margin="144,7,-197,-35"  Content="Medium" />
-        <Button Margin="144,-80,-197,48" Content="Small" />
-        <Button Margin="144,90,-197,-138" Content="Large"/>
+        <RadioButton Click="OnSelectMedium" Margin="144,7,-197,-35"  Content="Medium" Style="{StaticResource {x:Type ToggleButton}}"/>
+        <RadioButton Click="OnSelectSmall" Margin="144,-80,-197,48" Content="Small"  Style="{StaticResource {x:Type ToggleButton}}"/>
+        <RadioButton Click="OnSelectLarge" Margin="144,90,-197,-138" Content="Large" Style="{StaticResource {x:Type ToggleButton}}"/>
         <Label FontSize="20" Margin="177,-121,-167,135" Content="Size" />
 
-
-
+      
+        
     </Grid>
 </Page>
