@@ -26,6 +26,7 @@ namespace PointOfSale
         public ComboSelection()
         {
             InitializeComponent();
+            
         }
 
         /// <summary>
