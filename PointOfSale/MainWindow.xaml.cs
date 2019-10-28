@@ -53,5 +53,17 @@ namespace PointOfSale
         {
 
         }
+
+        private void OnDone(object sender, NavigationEventArgs args)
+        {
+            if(OrderInterface.NavigationService.CanGoBack)
+            {
+                OrderInterface.NavigationService.GoBack();
+            }
+            else
+            {
+                OrderInterface.NavigationService.Navigate(new MenuCategorySelection());
+            }
+        }
     }
 }

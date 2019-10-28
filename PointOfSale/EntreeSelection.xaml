@@ -46,7 +46,7 @@
 
         </Button>
 
-        <Button>
+        <Button Click="OnAddPrehistoricPBJ">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-03.png"></ImageBrush>
 

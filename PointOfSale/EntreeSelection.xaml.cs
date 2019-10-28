@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DinoDiner.Menu;
+using DinoDiner.Menu.Entrees;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,16 @@ namespace PointOfSale
         public EntreeSelection()
         {
             InitializeComponent();
+        }
+
+        void OnAddPrehistoricPBJ(object sender, NavigationEventArgs args)
+        {
+            if(DataContext is Order order)
+            {
+                PrehistoricPBJ pbj = new PrehistoricPBJ();
+                order.Add(pbj);
+                NavigationService.
+            }
         }
     }
 }

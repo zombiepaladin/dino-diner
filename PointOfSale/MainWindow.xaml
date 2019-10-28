@@ -11,5 +11,9 @@
                          Width="200"></local:OrderList>
         
         <Frame Name ="OrderUI" />
+        <Grid.ColumnDefinitions>
+            </Grid.ColumnDefinitions>/>
+        
+        </Grid.ColumnDefinitions>
     </DockPanel>
 </Window>
