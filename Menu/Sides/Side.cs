@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 
@@ -35,5 +36,7 @@ namespace DinoDiner.Menu
          public  string Description { get; }
 
         public string[] Special { get; }
+
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

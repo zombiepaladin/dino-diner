@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace DinoDiner.Menu
@@ -19,6 +20,8 @@ namespace DinoDiner.Menu
         public virtual uint Calories { get; protected set; }
 
         public Size Size;
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
         /// Gets the ingredients list

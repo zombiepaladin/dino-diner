@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System;
 using System.Collections;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
@@ -11,6 +12,8 @@ namespace DinoDiner.Menu
     {
         // Backing Variables
         private Size size;
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
 
         /// <summary>

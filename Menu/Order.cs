@@ -10,6 +10,9 @@ namespace DinoDiner.Menu
     public class Order : INotifyPropertyChanged
     {
         double salesTaxRate = 0;
+        List<IOrderItem> items = new List<IOrderItem>();
+
+
 
         /// <summary>
         /// An event handler for property changes
@@ -22,7 +25,12 @@ namespace DinoDiner.Menu
         /// <summary>
         /// This is the items added
         /// </summary>
-        public ObservableCollection<IOrderItem> Items { get; set; }
+        public IOrderItem[] Items {
+            get
+            {
+                return items.ToArray();
+            }
+        }
             
         /// <summary>
         /// gets the subtotal
@@ -30,12 +38,13 @@ namespace DinoDiner.Menu
         public double SubtotalCost {
             get
             {
-                foreach (IOrderItem order in Items)
+                double total = 0;
+                foreach (IOrderItem item in Items)
                 {
-                    return 1;
+                    total += item.Price;
                 }
 
-                return 1;
+                return total;
 
             }
 
@@ -64,9 +73,7 @@ namespace DinoDiner.Menu
             {
                 if (value < 0) return;
                 salesTaxRate = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SubtotalCost"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SalesTaxCost"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("TotalCost"));
+                NotifyAllPropertyChanged();
 
             }
             }
@@ -84,23 +91,67 @@ namespace DinoDiner.Menu
         public Order()
         {
 
-            Items = new ObservableCollection<IOrderItem>();
-            Items.CollectionChanged += OnCollectionChanged;
-
-            Items.Add(new SteakosaurusBurger());
-            Items.Add(new Fryceritops());
+            items = new List<IOrderItem>();
+            Add(new SteakosaurusBurger());
+            Add(new Fryceritops());
             Triceritots t = new Triceritots();
-            Items.Add(t);
+            Add(t);
             t.Size = Size.Large;
 
         }
 
-
-        private void OnCollectionChanged(object sender, EventArgs args)
+        protected void NotifyAllPropertyChanged()
         {
+
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SubtotalCost"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SalesTaxCost"));
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("TotalCost"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("totalCost"));
+        }
+
+        /// <summary>
+        /// Adds a new item to our order
+        /// </summary>
+        /// <param name="item"></param>
+        public void Add(IOrderItem item)
+        {
+            
+            items.Add(item);
+            item.PropertyChanged += OnPropertyChanged;
+            NotifyAllPropertyChanged();
+
+        }
+
+        public bool Remove(IOrderItem item)
+        {
+            bool removed = items.Remove(item);
+
+            if (removed)
+            {
+                NotifyAllPropertyChanged();
+            }
+       
+            return removed;
+           
+
+        }
+
+
+
+        private void OnPropertyChanged(object sender, PropertyChangedEventArgs args)
+        {
+            NotifyAllPropertyChanged();
+
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void OnCollectionChanged(object sender, EventArgs args)
+        {
+            NotifyAllPropertyChanged();
         }
 
     }

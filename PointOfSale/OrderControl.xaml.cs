@@ -26,6 +26,8 @@ namespace PointOfSale
         public OrderControl()
         {
             InitializeComponent();
+            Fryceritops fy = new Fryceritops();
+            
         }
 
         private void OnSelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -48,7 +50,7 @@ namespace PointOfSale
             {
                 if(OrderItems.SelectedItem is IOrderItem item)
                 {
-                    order.Items.Remove(item);
+                    order.Remove(item);
                 }
                
             }
