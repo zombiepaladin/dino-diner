@@ -20,7 +20,7 @@
         </WrapPanel.Resources>
         <Button  Content="BrontoWurst" />
         <Button  Content="Dino-Nuggets" />
-        <Button Content="Prehistoric PB&amp;J" />
+        <Button Content="Prehistoric PB&amp;J" Click="Button_Click" />
         <Button  Content="Pterodactyl Wings" />
         <Button  Content="Steakosaurus Buger" />
         <Button  Content="T-Rex KingBurger" />

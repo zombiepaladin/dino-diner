@@ -8,6 +8,7 @@
         Title="MainWindow" Height="450" Width="800">
     <DockPanel>
         <local:OrderControl x:Name="OrderList" DockPanel.Dock="Right" Width="200" Background="LightSteelBlue"></local:OrderControl>
+        <Button DockPanel.Dock="Bottom" Click="OnDone" Height="35">Go Back</Button>
         <Frame Name="OrderUI" LoadCompleted="OnLoadCompleted" Source="MenuCategorySelection.xaml"></Frame>
     </DockPanel>
 </Window>
