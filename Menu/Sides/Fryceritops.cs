@@ -13,12 +13,12 @@ namespace DinoDiner.Menu
 
         
         private List<string> ingredients;
-
+        bool sizeChange = false;
 
         /// <summary>
         /// Shows discription in a tostring
         /// </summary>
-        public string Discription
+        public  string Description
         {
 
             get
@@ -48,7 +48,7 @@ namespace DinoDiner.Menu
             get
             {
                 List<string> special = new List<string>();
-                special.Add("Size/Price Change");
+              if (sizeChange) special.Add("Size/Price Change");
                 
                 
 

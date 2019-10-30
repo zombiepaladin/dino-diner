@@ -21,18 +21,33 @@ namespace PointOfSale
     /// </summary>
     public partial class OrderControl : UserControl
     {
+        /// <summary>
+        /// Accessor for
+        /// </summary>
+        List<IOrderItem> items { get; set; }
+        Order ord = new Order();
+
 
         public NavigationService NavigationService {get;set;}
         public OrderControl()
         {
-            InitializeComponent();
-            Fryceritops fy = new Fryceritops();
+
             
+            InitializeComponent();
+           
+            OrderItems.ItemsSource = items;
+
         }
 
+        /// <summary>
+        /// for  seeing selection changed 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if(OrderItems.SelectedItems is Side side)
+           
+            if (OrderItems.SelectedItems is Side side)
             {
 
                 
@@ -42,21 +57,38 @@ namespace PointOfSale
 
         }
 
-       
+        /// <summary>
+        /// changes on data conext when changed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnDataContextChanged(object sender, EventArgs e)
+        {
+            if (DataContext is Order order)
+            {
+
+                OrderItems.ItemsSource = order.Items;
+
+            }
+
+        }
+
+
 
         public void OnRemoveItem(object sender, RoutedEventArgs args)
         {
-            if(DataContext is Order order)
-            {
+           // if(DataContext is Order order)
+            //{
                 if(OrderItems.SelectedItem is IOrderItem item)
                 {
-                    order.Remove(item);
+                    ord.Remove(item);
                 }
                
-            }
+          //  }
             
 
         }
 
+        
     }
 }

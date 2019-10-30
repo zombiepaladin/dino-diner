@@ -12,16 +12,17 @@
         <TextBlock FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="167,70,0,353" Width="53">Drink</TextBlock>
         <TextBlock FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,70,188,353" Width="65" >Special</TextBlock>
         <TextBlock FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="357,70,383,353" Width="60" >Size</TextBlock>
-        <Button MinHeight="50" Click="Button_Click" FontSize="20"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="137,126,0,269" Height="55">SodaSaurus</Button>
-        <Button FontSize="20"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="137,186,0,207" Width="107" Height="57">Tyrannotea</Button>
-        <Button  FontSize="19"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="138,248,0,120" Height="82" >Jurrasic Java</Button>
-        <Button FontSize="20"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="138,335,0,43" Width="106" Height="72">Water</Button>
-        <Button  FontSize="20"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="322,108,0,270" Height="72" Content="Small" Width="120"/>
-        <Button  FontSize="20"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="324,186,0,158" Width="118" Height="106" Content="Medium"/>
-        <Button  FontSize="19"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="324,300,0,43" Height="107"  Content="Large" Width="118" />
-        <Button  FontSize="20"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="522,108,0,270" Height="72" Content="Sweet/ Decaf/ Flavor" Width="129" />
-        <Button  FontSize="20"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="524,186,0,158" Width="127" Height="106" Content="Add Lemon"/>
-        <Button  FontSize="19"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="524,300,0,43" Height="107"  Content="Hold Ice" Width="127" />
+        <Button Click="OnSodaSaurus" MinHeight="50"  FontSize="20"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="137,126,0,269" Height="55">SodaSaurus</Button>
+        <Button Name="OnFlavor" Click="OnSelectedFlavor" MinHeight="50"  FontSize="20"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="244,126,0,269" Height="55">Flavor</Button>
+        <Button Click="OnTyrannotea" FontSize="20"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="137,186,0,207" Width="107" Height="57">Tyrannotea</Button>
+        <Button Click="OnJurrasicJava" FontSize="19"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="138,248,0,120" Height="82" >Jurrasic Java</Button>
+        <Button Click="OnWater" FontSize="20"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="138,335,0,43" Width="106" Height="72">Water</Button>
+        <RadioButton Click="OnSelectedSmall" FontSize="20"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="322,108,0,270" Height="72" Content="Small" Width="120" Style="{StaticResource {x:Type ToggleButton}}"/>
+        <RadioButton Click="OnSelectedMedium" FontSize="20"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="324,186,0,158" Width="118" Height="106" Content="Medium" Style="{StaticResource {x:Type ToggleButton}}"/>
+        <RadioButton Click="OnSelectedLarge" FontSize="19"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="324,300,0,43" Height="107"  Content="Large" Width="118" Style="{StaticResource {x:Type ToggleButton}}" />
+        <Button Name="addSweet"  IsEnabled="False" Click="OnSelectedAddSuger"  FontSize="20"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="522,108,0,270" Height="72" Content="Sweet/ Decaf/ Flavor" Width="129" />
+        <Button Name ="addLemon" IsEnabled="False" Click="OnSelectedAddLemon" FontSize="20"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="524,186,0,158" Width="127" Height="106" Content="Add Lemon"/>
+        <Button Name="holdIce" IsEnabled="False" Click="OnSelectedHoldIce" FontSize="19"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="524,300,0,43" Height="107"  Content="Hold Ice" Width="127" />
     </Grid>
 
 </Page>

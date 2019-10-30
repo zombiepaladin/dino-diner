@@ -18,12 +18,12 @@
                
             </Style>
         </WrapPanel.Resources>
-        <Button  Content="BrontoWurst" />
-        <Button  Content="Dino-Nuggets" />
-        <Button Content="Prehistoric PB&amp;J" Click="Button_Click" />
-        <Button  Content="Pterodactyl Wings" />
-        <Button  Content="Steakosaurus Buger" />
-        <Button  Content="T-Rex KingBurger" />
-        <Button  Content="Veloci-Wrap" />
+        <Button Name="button_BrontoWurst" Content="BrontoWurst" Click="button_BrontoWurst_Click" />
+        <Button x:Name="button_DinoNuggets" Content="Dino-Nuggets" Click="button_DinoNuggets_Click" />
+        <Button Name="button_PrehistoricPBJ" Content="Prehistoric PB&amp;J" Click="button_PrehistoricPBJ_click" />
+        <Button Name="button_PterodactylWings" Content="Pterodactyl Wings" Click="button_PterodactylWings_Click"/>
+        <Button Name="button_SteakosaurusBuger" Content="Steakosaurus Buger" Click="button_SteakosaurusBuger_Click" />
+        <Button Name="button_TRexKingBurger" Content="T-Rex KingBurger" Click="button_TRexKingBurger_Click" />
+        <Button Name="button_VelociWrap" Content="Veloci-Wrap" Click="button_VelociWrap_Click" />
     </WrapPanel>
 </Page>

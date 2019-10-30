@@ -9,7 +9,7 @@
       Title="MenuCategorySelection">
 
     <Grid>
-        <Button Click="Button_Click" Grid.Column="0" Grid.Row="0" Margin="36,0,395,237">Combos</Button>
+        <Button Click="Button_Click" Grid.Column="0" Grid.Row="0" Margin="36,9,395,228">Combos</Button>
         <Button Click="Button_Click1" Grid.Row="0" Margin="405,10,26,228" RenderTransformOrigin="0.49,0.529">Entrees</Button>
         <Button Click="Button_Click2" Grid.Column="0" Margin="36,227,395,10">Sides</Button>
         <Button Click="Button_Click3" Margin="405,227,26,10">Drinks</Button>

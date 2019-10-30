@@ -20,19 +20,121 @@ namespace PointOfSale
     /// </summary>
     public partial class EntreeSelection : Page
     {
+
+        /// <summary>
+        /// accessor to entree class
+        /// </summary>
+        public Entree Entree { get; set; }
         public EntreeSelection()
         {
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs args)
+       
+
+
+        /// <summary>
+        /// adds the selected entree
+        /// </summary>
+        /// <param name="entree"></param>
+        private void SelectEntree(Entree entree)
         {
+
+
             if (DataContext is Order order)
             {
-                PrehistoricPBJ pbj = new PrehistoricPBJ();
-                order.Add(pbj);
-                NavigationService.Navigate(new PrehistoricPBJCustom(pbj));
+
+                order.Add(entree);
+                this.Entree = entree;
+
             }
+
+
+        }
+        /// <summary>
+        /// adds entree to Entree
+        /// </summary>
+        /// <param name="entree"></param>
+        public EntreeSelection(Entree entree)
+        {
+            InitializeComponent();
+            Entree = entree;
+        }
+
+
+
+        /// <summary>
+        /// Button for adding PrehistoricPBJ
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void button_PrehistoricPBJ_click(object sender, RoutedEventArgs args)
+        {
+            SelectEntree(new PrehistoricPBJ());
+            NavigationService.Navigate(new MenuCategorySelection());
+        }
+
+        /// <summary>
+        /// Button for adding BrontoWurst
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void button_BrontoWurst_Click(object sender, RoutedEventArgs e)
+        {
+            SelectEntree(new Brontowurst());
+            NavigationService.Navigate(new MenuCategorySelection());
+        }
+        /// <summary>
+        /// Button for adding VelociWrap
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void button_VelociWrap_Click(object sender, RoutedEventArgs e)
+        {
+            SelectEntree(new VelociWrap());
+            NavigationService.Navigate(new MenuCategorySelection());
+        }
+        /// <summary>
+        /// Button for adding TRexKingBurger
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void button_TRexKingBurger_Click(object sender, RoutedEventArgs e)
+        {
+            SelectEntree(new TRexKingBurger());
+            NavigationService.Navigate(new MenuCategorySelection());
+        }
+
+        /// <summary>
+        /// Button for adding DinoNuggets
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void button_DinoNuggets_Click(object sender, RoutedEventArgs e)
+        {
+            SelectEntree(new DinoNuggets());
+            NavigationService.Navigate(new MenuCategorySelection());
+        }
+
+        /// <summary>
+        /// Button for adding SteakosaurusBuger
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void button_SteakosaurusBuger_Click(object sender, RoutedEventArgs e)
+        {
+            SelectEntree(new SteakosaurusBurger());
+            NavigationService.Navigate(new MenuCategorySelection());
+        }
+        /// <summary>
+        /// Button for adding PterodactylWings
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void button_PterodactylWings_Click(object sender, RoutedEventArgs e)
+        {
+            SelectEntree(new PterodactylWings());
+            NavigationService.Navigate(new MenuCategorySelection());
         }
     }
 }

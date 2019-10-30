@@ -9,13 +9,14 @@
       Title="FlavorSelection">
     <Grid>
             <Label Content="Flavor" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="20" Height="40"/>
-        <Button MinHeight="100" Width="140" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="139,71,0,0">Cherry</Button>
-        <Button Height="100" Width="140" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="139,176,0,174">Lime</Button>
-        <Button  Height="100" Width="140" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="139,0,0,69">Vinilla</Button>
-        <Button Height="100" Width="140" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="313,71,347,0">Chocolate</Button>
-        <Button Height="100" Width="140" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="313,0,347,174">Orange</Button>
-        <Button Height="100" Width="140" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,71,176,0">Cola</Button>
-        <Button Height="100" Width="140" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,176,176,174" >Root Beer</Button>
+        <Button Click="OnCherry" MinHeight="100" Width="140" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="139,71,0,0">Cherry</Button>
+        <Button Click="OnLime" Height="100" Width="140" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="139,176,0,174">Lime</Button>
+        <Button  Click="OnVinilla" Height="100" Width="140" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="139,0,0,69">Vinilla</Button>
+        <Button Click="OnChocolate" Height="100" Width="140" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="313,71,347,0">Chocolate</Button>
+        <Button Click="OnOrange" Height="100" Width="140" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="313,0,347,174">Orange</Button>
+        <Button Click="OnCola" Height="100" Width="140" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,71,176,0">Cola</Button>
+        <Button Click="onRootBeer" Height="100" Width="140" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,176,176,174" >Root Beer</Button>
+        <Button Click="OnDone" Height="100" Width="140" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,281,176,69" >Done</Button>
 
     </Grid>
 
