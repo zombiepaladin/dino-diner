@@ -14,7 +14,9 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DinoDiner.Menu.Entrees;
 using DinoDiner.Menu;
-
+/* EntreeSelection.cs
+ * Author: Thomas Paul
+ */
 namespace PointOfSale
 {
     /// <summary>

@@ -1,6 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
 using DinoDiner.Menu.Entrees;
+/* PterodactylWings.cs
+ * Author: Thomas Paul
+ */
 namespace DinoDiner.Menu.Entrees
 {
     public class PterodactylWings : Entree

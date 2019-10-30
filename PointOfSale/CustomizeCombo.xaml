@@ -9,13 +9,8 @@
       Title="CustomizeCombo">
 
     <Grid>
-        <RadioButton x:Name="Small" Content="Small" HorizontalAlignment="Left" Margin="82,401,0,0" VerticalAlignment="Top" Height="16" Width="52"/>
-        <RadioButton Content="Medium" HorizontalAlignment="Left" Margin="358,398,0,0" VerticalAlignment="Top"/>
-        <RadioButton Content="Large" HorizontalAlignment="Left" Margin="636,401,0,0" VerticalAlignment="Top" Height="14"/>
         <Button  Click="SideClick" Content="Sides" HorizontalAlignment="Left" Margin="59,143,0,0" VerticalAlignment="Top" Width="203" RenderTransformOrigin="-5.517,-1.677" Height="138"/>
         <Button Click="DrinkClick" Content="Drinks" HorizontalAlignment="Left" Margin="481,143,0,0" VerticalAlignment="Top" Width="203" RenderTransformOrigin="-5.517,-1.677" Height="138"/>
-        <Grid>
-            <TextBox TextWrapping="Wrap" Text="Add to Order&#xD;&#xA;Customize Combo" Margin="283,-76,329,463" FontSize="20"/>
-        </Grid>
+        <Grid/>
     </Grid>
 </Page>

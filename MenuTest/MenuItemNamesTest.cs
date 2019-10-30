@@ -7,7 +7,9 @@ using DinoDiner.Menu.Entrees;
 using DinoDiner.Menu.Drinks;
 using DinoDiner.Menu.Sides;
 
-
+/* MenuItemNamesTest.cs
+ * Author: Thomas Paul
+ */
 
 namespace MenuTest
     {

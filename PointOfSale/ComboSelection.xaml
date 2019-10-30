@@ -111,9 +111,7 @@
 
         </Button>
         <Grid>
-            <Grid Margin="65,-32,-65,32">
-                <TextBox TextWrapping="Wrap" Text="Add to Order" Margin="235,-282,278,430" FontSize="20"/>
-            </Grid>
+            <Grid Margin="65,-32,-65,32"/>
         </Grid>
 
     </WrapPanel>

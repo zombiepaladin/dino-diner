@@ -16,7 +16,9 @@ using DinoDiner.Menu.Sides;
 using DinoDiner.Menu.Entrees;
 using DinoDiner.Menu.Drinks;
 using DinoDiner.Menu;
-
+/* OrderControl.cs
+ * Author: Thomas Paul
+ */
 namespace PointOfSale
 {
     /// <summary>

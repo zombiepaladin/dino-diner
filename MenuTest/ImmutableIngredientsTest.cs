@@ -4,7 +4,9 @@ using DinoDiner.Menu;
 using DinoDiner.Menu.Entrees;
 using DinoDiner.Menu.Drinks;
 using DinoDiner.Menu.Sides;
-
+/* ImmutableIngredientsTest.cs
+ * Author: Thomas Paul
+ */
 namespace MenuTest
 {
     public class ImmutableIngredientsTest

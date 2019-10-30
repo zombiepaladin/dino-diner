@@ -14,7 +14,9 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DinoDiner.Menu.Drinks;
 using DinoDiner.Menu;
-
+/* DrinkSelection.cs
+ * Author: Thomas Paul
+ */
 namespace PointOfSale
 {
     /// <summary>
@@ -22,11 +24,15 @@ namespace PointOfSale
     /// </summary>
     public partial class DrinkSelection : Page
     {
+        /// <summary>
+        /// gets and sets the drink
+        /// </summary>
         public Drink Drink { get; set; }
 
         public DrinkSelection()
         {
             InitializeComponent();
+
         }
 
         public DrinkSelection(Drink drink)
@@ -34,7 +40,10 @@ namespace PointOfSale
             InitializeComponent();
             this.Drink = drink;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="d"></param>
         private void SelectDrink(Drink d)
         {
             if (DataContext is Order order)

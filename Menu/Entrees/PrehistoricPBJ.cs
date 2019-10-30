@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
 using DinoDiner.Menu.Entrees;
 using System.ComponentModel;
-
+/* PrehistoricPBJ.cs
+ * Author: Thomas Paul
+ */
 namespace DinoDiner.Menu.Entrees
 {
     public class PrehistoricPBJ : Entree

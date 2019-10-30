@@ -14,7 +14,9 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DinoDiner.Menu.Drinks;
 using DinoDiner.Menu;
-
+/* FlavorSelection.cs
+ * Author: Thomas Paul
+ */
 namespace PointOfSale
 {
     /// <summary>

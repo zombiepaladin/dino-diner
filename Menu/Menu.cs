@@ -4,7 +4,9 @@ using System.Text;
 using DinoDiner.Menu.Drinks;
 using DinoDiner.Menu.Entrees;
 using DinoDiner.Menu.Sides;
-
+/* Menu.cs
+ * Author: Thomas Paul
+ */
 
 namespace DinoDiner.Menu
 {

@@ -14,7 +14,9 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DinoDiner.Menu;
 using DinoDiner.Menu.Sides;
-
+/* SideSelection.cs
+ * Author: Thomas Paul
+ */
 namespace PointOfSale
 {
     /// <summary>

@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
-
+/* Water.cs
+ * Author: Thomas Paul
+ */
 namespace DinoDiner.Menu.Drinks
 {
     public class Water : Drink, INotifyPropertyChanged

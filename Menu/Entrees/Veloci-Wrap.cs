@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
 using DinoDiner.Menu.Entrees;
-
+/* Veloci-Wrap.cs
+ * Author: Thomas Paul
+ */
 namespace DinoDiner.Menu.Entrees
 {
     public class VelociWrap : Entree

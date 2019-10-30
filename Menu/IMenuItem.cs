@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-
+/* IMenuItem.cs
+ * Author: Thomas Paul
+ */
 namespace DinoDiner.Menu
 {
     public interface IMenuItem

@@ -16,7 +16,9 @@ using DinoDiner.Menu;
 using DinoDiner.Menu.Sides;
 using DinoDiner.Menu.Drinks;
 using DinoDiner.Menu.Entrees;
-
+/* MainWindow.cs
+ * Author: Thomas Paul
+ */
 namespace PointOfSale
 {
     /// <summary>

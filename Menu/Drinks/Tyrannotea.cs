@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
-
+/* Tyrannotea.cs
+ * Author: Thomas Paul
+ */
 namespace DinoDiner.Menu.Drinks
 {
     public class Tyrannotea : Drink, INotifyPropertyChanged

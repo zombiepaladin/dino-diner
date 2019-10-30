@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-
+/* Order.cs
+ * Author: Thomas Paul
+ */
 namespace DinoDiner.Menu
 {
     /// <summary>
@@ -80,7 +82,7 @@ namespace DinoDiner.Menu
         {
         }
 
-        private void NotifyOfPropertyChanged()
+        private void NotifyIfPropertyChanged()
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SubtotalCost"));
@@ -100,7 +102,7 @@ namespace DinoDiner.Menu
         /// <param name="args"></param>
         private void OnPropertyChanged(object sender, PropertyChangedEventArgs args)
         {
-            NotifyOfPropertyChanged();
+            NotifyIfPropertyChanged();
         }
 
         /// <summary>
@@ -111,7 +113,7 @@ namespace DinoDiner.Menu
         {
             items.Add(item);
             item.PropertyChanged += OnPropertyChanged;
-            NotifyOfPropertyChanged();
+            NotifyIfPropertyChanged();
         }
 
         /// <summary>
@@ -123,7 +125,7 @@ namespace DinoDiner.Menu
             bool removed = items.Remove(item);
             if (removed)
             {
-                NotifyOfPropertyChanged();
+                NotifyIfPropertyChanged();
             }
             return removed;
         }
