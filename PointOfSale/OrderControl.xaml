@@ -1,0 +1,74 @@
+﻿<UserControl x:Class="PointOfSale.OrderControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PointOfSale"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="200
+             ">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+
+        <TextBox Text="Order" Grid.Row="0"/>
+        <ListBox Grid.Row="1"
+                 ItemsSource ="{Binding Path=Items, UpdateSourceTrigger=PropertyChanged}"
+                 SelectionChanged="OnSelectionChanged"
+                 Name="OrderItems">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid MinWidth="180">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="0" Width="160">
+                            <TextBlock Text="{Binding Path=Description}"/>
+                            <ListBox Name ="OrderItems" ItemsSource="{Binding Path=Special}" BorderBrush="White"/>
+                        </StackPanel>
+                        <Button Grid.Column="1" Name="RemoveButton" Click="RemoveButtonClicked" Width="15" Background="Red" Foreground="White">X</Button>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Border Grid.Row="2">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Orientation="Horizontal" >
+                    <TextBlock Text="Subtotal: $" Width="63" Foreground="#FF151515"/>
+                    <TextBlock Text="{Binding Path=SubtotalCost}" Width="125" Foreground="#FFECDFDF" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Grid.Row="1">
+                    <TextBlock Text="Sales Tax: $" Width="65" Foreground="#FF0A0909"/>
+                    <TextBlock Text= "{Binding Path=SalesTaxCost}" Width="125" Foreground="#FFEEE5E5"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Grid.Row="2">
+                    <TextBlock Text="Total Price: $" Width="72" Foreground="#FF131313"/>
+                    <TextBlock Text= "{Binding Path=TotalCost}" Width="125" Foreground="#FFF5EDED"/>
+                </StackPanel>
+            </Grid>
+
+        </Border>
+
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button Name="CancelButton" Margin="2">Cancel</Button>
+            <Button Grid.Column="2" Name="PayButton" Margin="2">Pay</Button>
+        </Grid>
+    </Grid>
+
+</UserControl>

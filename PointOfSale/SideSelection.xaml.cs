@@ -1,6 +1,4 @@
-﻿using DinoDiner.Menu;
-using DinoDiner.Menu.Sides;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DinoDiner.Menu;
+using DinoDiner.Menu.Sides;
 
 namespace PointOfSale
 {
@@ -22,57 +22,70 @@ namespace PointOfSale
     /// </summary>
     public partial class SideSelection : Page
     {
+        //backing property
+        public Side Side { get; set; }
+
         public SideSelection()
         {
             InitializeComponent();
         }
 
-        public Side Side { get; set; }
-        private void SelectSide(Side side)
+        public SideSelection(Side side)
         {
-            if (DataContext is Order order)
-            {
-                order.Items.Add(side);
-            }
+            InitializeComponent();
+            this.Side = side;
         }
 
-        private void SelectSize(DinoDiner.Menu.Size size)
-        {
-            if(Side != null)
-            {
-                this.Side.Size = size;
-            }
-            
-        }
-        protected void OnSelectFryceritops(object sender, RoutedEventArgs args)
+        public void AddFryceritops(object sender, RoutedEventArgs args)
         {
             SelectSide(new Fryceritops());
         }
 
-        protected void OnSelectTriceritots(object sender, RoutedEventArgs args)
-        {
-            SelectSide(new Triceritots());
-        }
-        protected void OnSelectMezzorellaSticks(object sender, RoutedEventArgs args)
-        {
-            SelectSide(new MezzorellaSticks());
-        }
-        protected void OnSelectMeteorMacAndCheese(object sender, RoutedEventArgs args)
+        public void AddMacNCheese(object sender, RoutedEventArgs args)
         {
             SelectSide(new MeteorMacAndCheese());
         }
 
-        protected void OnSelectLarge(object sender, RoutedEventArgs args)
+        public void AddMezzSticks(object sender, RoutedEventArgs args)
         {
-            SelectSize(DinoDiner.Menu.Size.Large);
+            SelectSide(new MezzorellaSticks());
         }
-        protected void OnSelectMedium(object sender, RoutedEventArgs args)
+
+        public void AddTots(object sender, RoutedEventArgs args)
         {
-            SelectSize(DinoDiner.Menu.Size.Medium);
+            SelectSide(new Triceritots());
         }
-        protected void OnSelectSmall(object sender, RoutedEventArgs args)
+
+        private void SelectSide(Side side)
+        {
+            if (DataContext is Order order)
+            {
+                order.Add(side);
+                this.Side = side;
+            }
+        }
+
+        public void SmallClicked(object sender, RoutedEventArgs args)
         {
             SelectSize(DinoDiner.Menu.Size.Small);
+            NavigationService.Navigate(new MenuCategorySelection());
+        }
+
+        public void MediumClicked(object sender, RoutedEventArgs args)
+        {
+            SelectSize(DinoDiner.Menu.Size.Medium);
+            NavigationService.Navigate(new MenuCategorySelection());
+        }
+
+        public void LargeClicked(object sender, RoutedEventArgs args)
+        {
+            SelectSize(DinoDiner.Menu.Size.Large);
+            NavigationService.Navigate(new MenuCategorySelection());
+        }
+
+        private void SelectSize(DinoDiner.Menu.Size size)
+        {
+            if (this.Side != null) this.Side.Size = size;
         }
     }
 }

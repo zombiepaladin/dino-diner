@@ -1,131 +1,86 @@
-﻿using DinoDiner.Menu.Entrees;
-using DinoDiner.Menu.Sides;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Text;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Text;
 
 namespace DinoDiner.Menu
 {
     /// <summary>
-    /// A class representing an order at a DinoDiner
+    /// Represents order
     /// </summary>
     public class Order : INotifyPropertyChanged
     {
-        
+        //private backing variable
+        private double salesTaxRate = 0.07;
+        private List<IOrderItem> items = new List<IOrderItem>();
 
         /// <summary>
-        /// Property determining the Subtotal Cost
-        /// </summary>
-        private double subtotalcost = 0;
-
-        /// <summary>
-        /// Gets the cost of 
-        /// </summary>
-        public double SubtotalCost
-        {
-
-            get
-            {
-                
-                foreach(IOrderItem i in Items)
-                {
-                    subtotalcost += i.Price;
-                }
-                if(subtotalcost < 0)
-                {
-                    subtotalcost = 0;
-                }
-
-                return subtotalcost;
-            }
-
-        }
-
-        private double salestaxrate = 0;
-        List<IOrderItem> items = new List<IOrderItem>();
-
-        /// <summary>
-        /// The PropertyChanged event handler, notifies when an order
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        /// <summary>
-        /// A collection of items in the order
+        /// List of items
         /// </summary>
         public IOrderItem[] Items
         {
+            get { return items.ToArray(); }
+        }
+
+        /// <summary>
+        /// Gets the subtotal
+        /// </summary>
+        public double SubtotalCost
+        {
             get
             {
-                return items.ToArray();
+                double subtotal = 0;
+                foreach (IOrderItem item in Items)
+                {
+                    subtotal += item.Price;
+                }
+                if (subtotal < 0) return 0.00;
+                else return Math.Round(subtotal, 2);
+
             }
         }
-        public double SalesTaxRate { get { return salestaxrate; } protected set { salestaxrate = .065; } }
 
+
+
+        /// <summary>
+        /// Gets/sets sales tax rate
+        /// </summary>
+        public double SalesTaxRate
+        {
+            get { return salesTaxRate; }
+            protected set
+            {
+                salesTaxRate = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SalesTaxRate"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SalesTaxCost"));
+            }
+        }
+
+        /// <summary>
+        /// Gets total amount of order
+        /// </summary>
         public double SalesTaxCost
         {
             get
             {
-                return (SalesTaxRate * SubtotalCost);
+                return Math.Round(SalesTaxRate * SubtotalCost, 2);
             }
         }
 
         /// <summary>
-        /// Property
+        /// Gets total cost of the order
         /// </summary>
-        public double TotalCost {
-            get
-            {
-                return (SubtotalCost + SalesTaxCost);
-            }
-
+        public double TotalCost
+        {
+            get { return Math.Round(this.SubtotalCost + SalesTaxCost, 2); }
         }
 
         public Order()
         {
-            items = new ObservableCollection<IOrderItem>();
-            items.Add(new SteakosaurusBurger());
-            items.Add(new Fryceritops());
-            Triceritots t = new Triceritots();
-            items.Add(t);
-            t.Size = Size.Large;
         }
 
-        /// <summary>
-        /// Adds a new item to our order
-        /// </summary>
-        /// <param name="item"></param>
-        public void Add(IOrderItem item)
-        {
-            NotifyAllPropertyChanged();
-            items.Add(item);
-            item.PropertyChanged += OnPropertyChanged;
-        }
-
-        public bool Remove(IOrderItem item)
-        {
-            bool removed = items.Remove(item);
-            if (removed)
-            {
-                NotifyAllPropertyChanged();
-            }
-            
-            return removed;
-            
-        }
-
-      
-        private void OnPropertyChanged(object sender, PropertyChangedEventArgs args)
-        {
-            NotifyAllPropertyChanged();
-        }
-        protected void NotifyOfPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        protected void NotifyAllPropertyChanged()
+        private void NotifyOfPropertyChanged()
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SubtotalCost"));
@@ -133,6 +88,44 @@ namespace DinoDiner.Menu
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("TotalCost"));
         }
 
+        /// <summary>
+        /// Event handler for property changes
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
 
+        /// <summary>
+        /// Event handler for when 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void OnPropertyChanged(object sender, PropertyChangedEventArgs args)
+        {
+            NotifyOfPropertyChanged();
+        }
+
+        /// <summary>
+        /// Adds an item 
+        /// </summary>
+        /// <param name="item">The order item to be added to the order</param>
+        public void Add(IOrderItem item)
+        {
+            items.Add(item);
+            item.PropertyChanged += OnPropertyChanged;
+            NotifyOfPropertyChanged();
+        }
+
+        /// <summary>
+        /// Removes an item 
+        /// </summary>
+        /// <param name="item"></param>
+        public bool Remove(IOrderItem item)
+        {
+            bool removed = items.Remove(item);
+            if (removed)
+            {
+                NotifyOfPropertyChanged();
+            }
+            return removed;
+        }
     }
 }

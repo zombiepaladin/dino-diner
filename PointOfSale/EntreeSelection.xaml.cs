@@ -1,6 +1,4 @@
-﻿using DinoDiner.Menu;
-using DinoDiner.Menu.Entrees;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DinoDiner.Menu.Entrees;
+using DinoDiner.Menu;
 
 namespace PointOfSale
 {
@@ -22,19 +22,69 @@ namespace PointOfSale
     /// </summary>
     public partial class EntreeSelection : Page
     {
+        //backing property
+        public Entree Entree { get; set; }
+
         public EntreeSelection()
         {
             InitializeComponent();
         }
-
-        void OnAddPrehistoricPBJ(object sender, NavigationEventArgs args)
+        public EntreeSelection(Entree entree)
         {
-            if(DataContext is Order order)
+            InitializeComponent();
+            this.Entree = entree;
+        }
+
+        private void SelectEntree(Entree e)
+        {
+            if (DataContext is Order order)
             {
-                PrehistoricPBJ pbj = new PrehistoricPBJ();
-                order.Add(pbj);
-                NavigationService.
+                order.Add(e);
+                this.Entree = e;
             }
+        }
+
+        private void BrontowurstClicked(object sender, RoutedEventArgs e)
+        {
+            SelectEntree(new Brontowurst());
+            NavigationService.Navigate(new MenuCategorySelection());
+        }
+
+        private void DinoNugsClicked(object sender, RoutedEventArgs e)
+        {
+            SelectEntree(new DinoNuggets());
+            NavigationService.Navigate(new MenuCategorySelection());
+        }
+
+        private void PBJClicked(object sender, RoutedEventArgs e)
+        {
+            PrehistoricPBJ pbj = new PrehistoricPBJ();
+            SelectEntree(pbj);
+            NavigationService.Navigate(new CustomizePrehistoricPBJ(pbj));
+        }
+
+        private void WingsClicked(object sender, RoutedEventArgs e)
+        {
+            SelectEntree(new PterodactylWings());
+            NavigationService.Navigate(new MenuCategorySelection());
+        }
+
+        private void SteakosaurusClicked(object sender, RoutedEventArgs e)
+        {
+            SelectEntree(new SteakosaurusBurger());
+            NavigationService.Navigate(new MenuCategorySelection());
+        }
+
+        private void TRexClicked(object sender, RoutedEventArgs e)
+        {
+            SelectEntree(new TRexKingBurger());
+            NavigationService.Navigate(new MenuCategorySelection());
+        }
+
+        private void VelociwrapClicked(object sender, RoutedEventArgs e)
+        {
+            SelectEntree(new VelociWrap());
+            NavigationService.Navigate(new MenuCategorySelection());
         }
     }
 }

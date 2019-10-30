@@ -130,7 +130,7 @@ namespace MenuTest
             {
                 JurassicJava java = new JurassicJava();
                 java.Size = size;
-                java.Decaf = decaf;
+                java.decaf = decaf;
                 if (decaf) Assert.Equal($"{size} Decaf Jurassic Java", java.ToString());
                 else Assert.Equal($"{size} Jurassic Java", java.ToString());
             }

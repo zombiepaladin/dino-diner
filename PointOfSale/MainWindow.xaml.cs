@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DinoDiner.Menu;
+using DinoDiner.Menu.Sides;
 using DinoDiner.Menu.Drinks;
 using DinoDiner.Menu.Entrees;
 
@@ -26,44 +27,25 @@ namespace PointOfSale
         public MainWindow()
         {
             InitializeComponent();
-            OrderControl.NavigationService = OrderUI.NavigationService;
-            
-
-
-            
-            
-            
-
+            Order order = DataContext as Order;
+            OrderList.NavigationService = OrderInterface.NavigationService;
         }
 
-        private void BindDataContextToPage()
+        public void OnLoadCompleted(object sender, NavigationEventArgs args)
         {
-            if(OrderUI.Content is FrameworkElement element)
-            {
-                element.DataContext = OrderUI.DataContext;
-            }
+            SetFrameDataContext();
         }
 
-        private void OnLoadComplete(object sender, NavigationEventArgs args)
+        public void OnDataContextChanged(object sender, DependencyPropertyChangedEventArgs args)
         {
-            BindDataContextToPage();
+            SetFrameDataContext();
         }
 
-        private void OnDataContextChanged(object sender, DependencyPropertyChangedEventArgs args)
+        private void SetFrameDataContext()
         {
-
-        }
-
-        private void OnDone(object sender, NavigationEventArgs args)
-        {
-            if(OrderInterface.NavigationService.CanGoBack)
-            {
-                OrderInterface.NavigationService.GoBack();
-            }
-            else
-            {
-                OrderInterface.NavigationService.Navigate(new MenuCategorySelection());
-            }
+            FrameworkElement content = OrderInterface.Content as FrameworkElement;
+            if (content == null) return;
+            else content.DataContext = OrderInterface.DataContext;
         }
     }
 }

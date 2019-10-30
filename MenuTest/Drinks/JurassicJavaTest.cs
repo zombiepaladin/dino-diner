@@ -141,7 +141,7 @@ namespace MenuTest.Drinks
         {
             JurassicJava j = new JurassicJava();
             j.Size = Size.Small;
-            j.Decaf = true;
+            j.decaf = true;
             Assert.Equal("Small Decaf Jurassic Java", j.Description);
         }
 
@@ -150,7 +150,7 @@ namespace MenuTest.Drinks
         {
             JurassicJava j = new JurassicJava();
             j.Size = Size.Medium;
-            j.Decaf = true;
+            j.decaf = true;
             Assert.Equal("Medium Decaf Jurassic Java", j.Description);
         }
 
@@ -159,7 +159,7 @@ namespace MenuTest.Drinks
         {
             JurassicJava j = new JurassicJava();
             j.Size = Size.Large;
-            j.Decaf = true;
+            j.decaf = true;
             Assert.Equal("Large Decaf Jurassic Java", j.Description);
         }
 
