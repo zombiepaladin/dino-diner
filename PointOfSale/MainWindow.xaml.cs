@@ -32,22 +32,12 @@ namespace PointOfSale
         }
 
 
-        private void BindDataContextToPage()
-        {
-            if(OrderUI.Content is FrameworkElement element)
-            {
-                element.DataContext = OrderUI.DataContext;  
-              
-            }
-
-        }
-
         public void OnLoadCompleted(object sender,NavigationEventArgs args)
         {
             SetFrameContext();
         }
 
-        public void OnDataCompleted(object sender, RoutedEventArgs args)
+        public void OnDataContextChanged(object sender, DependencyPropertyChangedEventArgs args)
         {
             SetFrameContext();
         }
@@ -57,7 +47,7 @@ namespace PointOfSale
 
         private void SetFrameContext()
         {
-            FrameworkElement content = OrderUI as FrameworkElement;
+            FrameworkElement content = OrderUI.Content as FrameworkElement;
             if (content == null) return;
             content.DataContext = OrderUI.DataContext;
         }

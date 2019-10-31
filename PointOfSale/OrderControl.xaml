@@ -16,7 +16,7 @@
         </Grid.RowDefinitions>
         <TextBox Text="Order" Grid.Row="0"/>
         <!--DataContextChanged="OnDataContextChanged"-->
-        <ListBox Name="OrderItems" Grid.Row="1" ItemsSource="{Binding Path=Items}" IsSynchronizedWithCurrentItem="true" SelectionChanged="OnSelectionChanged" DataContext="OnDataContextChanged"  >
+        <ListBox Name="OrderItems" Grid.Row="1" ItemsSource="{Binding Path=Items}"  SelectionChanged="OnSelectionChanged" >
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Width="190">
@@ -28,9 +28,8 @@
                                 
                             </Grid.ColumnDefinitions>
                             <TextBlock Text="{Binding Path=Description}"/>
-                            
-                            <ListBox ItemsSource="{Binding Path=Special}" BorderBrush="White"/>
                             <Button Click="OnRemoveItem" Background="Red" Foreground="White" Grid.Column="1">X</Button>
+                            <ItemsControl ItemsSource="{Binding Path=Special}" BorderBrush="White"/>
                         </Grid>
                     </StackPanel>
                 </DataTemplate>
@@ -40,8 +39,8 @@
         </ListBox>
         <Border Grid.Row="2">
             <StackPanel Orientation="Horizontal">
-                <TextBox Text="Price" Height="20" VerticalAlignment="Bottom"/>
-                <TextBox Text="$_______________________________"/>
+                <TextBlock Text="Price $" Height="20" VerticalAlignment="Bottom"/>
+                <TextBlock Text="{Binding Path=SubtotalCost, StringFormat=n2}"/>
             </StackPanel>
         </Border>
         <TextBox Text="Buttons Go Here" Grid.Row="3" />
