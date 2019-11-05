@@ -50,5 +50,10 @@ namespace PointOfSale
             SideSelection d = new SideSelection();
             NavigationService.Navigate(d);
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

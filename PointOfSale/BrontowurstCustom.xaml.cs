@@ -43,14 +43,9 @@ namespace PointOfSale
 
         private void OnHoldDone(object sender, RoutedEventArgs e)
         {
-            if (NavigationService.CanGoBack)
-            {
-                NavigationService.GoBack();
-            }
-            else
-            {
-                NavigationService.Navigate(new MenuCategorySelection());
-            }
+           
+                NavigationService.Navigate(new CustomizeCombo());
+            
         }
     }
 }

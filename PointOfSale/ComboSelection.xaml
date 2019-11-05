@@ -16,12 +16,12 @@
                 
             </Style>
         </WrapPanel.Resources>
-        <Button Click="Button_Click">Brontowurst Combo</Button>
-        <Button Click="Button_Click">Dino-Nuggets Combo</Button>
-        <Button Click="Button_Click">PB&amp;J Combo</Button>
-        <Button Click="Button_Click">Pterodactyl Wings Combo</Button>
-        <Button Click="Button_Click" >Steakosarus Burger Combo</Button>
-        <Button Click="Button_Click">T-Rex King Burger Combo</Button>
-        <Button Click="Button_Click">Veloci-Wrap Combo</Button>
+        <Button Click="Brontowurst_Click">Brontowurst Combo</Button>
+        <Button Click="DinoNuggets_Click">Dino-Nuggets Combo</Button>
+        <Button Click="PBJ_Click">PB&amp;J Combo</Button>
+        <Button Click="PterodactylWings_Click">Pterodactyl Wings Combo</Button>
+        <Button Click="SteakosarusBurger_Click" >Steakosarus Burger Combo</Button>
+        <Button Click="TRexKingBurger_Click">T-Rex King Burger Combo</Button>
+        <Button Click="VelociWrap_Click">Veloci-Wrap Combo</Button>
     </WrapPanel>
 </Page>

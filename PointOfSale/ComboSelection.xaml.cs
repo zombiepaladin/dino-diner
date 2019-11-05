@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using DinoDiner.Menu;
 namespace PointOfSale
 {
     /// <summary>
@@ -29,16 +29,42 @@ namespace PointOfSale
             
         }
 
-        /// <summary>
-        /// Navigates to the desired window
-        /// </summary>
-        /// <param name="sender"> sends where it was clicked</param>
-        /// <param name="e">and the event argument</param>
-        private void Button_Click(object sender, RoutedEventArgs e)
+      
+      
+
+        private void Brontowurst_Click(object sender, RoutedEventArgs e)
         {
-            
-            NavigationService.Navigate(c);
-            //
+           NavigationService.Navigate(new BrontowurstCustom());
+        }
+
+        private void DinoNuggets_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new DinoNuggetsCustom());
+        }
+
+        private void PBJ_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new PrehistoricPBJCustom(new PrehistoricPBJ()));
+        }
+
+        private void PterodactylWings_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new PterodactyWingsCustom());
+        }
+
+        private void SteakosarusBurger_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new SteakasaurusBurgerCustom());
+        }
+
+        private void TRexKingBurger_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new TRexKingBurgerCustom());
+        }
+
+        private void VelociWrap_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new VelociWarpCustom());
         }
     }
 }

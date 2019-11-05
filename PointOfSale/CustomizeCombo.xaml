@@ -15,7 +15,7 @@
         <TextBlock Text="Size" FontSize="20" Margin="395,241,358,0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="47" Height="33"/>
         <Button Click="Button_Click"  FontSize="20" Content="Friceritops" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="196,119,0,253" Height="78" Width="132"/>
         <Button Click="Button_Click1" FontSize="20" Content="Sodasaurus" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="494,119,0,253" Height="78" Width="145"/>
-        <Button   FontSize="20" Content="Small" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="160,279,0,93" Height="78" Width="172"/>
+        <Button   FontSize="20" Content="Small" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="160,279,0,93" Height="78" Width="172" Click="Button_Click_1"/>
         <Button  FontSize="20" Content="Medium" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="332,279,0,93" Height="78" Width="155"/>
         <Button   FontSize="20" Content="Large" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="487,279,0,93" Height="78" Width="188"/>
     </Grid>
