@@ -16,29 +16,30 @@ using System.Windows.Shapes;
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for ComboSelection.xaml
+    /// Interaction logic for PterodactyWingsCustom.xaml
     /// </summary>
-    public partial class ComboSelection : Page
+    public partial class PterodactyWingsCustom : Page
     {
-        /// <summary>
-        /// Initilizes window
-        /// </summary>
-        public ComboSelection()
+        public PterodactyWingsCustom()
         {
             InitializeComponent();
-            
         }
 
         /// <summary>
-        /// Navigates to the desired window
+        /// Send you back when your done
         /// </summary>
-        /// <param name="sender"> sends where it was clicked</param>
-        /// <param name="e">and the event argument</param>
-        private void Button_Click(object sender, RoutedEventArgs e)
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnHoldDone(object sender, RoutedEventArgs e)
         {
-            
-            NavigationService.Navigate(c);
-            //
+            if (NavigationService.CanGoBack)
+            {
+                NavigationService.GoBack();
+            }
+            else
+            {
+                NavigationService.Navigate(new MenuCategorySelection());
+            }
         }
     }
 }

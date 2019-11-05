@@ -172,7 +172,7 @@ namespace MenuTest
         {
             Tyrannotea tea = new Tyrannotea();
             tea.Size = size;
-            tea.sweet = sweet;
+            tea.Sweet = sweet;
             if (sweet) Assert.Equal($"{size} Sweet Tyrannotea", tea.ToString());
             else Assert.Equal($"{size} Tyrannotea", tea.ToString());
         }

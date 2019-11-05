@@ -11,7 +11,7 @@ namespace DinoDiner.Menu
     {
         private List<string> ingredients;
 
-
+        bool sizeChange = false;
 
 
         /// <summary>
@@ -47,7 +47,7 @@ namespace DinoDiner.Menu
             get
             {
                 List<string> special = new List<string>();
-                special.Add("Size/Price Change");
+                if (sizeChange) special.Add("Size");
 
 
 

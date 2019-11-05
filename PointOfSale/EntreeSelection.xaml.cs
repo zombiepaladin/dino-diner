@@ -71,7 +71,7 @@ namespace PointOfSale
         private void button_PrehistoricPBJ_click(object sender, RoutedEventArgs args)
         {
             SelectEntree(new PrehistoricPBJ());
-            NavigationService.Navigate(new MenuCategorySelection());
+            NavigationService.Navigate(new PrehistoricPBJCustom(new PrehistoricPBJ()));
         }
 
         /// <summary>
@@ -82,7 +82,7 @@ namespace PointOfSale
         private void button_BrontoWurst_Click(object sender, RoutedEventArgs e)
         {
             SelectEntree(new Brontowurst());
-            NavigationService.Navigate(new MenuCategorySelection());
+            NavigationService.Navigate(new BrontowurstCustom());
         }
         /// <summary>
         /// Button for adding VelociWrap
@@ -92,7 +92,7 @@ namespace PointOfSale
         private void button_VelociWrap_Click(object sender, RoutedEventArgs e)
         {
             SelectEntree(new VelociWrap());
-            NavigationService.Navigate(new MenuCategorySelection());
+            NavigationService.Navigate(new VelociWarpCustom());
         }
         /// <summary>
         /// Button for adding TRexKingBurger
@@ -102,7 +102,7 @@ namespace PointOfSale
         private void button_TRexKingBurger_Click(object sender, RoutedEventArgs e)
         {
             SelectEntree(new TRexKingBurger());
-            NavigationService.Navigate(new MenuCategorySelection());
+            NavigationService.Navigate(new TRexKingBurgerCustom());
         }
 
         /// <summary>
@@ -113,7 +113,7 @@ namespace PointOfSale
         private void button_DinoNuggets_Click(object sender, RoutedEventArgs e)
         {
             SelectEntree(new DinoNuggets());
-            NavigationService.Navigate(new MenuCategorySelection());
+            NavigationService.Navigate(new DinoNuggetsCustom());
         }
 
         /// <summary>
@@ -124,7 +124,7 @@ namespace PointOfSale
         private void button_SteakosaurusBuger_Click(object sender, RoutedEventArgs e)
         {
             SelectEntree(new SteakosaurusBurger());
-            NavigationService.Navigate(new MenuCategorySelection());
+            NavigationService.Navigate(new SteakasaurusBurgerCustom());
         }
         /// <summary>
         /// Button for adding PterodactylWings
@@ -134,7 +134,7 @@ namespace PointOfSale
         private void button_PterodactylWings_Click(object sender, RoutedEventArgs e)
         {
             SelectEntree(new PterodactylWings());
-            NavigationService.Navigate(new MenuCategorySelection());
+            NavigationService.Navigate(new PterodactyWingsCustom());
         }
     }
 }

@@ -55,6 +55,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BrontowurstCustom.xaml.cs">
+      <DependentUpon>BrontowurstCustom.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DinoNuggetsCustom.xaml.cs">
+      <DependentUpon>DinoNuggetsCustom.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DrinkSelection.xaml.cs">
       <DependentUpon>DrinkSelection.xaml</DependentUpon>
     </Compile>
@@ -67,14 +73,34 @@
     <Compile Include="PrehistoricPBJCustom.xaml.cs">
       <DependentUpon>PrehistoricPBJCustom.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PterodactyWingsCustom.xaml.cs">
+      <DependentUpon>PterodactyWingsCustom.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SideSelection.xaml.cs">
       <DependentUpon>SideSelection.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SteakasaurusBurgerCustom.xaml.cs">
+      <DependentUpon>SteakasaurusBurgerCustom.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TRexKingBurgerCustom.xaml.cs">
+      <DependentUpon>TRexKingBurgerCustom.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VelociWarpCustom.xaml.cs">
+      <DependentUpon>VelociWarpCustom.xaml</DependentUpon>
+    </Compile>
+    <Page Include="BrontowurstCustom.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ComboSelection.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="CustomizeCombo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DinoNuggetsCustom.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -123,7 +149,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PterodactyWingsCustom.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="SideSelection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SteakasaurusBurgerCustom.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TRexKingBurgerCustom.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VelociWarpCustom.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

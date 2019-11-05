@@ -46,7 +46,7 @@ namespace MenuTest.Drinks
         public void ShouldHaveCorrectDefaultSweet()
         {
             Tyrannotea tea = new Tyrannotea();
-            Assert.False(tea.sweet);
+            Assert.False(tea.Sweet);
 
         }
         [Fact]
@@ -78,7 +78,7 @@ namespace MenuTest.Drinks
         {
             Tyrannotea tea = new Tyrannotea();
             tea.AddSweet();
-            Assert.True(tea.sweet);
+            Assert.True(tea.Sweet);
             Assert.Equal<double>(8 * 2, tea.Calories);
             Assert.Contains<string>("Water", tea.Ingredients);
             Assert.Contains<string>("Tea", tea.Ingredients);
@@ -91,7 +91,7 @@ namespace MenuTest.Drinks
         {
             Tyrannotea tea = new Tyrannotea();
             tea.RemoveSweet();
-            Assert.False(tea.sweet);
+            Assert.False(tea.Sweet);
             Assert.Equal<double>(8 , tea.Calories);
 
 

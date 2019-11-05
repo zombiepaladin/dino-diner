@@ -46,8 +46,8 @@ namespace DinoDiner.Menu
                 List<string> special = new List<string>();
                if(lemon) special.Add("Add Lemon");
                if(ice) special.Add("Add Ice");
-               if(sweet) special.Add("Add Cane Sugar");
-               if(!sweet) special.Add("Remove Cane Sugar");
+               if(Sweet) special.Add("Add Cane Sugar");
+               if(!Sweet) special.Add("Remove Cane Sugar");
 
 
                 return special.ToArray();
@@ -69,7 +69,7 @@ namespace DinoDiner.Menu
         {
             get
             {
-                if (sweet)
+                if (Sweet)
                 {
                     if (size == Size.Large) return 32*2;
                     if (size == Size.Medium) return 16*2;
@@ -97,7 +97,7 @@ namespace DinoDiner.Menu
                 ingredients.Add("Water");
                 ingredients.Add("Tea");
                 if(lemon)ingredients.Add("Lemon");
-                if(sweet)ingredients.Add("Cane Sugar");
+                if(Sweet)ingredients.Add("Cane Sugar");
                 
 
 
@@ -115,15 +115,15 @@ namespace DinoDiner.Menu
         /// <returns>The name of Item for menu</returns>
         public override string ToString()
         {
-            if (size == Size.Large && sweet == true)
+            if (size == Size.Large && Sweet == true)
             {
                 return "Large Sweet Tyrannotea";
             }
-            if (size == Size.Medium && sweet == true)
+            if (size == Size.Medium && Sweet == true)
             {
                 return "Medium Sweet Tyrannotea";
             }
-            if (size == Size.Small && sweet == true)
+            if (size == Size.Small && Sweet == true)
             {
                 return "Small Sweet Tyrannotea";
             }
@@ -160,7 +160,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// This variable is default to make tea non sweet
         /// </summary>
-        public bool sweet = false;
+        public bool Sweet = false;
         /// <summary>
         /// This indicates there is no lemon in tea by default
         /// </summary>
@@ -192,7 +192,7 @@ namespace DinoDiner.Menu
                 if (size == Size.Small)
                 {
                     Price = 0.99;
-                    if (sweet) Calories= 16;
+                    if (Sweet) Calories= 16;
                     else this.Calories = 8;
 
                 }
@@ -232,7 +232,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public void AddSweet()
         {
-            sweet = true;
+            Sweet = true;
             Ingredients.Add("Cane Sugar");
             Calories = this.Calories * 2;
 
@@ -245,7 +245,7 @@ namespace DinoDiner.Menu
         //This makes the tea Back to normal
         public void RemoveSweet()
         {
-            sweet = false;
+            Sweet = false;
             Ingredients.Add("Cane Sugar");
             this.Calories = this.Calories;
 
@@ -261,10 +261,11 @@ namespace DinoDiner.Menu
         public override bool HoldIce()
         {
              ice = false;
-            return false;
-
             NotifyOfPropertyChange("Special");
             NotifyOfPropertyChange("Ingredients");
+            return false;
+
+            
         }
 
     }

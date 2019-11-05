@@ -12,21 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using DinoDiner.Menu;
+
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for PrehistoricPBJCustom.xaml
+    /// Interaction logic for SteakasaurusBurgerCustom.xaml
     /// </summary>
-    public partial class PrehistoricPBJCustom : Page
-
+    public partial class SteakasaurusBurgerCustom : Page
     {
-
-        private PrehistoricPBJ pbj;
-        public PrehistoricPBJCustom(PrehistoricPBJ pbj)
+        public SteakasaurusBurgerCustom()
         {
             InitializeComponent();
-            this.pbj = pbj;
         }
 
         /// <summary>
@@ -34,9 +30,9 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void OnHoldJelly(object sender, RoutedEventArgs e)
+        private void OnHoldBun(object sender, RoutedEventArgs e)
         {
-            pbj.HoldJelly();
+
         }
 
         /// <summary>
@@ -44,13 +40,32 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void OnHoldPBJ(object sender, RoutedEventArgs e)
+        private void OnHoldPickle(object sender, RoutedEventArgs e)
         {
-            pbj.HoldJelly();
+
         }
 
         /// <summary>
-        /// Sends you back whe your done
+        /// Holds Item
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnHoldKetchup(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// Holds Item
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnHoldMustard(object sender, RoutedEventArgs e)
+        {
+
+        }
+        /// <summary>
+        /// Done with special items sends you back
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -65,7 +80,5 @@ namespace PointOfSale
                 NavigationService.Navigate(new MenuCategorySelection());
             }
         }
-
-
     }
 }

@@ -12,21 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using DinoDiner.Menu;
+
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for PrehistoricPBJCustom.xaml
+    /// Interaction logic for VelociWarpCustom.xaml
     /// </summary>
-    public partial class PrehistoricPBJCustom : Page
-
+    public partial class VelociWarpCustom : Page
     {
-
-        private PrehistoricPBJ pbj;
-        public PrehistoricPBJCustom(PrehistoricPBJ pbj)
+        public VelociWarpCustom()
         {
             InitializeComponent();
-            this.pbj = pbj;
         }
 
         /// <summary>
@@ -34,9 +30,9 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void OnHoldJelly(object sender, RoutedEventArgs e)
+        private void OnHoldDressing(object sender, RoutedEventArgs e)
         {
-            pbj.HoldJelly();
+
         }
 
         /// <summary>
@@ -44,13 +40,23 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void OnHoldPBJ(object sender, RoutedEventArgs e)
+        private void OnHoldCheese(object sender, RoutedEventArgs e)
         {
-            pbj.HoldJelly();
+
         }
 
         /// <summary>
-        /// Sends you back whe your done
+        /// Holds Item
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnHoldLettuce(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// Sends you back when your done
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -65,7 +71,5 @@ namespace PointOfSale
                 NavigationService.Navigate(new MenuCategorySelection());
             }
         }
-
-
     }
 }

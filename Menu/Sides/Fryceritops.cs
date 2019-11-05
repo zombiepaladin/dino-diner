@@ -30,7 +30,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// PropertyChanged event handeler; notifys of changes to the Price,Description,and Special properties.
         /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event  PropertyChangedEventHandler PropertyChanged;
 
 
         //Helper Function for notifying of property changes
@@ -48,7 +48,7 @@ namespace DinoDiner.Menu
             get
             {
                 List<string> special = new List<string>();
-              if (sizeChange) special.Add("Size/Price Change");
+              if (sizeChange) special.Add("Size");
                 
                 
 
@@ -64,6 +64,7 @@ namespace DinoDiner.Menu
             {
                 if (size == Size.Large)
                 {
+                    Price = 1.95;
                     NotifyOfPropertyChange("Special");
                     NotifyOfPropertyChange("Price/Size");
 
@@ -71,8 +72,10 @@ namespace DinoDiner.Menu
                 }
                 if (size == Size.Medium)
                 {
+                    Price = 1.45;
                     NotifyOfPropertyChange("Special");
-                    NotifyOfPropertyChange("Price/Size");
+                    NotifyOfPropertyChange("Price");
+                    NotifyOfPropertyChange("Size");
                     return 1.45;
 
                 }
@@ -88,14 +91,18 @@ namespace DinoDiner.Menu
 
                 if (size == Size.Large)
                 {
+                    Calories = 480;
                     NotifyOfPropertyChange("Special");
-                    NotifyOfPropertyChange("Price/Size");
+                    NotifyOfPropertyChange("Price");
+                    NotifyOfPropertyChange("Size");
                     return 480;
                 }
                 if (size == Size.Medium)
                 {
+                    Calories = 365;
                     NotifyOfPropertyChange("Special");
-                    NotifyOfPropertyChange("Price/Size");
+                    NotifyOfPropertyChange("Price");
+                    NotifyOfPropertyChange("Size");
                     return 365;
                 }
                 return 222;

@@ -12,7 +12,7 @@
 
         <Button Click="OnSelectFryceritops" Margin="-20,-18,-33,11"  Grid.ColumnSpan="2" >Fryceritops</Button>
         <Button  Click ="OnSelectMac"  Margin="-20,-80,-33,73" Grid.ColumnSpan="2" >Meteor Mac &amp; Cheese</Button>
-        <Button  Click ="OnSelectMezzorella" Margin="-20,45,-33,-51" Grid.ColumnSpan="2">Mezzorella Sticks</Button>
+        <Button  Click ="OnSelectMezzorella" Margin="-20,45,-33,-51" HorizontalAlignment="Left" Width="123">Mezzorella Sticks</Button>
         <Button  Click ="OnSelectTriceritops" Margin="-20,107,-33,-122" Grid.ColumnSpan="2">Triceritops</Button>
         <Label  Margin="13,-121,-3,135" >Side</Label>
         <RadioButton Click="OnSelectMedium" Margin="144,7,-197,-35"  Content="Medium" Style="{StaticResource {x:Type ToggleButton}}"/>

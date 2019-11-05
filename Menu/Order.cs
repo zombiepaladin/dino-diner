@@ -91,7 +91,7 @@ namespace DinoDiner.Menu
         public Order()
         {
 
-            items = new List<IOrderItem>();
+            
             Add(new SteakosaurusBurger());
             Add(new Fryceritops());
             Triceritots t = new Triceritots();
