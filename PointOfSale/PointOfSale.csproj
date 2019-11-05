@@ -58,6 +58,9 @@
     <Compile Include="BrontowurstCustom.xaml.cs">
       <DependentUpon>BrontowurstCustom.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CustomizeCombo.xaml.cs">
+      <DependentUpon>CustomizeCombo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DinoNuggetsCustom.xaml.cs">
       <DependentUpon>DinoNuggetsCustom.xaml</DependentUpon>
     </Compile>
@@ -126,9 +129,6 @@
     </Compile>
     <Compile Include="ComboSelection.xaml.cs">
       <DependentUpon>ComboSelection.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="CustomizeCombo.xaml.cs">
-      <DependentUpon>CustomizeCombo.xaml</DependentUpon>
     </Compile>
     <Compile Include="EntreeSelection.xaml.cs">
       <DependentUpon>EntreeSelection.xaml</DependentUpon>

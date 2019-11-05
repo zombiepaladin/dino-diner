@@ -20,38 +20,32 @@ namespace PointOfSale
     /// </summary>
     public partial class CustomizeCombo : Page
     {
-        /// <summary>
-        /// Initilizes window
-        /// </summary>
         public CustomizeCombo()
         {
             InitializeComponent();
         }
 
-        /// <summary>
-        /// Navigates to the desired window
-        /// </summary>
-        /// <param name="sender"> sends where it was clicked</param>
-        /// <param name="e">and the event argument</param>
-        private void Button_Click1(object sender, RoutedEventArgs e)
+        private void OnMedium(object sender, RoutedEventArgs e)
         {
-            DrinkSelection d = new DrinkSelection();
-            NavigationService.Navigate(d);
-
 
         }
-        /// <summary>
-        /// Navigates to the desired window
-        /// </summary>
-        /// <param name="sender"> sends where it was clicked</param>
-        /// <param name="e">and the event argument</param>
-        private void Button_Click(object sender, RoutedEventArgs e)
+
+        private void OnSmall(object sender, RoutedEventArgs e)
         {
-            SideSelection d = new SideSelection();
-            NavigationService.Navigate(d);
+
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void OnLarge(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void OnDrink(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void OnSide(object sender, RoutedEventArgs e)
         {
 
         }
