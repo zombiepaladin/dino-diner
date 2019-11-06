@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DinoDiner.Menu;
+using DinoDiner.Menu.Entrees;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,39 +24,74 @@ namespace PointOfSale
     /// </summary>
     public partial class ComboSelection : Page
     {
+        public CretaceousCombo Combo { get; set; }
         public ComboSelection()
         {
             InitializeComponent();
         }
+
+        public ComboSelection(CretaceousCombo combo)
+        {
+            InitializeComponent();
+            this.Combo = combo;
+        }
+
+        private void SelectCombo(CretaceousCombo c)
+        {
+            if (DataContext is Order order)
+            {
+                order.Add(c);
+                this.Combo = c;
+            }
+        }
         private void BrontowurstCombo(object sender, RoutedEventArgs e)
         {
+            CretaceousCombo combo = new CretaceousCombo(new Brontowurst());
+            SelectCombo(combo);
             NavigationService.Navigate(new CustomizeCombo());
         }
         private void DinoNuggetsCombo(object sender, RoutedEventArgs e)
         {
+            CretaceousCombo combo = new CretaceousCombo(new DinoNuggets());
+            SelectCombo(combo);
             NavigationService.Navigate(new CustomizeCombo());
         }
         private void PrehistoricPBJCombo(object sender, RoutedEventArgs e)
         {
+            CretaceousCombo combo = new CretaceousCombo(new PrehistoricPBJ());
+            SelectCombo(combo);
             NavigationService.Navigate(new CustomizeCombo());
         }
         private void PterodactylWingsCombo(object sender, RoutedEventArgs e)
         {
+            CretaceousCombo combo = new CretaceousCombo(new PterodactylWings());
+            SelectCombo(combo);
             NavigationService.Navigate(new CustomizeCombo());
         }
         private void SteakosaurusBurgerCombo(object sender, RoutedEventArgs e)
         {
+            CretaceousCombo combo = new CretaceousCombo(new SteakosaurusBurger());
+            SelectCombo(combo);
             NavigationService.Navigate(new CustomizeCombo());
         }
         private void TRexKingburgerCombo(object sender, RoutedEventArgs e)
         {
+            CretaceousCombo combo = new CretaceousCombo(new TRexKingBurger());
+            SelectCombo(combo);
             NavigationService.Navigate(new CustomizeCombo());
         }
         private void VelociWrapCombo(object sender, RoutedEventArgs e)
         {
+            CretaceousCombo combo = new CretaceousCombo(new VelociWrap());
+            SelectCombo(combo);
             NavigationService.Navigate(new CustomizeCombo());
         }
 
-        
+        private void DoneClicked(object sender, RoutedEventArgs args)
+        {
+            NavigationService.Navigate(new MenuCategorySelection());
+        }
+
+
     }
 }

@@ -42,6 +42,8 @@ namespace DinoDiner.Menu
             }
         }
 
+    
+
 
         //private backing variable
         private double salesTaxRate = 0.07;

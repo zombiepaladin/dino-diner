@@ -63,6 +63,30 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="EntreeCustomization\CustomizeBrontowurst.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EntreeCustomization\CustomizeDinoNuggets.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EntreeCustomization\CustomizePrehistoricPBJ.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EntreeCustomization\CustomizeSteakosaurus.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EntreeCustomization\CustomizeTRexKingBurger.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EntreeCustomization\CustomizeVelociWrap.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="FlavorSelection.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -104,6 +128,24 @@
     </Compile>
     <Compile Include="CustomizePrehistoricPBJ.xaml.cs">
       <DependentUpon>CustomizePrehistoricPBJ.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EntreeCustomization\CustomizeBrontowurst.xaml.cs">
+      <DependentUpon>CustomizeBrontowurst.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EntreeCustomization\CustomizeDinoNuggets.xaml.cs">
+      <DependentUpon>CustomizeDinoNuggets.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EntreeCustomization\CustomizePrehistoricPBJ.xaml.cs">
+      <DependentUpon>CustomizePrehistoricPBJ.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EntreeCustomization\CustomizeSteakosaurus.xaml.cs">
+      <DependentUpon>CustomizeSteakosaurus.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EntreeCustomization\CustomizeTRexKingBurger.xaml.cs">
+      <DependentUpon>CustomizeTRexKingBurger.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EntreeCustomization\CustomizeVelociWrap.xaml.cs">
+      <DependentUpon>CustomizeVelociWrap.xaml</DependentUpon>
     </Compile>
     <Compile Include="FlavorSelection.xaml.cs">
       <DependentUpon>FlavorSelection.xaml</DependentUpon>
@@ -169,7 +211,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-
     <Resource Include="Assets\DinoDiner-01.png" />
     <Resource Include="Assets\DinoDiner-02.png" />
     <Resource Include="Assets\DinoDiner-03.png" />
@@ -187,7 +228,6 @@
     <Resource Include="Assets\DinoDiner-15.png" />
   </ItemGroup>
   <ItemGroup>
-
     <ProjectReference Include="..\Menu\Menu.csproj">
       <Project>{2f5f801d-c838-4c96-a2be-a40c4dffb719}</Project>
       <Name>Menu</Name>

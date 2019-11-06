@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DinoDiner.Menu;
+using DinoDiner.Menu.Entrees;
+using PointOfSale.EntreeCustomization;
 /* CustomizeCombo.cs
 * Author: Thomas Paul
 */
@@ -23,7 +25,7 @@ namespace PointOfSale
     /// </summary>
     public partial class CustomizeCombo : Page
     {
-        private CretaceousCombo combo;
+        private CretaceousCombo c;
 
         public CustomizeCombo()
         {
@@ -33,16 +35,66 @@ namespace PointOfSale
         public CustomizeCombo(CretaceousCombo combo)
         {
             InitializeComponent();
-            this.combo = combo;
+            this.c = combo;
         }
 
         private void DrinkClick(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new DrinkSelection());
+            NavigationService.Navigate(new DrinkSelection(c.Drink));
+            NavigationService.Navigate(new CustomizeCombo());
         }
         private void SideClick(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new SideSelection());
+            NavigationService.Navigate(new SideSelection(c.Side));
+            NavigationService.Navigate(new CustomizeCombo());
+        }
+
+        private void EntreeButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (c.Entree is Brontowurst b)
+            {
+                NavigationService.Navigate(new CustomizeBrontowurst(c));
+            }
+            if (c.Entree is DinoNuggets d)
+            {
+                NavigationService.Navigate(new CustomizeDinoNuggets(c));
+            }
+            if (c.Entree is PrehistoricPBJ pbj)
+            {
+                NavigationService.Navigate(new CustomizePrehistoricPBJ(c));
+            }
+            if (c.Entree is SteakosaurusBurger s)
+            {
+                NavigationService.Navigate(new CustomizeSteakosaurus(c));
+            }
+            if (c.Entree is TRexKingBurger t)
+            {
+                NavigationService.Navigate(new CustomizeTRexKingBurger(c));
+            }
+            if (c.Entree is VelociWrap v)
+            {
+                NavigationService.Navigate(new CustomizeVelociWrap(c));
+            }
+            if (c.Entree is PterodactylWings wings)
+            {
+
+            }
+
+
+        }
+        private void SmallClicked(object sender, RoutedEventArgs args)
+        {
+            c.Size = DinoDiner.Menu.Size.Small;
+        }
+
+        private void MedClicked(object sender, RoutedEventArgs args)
+        {
+            c.Size = DinoDiner.Menu.Size.Medium;
+        }
+
+        private void LargeClicked(object sender, RoutedEventArgs args)
+        {
+            c.Size = DinoDiner.Menu.Size.Large;
         }
     }
 }

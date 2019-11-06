@@ -60,9 +60,7 @@ namespace DinoDiner.Menu.Sides
         {
             Price = 0.99;
             Calories = 352;
-            ingredients.Add("Potato");
-            ingredients.Add("Salt");
-            ingredients.Add("Vegetable Oil");
+            
 
         }
 
@@ -106,5 +104,16 @@ namespace DinoDiner.Menu.Sides
                 return special.ToArray();
             }
         }
+
+        public override List<string> Ingredients
+        {
+            get
+            {
+                return new List<string>() { "Potato", "Salt", "Vegetable Oil" };
+            }
+        
+        
+        }
+
     }
 }

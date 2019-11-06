@@ -32,7 +32,6 @@ namespace PointOfSale
         public DrinkSelection()
         {
             InitializeComponent();
-
         }
 
         public DrinkSelection(Drink drink)
@@ -40,6 +39,8 @@ namespace PointOfSale
             InitializeComponent();
             this.Drink = drink;
         }
+
+  
         /// <summary>
         /// 
         /// </summary>
@@ -52,6 +53,8 @@ namespace PointOfSale
                 this.Drink = d;
             }
         }
+
+
 
         private void WaterClicked(object sender, RoutedEventArgs args)
         {

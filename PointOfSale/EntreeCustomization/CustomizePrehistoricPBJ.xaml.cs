@@ -14,11 +14,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-/* CustomizePrehistoricPBJ.cs
- * Author: Thomas Paul
- */
 
-namespace PointOfSale
+namespace PointOfSale.EntreeCustomization
 {
     /// <summary>
     /// Interaction logic for CustomizePrehistoricPBJ.xaml
@@ -27,6 +24,11 @@ namespace PointOfSale
     {
         private PrehistoricPBJ pbj;
         private CretaceousCombo combo;
+
+        public CustomizePrehistoricPBJ()
+        {
+            InitializeComponent();
+        }
         public CustomizePrehistoricPBJ(PrehistoricPBJ pbj)
         {
             this.pbj = pbj;
@@ -38,20 +40,40 @@ namespace PointOfSale
             this.combo = combo;
             InitializeComponent();
         }
+        private void HoldPeanutButterClicked(object sender, RoutedEventArgs e)
+        {
 
-        private void HoldPeanutButterClicked(object sender, RoutedEventArgs args)
-        {
-            pbj.HoldPeanutButter();
+            pbj?.HoldPeanutButter();
+            if (this.combo != null)
+            {
+                if (this.combo.Entree is PrehistoricPBJ pb)
+                {
+                    pb.HoldPeanutButter();
+                }
+            }
         }
-        private void HoldJellyClicked(object sender, RoutedEventArgs args)
+
+        private void HoldJellyClicked(object sender, RoutedEventArgs e)
         {
-            pbj.HoldJelly();
+            pbj?.HoldJelly();
+            if (this.combo != null)
+            {
+                if (this.combo.Entree is PrehistoricPBJ pb)
+                {
+                    pb.HoldJelly();
+                }
+            }
         }
-        private void DoneClicked(object sender, RoutedEventArgs args)
+
+        private void DoneClicked(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new MenuCategorySelection());
         }
 
-
+        private void BackClicked(object sender, RoutedEventArgs e)
+        {
+            if (NavigationService.CanGoBack) NavigationService.GoBack();
+            else NavigationService.Navigate(new MenuCategorySelection());
+        }
     }
 }
