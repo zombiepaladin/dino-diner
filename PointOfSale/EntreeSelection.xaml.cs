@@ -24,7 +24,7 @@ namespace PointOfSale
     /// </summary>
     public partial class EntreeSelection : Page
     {
-        //backing property
+        
         public Entree Entree { get; set; }
 
         public EntreeSelection()

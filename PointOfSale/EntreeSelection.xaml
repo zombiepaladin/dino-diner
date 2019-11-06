@@ -29,43 +29,43 @@
         </Grid.RowDefinitions>
         <Button FontWeight="UltraBold" Click=" BrontowurstClicked" Name="BrontowurstButton" Margin="0">
             <Button.Background>
-                <ImageBrush ImageSource ="C:\Users\tomango8\Desktop\dino-diner\PointOfSale\Assets\DinoDiner-01.png"></ImageBrush>
+                <ImageBrush ImageSource ="Assets/DinoDiner-01.png"></ImageBrush>
             </Button.Background>
             <TextBlock Height = "150" Grid.Column="0" Grid.Row="0" FontWeight="UltraBold" Opacity=".7" >Brontowurst</TextBlock>
         </Button>
         <Button Grid.Column="1" FontWeight="UltraBold" Click="DinoNugsClicked" Name="NugsButton" Margin="0">
             <Button.Background>
-                <ImageBrush ImageSource ="C:\Users\tomango8\Desktop\dino-diner\PointOfSale\Assets\DinoDiner-02.png"></ImageBrush>
+                <ImageBrush ImageSource ="Assets/DinoDiner-02.png"></ImageBrush>
             </Button.Background>
             <TextBlock Height = "150" Grid.Column="0" Grid.Row="0" FontWeight="UltraBold" Opacity=".7" >Dino-Nuggets</TextBlock>
         </Button>
         <Button Grid.Column="2" FontWeight="UltraBold" Click="PBJClicked" Name="PBJButton" Margin="0">
             <TextBlock Height = "150" Grid.Column="0" Grid.Row="0" FontWeight="UltraBold" Opacity=".7" >Prehistoric PB&amp;J</TextBlock>
             <Button.Background>
-                <ImageBrush ImageSource ="C:\Users\tomango8\Desktop\dino-diner\PointOfSale\Assets\DinoDiner-03.png"></ImageBrush>
+                <ImageBrush ImageSource ="Assets/DinoDiner-03.png"></ImageBrush>
             </Button.Background>
         </Button>
         <Button Grid.Row="1" FontWeight="UltraBold" Click="WingsClicked" Name="WingsButton" Margin="0">
             <Button.Background>
-                <ImageBrush ImageSource ="C:\Users\tomango8\Desktop\dino-diner\PointOfSale\Assets\DinoDiner-04.png"></ImageBrush>
+                <ImageBrush ImageSource ="Assets/DinoDiner-04.png"></ImageBrush>
             </Button.Background>
             <TextBlock Height = "150" Grid.Column="0" Grid.Row="0" FontWeight="UltraBold" Opacity=".7" >Pterodactyl Wings</TextBlock>
         </Button>
         <Button Grid.Row="1" Grid.Column="1" FontWeight="UltraBold" Click="SteakosaurusClicked" Name="SteakosaurusButton" Margin="0">
             <Button.Background>
-                <ImageBrush ImageSource ="C:\Users\tomango8\Desktop\dino-diner\PointOfSale\Assets\DinoDiner-05.png"></ImageBrush>
+                <ImageBrush ImageSource ="Assets/DinoDiner-05.png"></ImageBrush>
             </Button.Background>
             <TextBlock Height = "150" Grid.Column="0" Grid.Row="0" FontWeight="UltraBold" Opacity=".7" >Steakosaurus Burger</TextBlock>
         </Button>
         <Button Grid.Row="1" Grid.Column="2" FontWeight="UltraBold" Click="TRexClicked" Name="TRexButton" Margin="0">
             <Button.Background>
-                <ImageBrush ImageSource ="C:\Users\tomango8\Desktop\dino-diner\PointOfSale\Assets\DinoDiner-06.png"></ImageBrush>
+                <ImageBrush ImageSource ="Assets/DinoDiner-06.png"></ImageBrush>
             </Button.Background>
             <TextBlock Height = "150" Grid.Column="0" Grid.Row="0" FontWeight="UltraBold" Opacity=".7" >T-Rex King Burger</TextBlock>
         </Button>
         <Button Grid.Row="2" FontWeight="UltraBold" Click="VelociwrapClicked" Name="VelociwrapButton" Margin="0,5,0,0">
             <Button.Background>
-                <ImageBrush ImageSource ="C:\Users\tomango8\Desktop\dino-diner\PointOfSale\Assets\DinoDiner-07.png"></ImageBrush>
+                <ImageBrush ImageSource ="Assets/DinoDiner-07.png"></ImageBrush>
             </Button.Background>
             <TextBlock Height = "150" Grid.Column="0" Grid.Row="0" FontWeight="UltraBold" Opacity=".7" >Veloci-Wrap</TextBlock>
         </Button>

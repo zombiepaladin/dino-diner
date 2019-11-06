@@ -4,6 +4,9 @@ using System.Text;
 using System.ComponentModel;
 using DinoDiner.Menu;
 using Xunit;
+using DinoDiner.Menu.Entrees;
+using DinoDiner.Menu.Sides;
+using DinoDiner.Menu.Drinks;
 
 namespace MenuTest
 {

@@ -70,24 +70,30 @@ namespace PointOfSale
         public void SmallClicked(object sender, RoutedEventArgs args)
         {
             SelectSize(DinoDiner.Menu.Size.Small);
-            NavigationService.Navigate(new MenuCategorySelection());
+            
         }
 
         public void MediumClicked(object sender, RoutedEventArgs args)
         {
             SelectSize(DinoDiner.Menu.Size.Medium);
-            NavigationService.Navigate(new MenuCategorySelection());
+            
         }
 
         public void LargeClicked(object sender, RoutedEventArgs args)
         {
             SelectSize(DinoDiner.Menu.Size.Large);
-            NavigationService.Navigate(new MenuCategorySelection());
+            
         }
 
         private void SelectSize(DinoDiner.Menu.Size size)
         {
             if (this.Side != null) this.Side.Size = size;
+        }
+
+       
+        private void DoneClick(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new MenuCategorySelection());
         }
     }
 }

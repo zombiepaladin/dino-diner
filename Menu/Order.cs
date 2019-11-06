@@ -13,8 +13,7 @@ namespace DinoDiner.Menu
     /// </summary>
     public class Order : INotifyPropertyChanged
     {
-        //private backing variable
-        private double salesTaxRate = 0.07;
+        
         private List<IOrderItem> items = new List<IOrderItem>();
 
         /// <summary>
@@ -44,7 +43,8 @@ namespace DinoDiner.Menu
         }
 
 
-
+        //private backing variable
+        private double salesTaxRate = 0.07;
         /// <summary>
         /// Gets/sets sales tax rate
         /// </summary>

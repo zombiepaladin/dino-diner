@@ -12,9 +12,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DinoDiner.Menu;
 /* CustomizeCombo.cs
- * Author: Thomas Paul
- */
+* Author: Thomas Paul
+*/
 namespace PointOfSale
 {
     /// <summary>
@@ -22,9 +23,17 @@ namespace PointOfSale
     /// </summary>
     public partial class CustomizeCombo : Page
     {
+        private CretaceousCombo combo;
+
         public CustomizeCombo()
         {
             InitializeComponent();
+        }
+
+        public CustomizeCombo(CretaceousCombo combo)
+        {
+            InitializeComponent();
+            this.combo = combo;
         }
 
         private void DrinkClick(object sender, RoutedEventArgs e)
