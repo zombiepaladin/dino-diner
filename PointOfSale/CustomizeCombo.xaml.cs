@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using DinoDiner.Menu;
 using DinoDiner.Menu.Entrees;
 using PointOfSale.EntreeCustomization;
+using DDSize = DinoDiner.Menu.Size;
 /* CustomizeCombo.cs
 * Author: Thomas Paul
 */
@@ -36,17 +37,20 @@ namespace PointOfSale
         {
             InitializeComponent();
             this.c = combo;
+            if (combo.Entree is PterodactylWings p)
+            {
+                EntreeButton.IsEnabled = false;
+            }
         }
 
         private void DrinkClick(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new DrinkSelection(c.Drink));
-            NavigationService.Navigate(new CustomizeCombo());
+            NavigationService.Navigate(new ComboDrinkCustomization(c));
         }
         private void SideClick(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new SideSelection(c.Side));
-            NavigationService.Navigate(new CustomizeCombo());
+            NavigationService.Navigate(new ComboSideCustomization(c));
+           
         }
 
         private void EntreeButton_Click(object sender, RoutedEventArgs e)
@@ -75,10 +79,7 @@ namespace PointOfSale
             {
                 NavigationService.Navigate(new CustomizeVelociWrap(c));
             }
-            if (c.Entree is PterodactylWings wings)
-            {
-
-            }
+       
 
 
         }
@@ -95,6 +96,20 @@ namespace PointOfSale
         private void LargeClicked(object sender, RoutedEventArgs args)
         {
             c.Size = DinoDiner.Menu.Size.Large;
+        }
+
+        /// <summary>
+        /// Occurs when the size buttons are clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void OnChangeSize(object sender, RoutedEventArgs args)
+        {
+            if (sender is Button element)
+            {
+                c.Size = (DDSize)Enum.Parse(typeof(DDSize), element.Tag.ToString());
+                NavigationService.Navigate(new MenuCategorySelection());
+            }
         }
     }
 }

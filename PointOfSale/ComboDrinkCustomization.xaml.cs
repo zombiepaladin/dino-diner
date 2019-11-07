@@ -12,67 +12,30 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using DinoDiner.Menu.Drinks;
 using DinoDiner.Menu;
-/* DrinkSelection.cs
- * Author: Thomas Paul
- */
+using DinoDiner.Menu.Drinks;
+
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for DrinkSelection.xaml
+    /// Interaction logic for ComboDrinkCustomization.xaml
     /// </summary>
-    public partial class DrinkSelection : Page
+    public partial class ComboDrinkCustomization : Page
     {
-        
-        /// <summary>
-        /// Private Cretaceous Combo property
-        /// </summary>
         private CretaceousCombo combo;
-
-        /// <summary>
-        /// gets and sets the drink
-        /// </summary>
-        public Drink Drink { get; set; }
-
-        /// <summary>
-        /// This constructor is used if the page came from mainmenu category
-        /// </summary>
-        /// <param name="combo"></param>
-        public DrinkSelection(Drink drink = null)
+        public ComboDrinkCustomization(CretaceousCombo combo)
         {
-            
-            InitializeComponent();
-            this.Drink = drink;
-            
-        }
-
-        /// <summary>
-        /// This constructor is used if the page came from combo selection
-        /// </summary>
-        /// <param name="combo"></param>
-        public DrinkSelection(CretaceousCombo combo)
-        {
-           
             InitializeComponent();
             this.combo = combo;
-            
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="d"></param>
         private void SelectDrink(Drink d)
         {
             if (DataContext is Order order)
             {
-                order.Add(d);
-                this.Drink = d;
+                this.combo.Drink = d;
             }
         }
-
-
 
         private void WaterClicked(object sender, RoutedEventArgs args)
         {
@@ -82,6 +45,7 @@ namespace PointOfSale
             LemonButton.Content = "Add Lemon";
             SpecialtyButton.Content = "";
             SpecialtyButton.IsEnabled = false;
+            DoneButton.IsEnabled = true;
             SelectDrink(new Water());
         }
 
@@ -92,6 +56,7 @@ namespace PointOfSale
             LemonButton.Content = "Room For Cream";
             LemonButton.IsEnabled = true;
             SpecialtyButton.Content = "Decaf";
+            DoneButton.IsEnabled = true;
             SpecialtyButton.IsEnabled = true;
             SelectDrink(new JurassicJava());
         }
@@ -104,6 +69,7 @@ namespace PointOfSale
             LemonButton.Content = "Add Lemon";
             SpecialtyButton.Content = "Sweet";
             SpecialtyButton.IsEnabled = true;
+            DoneButton.IsEnabled = true;
             SelectDrink(new Tyrannotea());
         }
 
@@ -115,6 +81,7 @@ namespace PointOfSale
             LemonButton.Content = "";
             SpecialtyButton.Content = "Flavor";
             SpecialtyButton.IsEnabled = true;
+            DoneButton.IsEnabled = true;
             SelectDrink(new Sodasaurus());
         }
 
@@ -122,27 +89,30 @@ namespace PointOfSale
         {
             if ((string)SpecialtyButton.Content == "Flavor")
             {
-                NavigationService.Navigate(new FlavorSelection(this.Drink));
+                NavigationService.Navigate(new FlavorSelection(this.combo.Drink));
             }
             else if ((string)SpecialtyButton.Content == "Sweet")
             {
-                if (this.Drink is Tyrannotea tea)
+                if (this.combo.Drink is Tyrannotea tea)
                 {
-                    if (this.Drink != null) tea.AddSweet();
+                    if (this.combo.Drink != null) tea.AddSweet();
                 }
             }
             else if ((string)SpecialtyButton.Content == "Decaf")
             {
-                if (this.Drink is JurassicJava java)
+                if (this.combo.Drink is JurassicJava java)
                 {
-                    if (this.Drink != null) java.Decaf();
+                    if (this.combo.Drink != null) java.Decaf();
                 }
             }
         }
 
         private void SelectSize(DinoDiner.Menu.Size size)
         {
-            if (this.Drink != null) this.Drink.Size = size;
+            if (DataContext is Order order)
+            {
+                this.combo.Drink.Size = size;
+            }
         }
 
         private void SmallClicked(object sender, RoutedEventArgs args)
@@ -167,20 +137,20 @@ namespace PointOfSale
         {
             if ((string)LemonButton.Content == "Add Lemon")
             {
-                if (this.Drink is Tyrannotea tea)
+                if (this.combo.Drink is Tyrannotea tea)
                 {
-                    if (this.Drink != null) tea.AddLemon();
+                    if (this.combo.Drink != null) tea.AddLemon();
                 }
-                if (this.Drink is Water water)
+                if (this.combo.Drink is Water water)
                 {
-                    if (this.Drink != null) water.AddLemon();
+                    if (this.combo.Drink != null) water.AddLemon();
                 }
             }
             else if ((string)LemonButton.Content == "Room For Cream")
             {
-                if (this.Drink is JurassicJava java)
+                if (this.combo.Drink is JurassicJava java)
                 {
-                    if (this.Drink != null) java.LeaveRoomForCream();
+                    if (this.combo.Drink != null) java.LeaveRoomForCream();
                 }
             }
         }
@@ -189,20 +159,20 @@ namespace PointOfSale
         {
             if ((string)IceButton.Content == "Hold Ice")
             {
-                if (this.Drink is Sodasaurus soda)
+                if (this.combo.Drink is Sodasaurus soda)
                 {
-                    if (this.Drink != null) soda.HoldIce();
+                    if (this.combo.Drink != null) soda.HoldIce();
                 }
-                if (this.Drink is Water water)
+                if (this.combo.Drink is Water water)
                 {
-                    if (this.Drink != null) water.HoldIce();
+                    if (this.combo.Drink != null) water.HoldIce();
                 }
             }
             else if ((string)IceButton.Content == "Add Ice")
             {
-                if (this.Drink is JurassicJava java)
+                if (this.combo.Drink is JurassicJava java)
                 {
-                    if (this.Drink != null) java.AddIce();
+                    if (this.combo.Drink != null) java.AddIce();
                 }
             }
         }

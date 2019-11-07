@@ -9,10 +9,13 @@
       Title="CustomizeCombo">
 
     <Grid>
-        <Button  Click="SideClick" Content="Sides" HorizontalAlignment="Left" Margin="59,143,0,0" VerticalAlignment="Top" Width="203" RenderTransformOrigin="-5.517,-1.677" Height="138"/>
-        <Button Click="DrinkClick" Content="Drinks" HorizontalAlignment="Left" Margin="481,143,0,0" VerticalAlignment="Top" Width="203" RenderTransformOrigin="-5.517,-1.677" Height="138"/>
-        <Grid>
-            <Button x:Name="EntreeButton"  HorizontalAlignment="Left" Height="138" Margin="267,143,0,0" VerticalAlignment="Top" Width="209" Click="EntreeButton_Click">Entrees</Button>
-        </Grid>
+        <Button  Click="SideClick" Content="Sides" HorizontalAlignment="Left" Margin="47,74,0,0" VerticalAlignment="Top" Width="203" RenderTransformOrigin="-5.517,-1.677" Height="138"/>
+        <Button Click="DrinkClick" Content="Drinks" HorizontalAlignment="Left" Margin="559,74,0,0" VerticalAlignment="Top" Width="203" RenderTransformOrigin="-5.517,-1.677" Height="138"/>
+        
+        <Button x:Name="EntreeButton"  HorizontalAlignment="Left" Height="138" Margin="299,74,0,0" VerticalAlignment="Top" Width="209" Click="EntreeButton_Click">Entrees</Button>
+        <Button  Click="OnChangeSize" Content="Small" HorizontalAlignment="Left" Margin="47,265,0,0" VerticalAlignment="Top" Width="203" RenderTransformOrigin="-5.517,-1.677" Height="138"/>
+        <Button  Click="OnChangeSize" Content="Medium" HorizontalAlignment="Left" Margin="305,265,0,0" VerticalAlignment="Top" Width="203" RenderTransformOrigin="-5.517,-1.677" Height="138"/>
+        <Button  Click="OnChangeSize" Content="Large" HorizontalAlignment="Left" Margin="559,265,0,0" VerticalAlignment="Top" Width="203" RenderTransformOrigin="-5.517,-1.677" Height="138"/>
+
     </Grid>
 </Page>
