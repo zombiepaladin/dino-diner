@@ -15,7 +15,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// List to avalible menu items
         /// </summary>
-        List<string> AvailableMenuItems 
+       List<string> AvailableMenuItems 
         {
             get
             {
