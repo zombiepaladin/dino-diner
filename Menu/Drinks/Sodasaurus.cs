@@ -19,8 +19,16 @@ namespace DinoDiner.Menu.Drinks
         private SodasaurusFlavor flavor;
         public SodasaurusFlavor Flavor
         {
-            get { return flavor; }
-            set { flavor = value; }
+            get 
+            { 
+                return flavor; 
+            }
+            set 
+            { 
+                flavor = value;
+                NotifyIfPropertyChanged("Description");
+
+            }
         }
         private Size size;
 
@@ -51,6 +59,7 @@ namespace DinoDiner.Menu.Drinks
                 }
                 NotifyIfPropertyChanged("Description");
                 NotifyIfPropertyChanged("Price");
+                NotifyIfPropertyChanged("Calories");
 
 
             }

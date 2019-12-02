@@ -7,7 +7,7 @@ using System.Text;
  */
 namespace DinoDiner.Menu.Drinks
 {
-    public class Tyrannotea : Drink, INotifyPropertyChanged
+    public class Tyrannotea : Drink
     {
        
 
@@ -49,6 +49,7 @@ namespace DinoDiner.Menu.Drinks
 
                 NotifyIfPropertyChanged("Description");
                 NotifyIfPropertyChanged("Price");
+                NotifyIfPropertyChanged("Calories");
             }
             get { return size; }
 
@@ -60,17 +61,22 @@ namespace DinoDiner.Menu.Drinks
             lemon = true;
             ingredients.Add("Lemon");
             NotifyIfPropertyChanged("Special");
+            NotifyIfPropertyChanged("Ingredients");
+
         }
 
         public void AddSweet()
         {
             Sweet = true;
-            ingredients.Add("Sugar");
-            NotifyIfPropertyChanged("Description");
+            ingredients.Add("Cane Sugar");
+            Calories = 2 * Calories;
+            NotifyIfPropertyChanged("Ingredients");
+            NotifyIfPropertyChanged("Special");
+
         }
 
         
-        public Tyrannotea()
+        public Tyrannotea() : base()
         {
             Price = 0.99;
             Calories = 8;
@@ -117,7 +123,17 @@ namespace DinoDiner.Menu.Drinks
 
         }
 
-        
+        /// <summary>
+        /// Removes sugar from the tea order
+        /// </summary>
+        public void RemoveSugar()
+        {
+            this.Sweet = false;
+            ingredients.Remove("Cane Sugar");
+            this.Calories = ((this.Calories) / 2);
+            NotifyIfPropertyChanged("Special");
+            NotifyIfPropertyChanged("Ingredients");
+        }
 
         /// <summary>
         /// special requests

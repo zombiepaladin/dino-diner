@@ -34,8 +34,11 @@ namespace DinoDiner.Menu
             {
                 entree = value;
                 NotifyOfPropertyChanged("Price");
-                NotifyOfPropertyChanged("Description");
+               
+                NotifyOfPropertyChanged("Calories");
                 NotifyOfPropertyChanged("Special");
+                NotifyOfPropertyChanged("Ingredients");
+
 
             }
         }
@@ -52,6 +55,8 @@ namespace DinoDiner.Menu
                 NotifyOfPropertyChanged("Price");
                 NotifyOfPropertyChanged("Special");
                 NotifyOfPropertyChanged("Description");
+                NotifyOfPropertyChanged("Calories");
+                NotifyOfPropertyChanged("Ingredients");
             }
         }
 
@@ -65,7 +70,9 @@ namespace DinoDiner.Menu
                 drink = value;
                 NotifyOfPropertyChanged("Special");
                 NotifyOfPropertyChanged("Price");
-                
+                NotifyOfPropertyChanged("Ingredients");
+                NotifyOfPropertyChanged("Calories");
+
             }
 
         }
@@ -83,8 +90,10 @@ namespace DinoDiner.Menu
                 this.Drink.Size = value;
                 this.Side.Size = value;
                 
-                NotifyOfPropertyChanged("Special");
+                NotifyOfPropertyChanged("Price");
                 NotifyOfPropertyChanged("Description");
+                NotifyOfPropertyChanged("Special");
+                NotifyOfPropertyChanged("Size");
                 NotifyOfPropertyChanged("Calories");
 
             }
@@ -110,7 +119,7 @@ namespace DinoDiner.Menu
 
         public override string ToString()
         {
-            return $"{Entree} Combo \n {Side} \n {Drink}";
+            return $"{Entree} Combo";
         }
 
         public string Description
@@ -122,13 +131,13 @@ namespace DinoDiner.Menu
         {
             get
             {
-                List<string> ingredients = new List<string>();
-                ingredients.AddRange(Entree.Special);
-                ingredients.Add(Side.ToString());
-                ingredients.AddRange(Side.Special);
-                ingredients.Add(Drink.ToString());
-                ingredients.AddRange(Drink.Special);
-                return ingredients.ToArray();
+                List<string> special = new List<string>();
+                special.AddRange(Entree.Special);
+                special.Add(Side.Description);
+                special.AddRange(Side.Special);
+                special.Add(Drink.Description);
+                special.AddRange(Drink.Special);
+                return special.ToArray();
             }
         }
 

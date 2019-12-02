@@ -48,6 +48,7 @@ namespace DinoDiner.Menu.Drinks
 
                 NotifyIfPropertyChanged("Description");
                 NotifyIfPropertyChanged("Price");
+                NotifyIfPropertyChanged("Calories");
             }
             get { return size; }
 
@@ -102,7 +103,7 @@ namespace DinoDiner.Menu.Drinks
             {
                 List<string> special = new List<string>();
                 if (!Ice) special.Add("Hold Ice");
-                if (lemon == true) special.Add("Add Lemon");
+                if (lemon) special.Add("Add Lemon");
                 return special.ToArray();
             }
         }

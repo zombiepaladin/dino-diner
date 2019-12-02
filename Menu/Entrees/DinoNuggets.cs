@@ -32,6 +32,7 @@ namespace DinoDiner.Menu.Entrees
             {
                 ingredients.Add("Chicken Nugget");
             }
+            
         }
 
         /// <summary>
@@ -42,6 +43,10 @@ namespace DinoDiner.Menu.Entrees
             this.Price += 0.25;
             this.Calories += 59;
             ingredients.Add("Chicken Nugget");
+            NotifyIfPropertyChanged("Special");
+            NotifyIfPropertyChanged("Price");
+            NotifyIfPropertyChanged("Description");
+            NotifyIfPropertyChanged("Ingredients");
             count++;
         }
         public override string ToString()

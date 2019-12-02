@@ -48,43 +48,43 @@ namespace PointOfSale
         {
             CretaceousCombo combo = new CretaceousCombo(new Brontowurst());
             SelectCombo(combo);
-            NavigationService.Navigate(new CustomizeCombo());
+            NavigationService.Navigate(new CustomizeCombo(combo));
         }
         private void DinoNuggetsCombo(object sender, RoutedEventArgs e)
         {
             CretaceousCombo combo = new CretaceousCombo(new DinoNuggets());
             SelectCombo(combo);
-            NavigationService.Navigate(new CustomizeCombo());
+            NavigationService.Navigate(new CustomizeCombo(combo));
         }
         private void PrehistoricPBJCombo(object sender, RoutedEventArgs e)
         {
             CretaceousCombo combo = new CretaceousCombo(new PrehistoricPBJ());
             SelectCombo(combo);
-            NavigationService.Navigate(new CustomizeCombo());
+            NavigationService.Navigate(new CustomizeCombo(combo));
         }
         private void PterodactylWingsCombo(object sender, RoutedEventArgs e)
         {
             CretaceousCombo combo = new CretaceousCombo(new PterodactylWings());
             SelectCombo(combo);
-            NavigationService.Navigate(new CustomizeCombo());
+            NavigationService.Navigate(new CustomizeCombo(combo));
         }
         private void SteakosaurusBurgerCombo(object sender, RoutedEventArgs e)
         {
             CretaceousCombo combo = new CretaceousCombo(new SteakosaurusBurger());
             SelectCombo(combo);
-            NavigationService.Navigate(new CustomizeCombo());
+            NavigationService.Navigate(new CustomizeCombo(combo));
         }
         private void TRexKingburgerCombo(object sender, RoutedEventArgs e)
         {
             CretaceousCombo combo = new CretaceousCombo(new TRexKingBurger());
             SelectCombo(combo);
-            NavigationService.Navigate(new CustomizeCombo());
+            NavigationService.Navigate(new CustomizeCombo(combo));
         }
         private void VelociWrapCombo(object sender, RoutedEventArgs e)
         {
             CretaceousCombo combo = new CretaceousCombo(new VelociWrap());
             SelectCombo(combo);
-            NavigationService.Navigate(new CustomizeCombo());
+            NavigationService.Navigate(new CustomizeCombo(combo));
         }
 
         private void DoneClicked(object sender, RoutedEventArgs args)

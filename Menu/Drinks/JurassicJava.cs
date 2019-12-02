@@ -55,12 +55,18 @@ namespace DinoDiner.Menu.Drinks
                         this.Price = .99;
                         this.Calories = 4;
                         break;
+                    case Size.Small:
+                        this.Price = .59;
+                        this.Calories = 2;
+                        break;
                     default:
                         this.size = Size.Small;
+
                         break;
                 }
                 NotifyIfPropertyChanged("Description");
                 NotifyIfPropertyChanged("Price");
+                NotifyIfPropertyChanged("Calories");
             }
             get
             {
@@ -83,9 +89,9 @@ namespace DinoDiner.Menu.Drinks
         public void LeaveRoomForCream()
         {
             this.RoomForCream = true;
-            Ingredients.Add("Cream");
+            
             NotifyIfPropertyChanged("Special");
-            NotifyIfPropertyChanged("Description");
+            
         }
 
         /// <summary>
@@ -94,7 +100,7 @@ namespace DinoDiner.Menu.Drinks
         public void AddIce()
         {
             this.Ice = true;
-            Ingredients.Add("Ice");
+            
             NotifyIfPropertyChanged("Special");
         }
 

@@ -200,13 +200,13 @@ namespace MenuTest
             #region Combos
 
             [Theory]
-            [InlineData(typeof(Brontowurst), "Brontowurst Combo")]
-            [InlineData(typeof(DinoNuggets), "Dino-Nuggets Combo")]
-            [InlineData(typeof(PrehistoricPBJ), "Prehistoric PB&J Combo")]
-            [InlineData(typeof(PterodactylWings), "Pterodactyl Wings Combo")]
-            [InlineData(typeof(SteakosaurusBurger), "Steakosaurus Burger Combo")]
-            [InlineData(typeof(TRexKingBurger), "T-Rex King Burger Combo")]
-            [InlineData(typeof(VelociWrap), "Veloci-Wrap Combo")]
+            [InlineData(typeof(Brontowurst), "Brontowurst Combo \n Small Fryceritops \n Small Cola Sodasaurus")]
+            [InlineData(typeof(DinoNuggets), "Dino-Nuggets Combo \n Small Fryceritops \n Small Cola Sodasaurus")]
+            [InlineData(typeof(PrehistoricPBJ), "Prehistoric PB&J Combo \n Small Fryceritops \n Small Cola Sodasaurus")]
+            [InlineData(typeof(PterodactylWings), "Pterodactyl Wings Combo \n Small Fryceritops \n Small Cola Sodasaurus")]
+            [InlineData(typeof(SteakosaurusBurger), "Steakosaurus Burger Combo \n Small Fryceritops \n Small Cola Sodasaurus")]
+            [InlineData(typeof(TRexKingBurger), "T-Rex King Burger Combo \n Small Fryceritops \n Small Cola Sodasaurus")]
+            [InlineData(typeof(VelociWrap), "Veloci-Wrap Combo \n Small Fryceritops \n Small Cola Sodasaurus")]
             public void ToStringShouldGiveName(Type type, string name)
             {
                 Entree entree = (Entree)Activator.CreateInstance(type);

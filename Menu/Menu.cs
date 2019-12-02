@@ -95,10 +95,7 @@ namespace DinoDiner.Menu
                 list.Add(t);
                 list.Add(w);
                 list.Add(s);
-                foreach(CretaceousCombo c in AvailableCombos)
-                {
-                    list.Add(c);
-                }
+                
 
                 return list;
             }
