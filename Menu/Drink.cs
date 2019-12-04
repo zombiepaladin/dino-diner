@@ -5,7 +5,7 @@ using System.Text;
 /*Author: Thomas Paul
  * Drink.cs
  */
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
 
 

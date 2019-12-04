@@ -77,7 +77,7 @@ namespace DinoDiner.Menu
         }
 
         private List<IMenuItem> list = new List<IMenuItem>();
-        private List<IMenuItem> AvailableMenuItems
+        public List<IMenuItem> AvailableMenuItems
         {
             get
             {
@@ -95,8 +95,14 @@ namespace DinoDiner.Menu
                 list.Add(t);
                 list.Add(w);
                 list.Add(s);
-                
 
+                foreach (Entree e in AvailableEntrees)
+                {
+                    list.Add(new CretaceousCombo(e));
+                }
+
+
+                
                 return list;
             }
 
@@ -134,7 +140,24 @@ namespace DinoDiner.Menu
             return fullMenu.ToString();
         }
 
-
+        public List<string> PossibleIngredients
+        {
+            get
+            {
+                List<string> ingr = new List<string>();
+                foreach (IMenuItem item in AvailableMenuItems)
+                {
+                    foreach (string s in item.Ingredients)
+                    {
+                        if (!ingr.Contains(s))
+                        {
+                            ingr.Add(s);
+                        }
+                    }
+                }
+                return ingr;
+            }
+        }
 
 
     }

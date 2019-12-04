@@ -17,4 +17,11 @@
     <ProjectReference Include="..\Menu\Menu.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="Pages\Menu.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>

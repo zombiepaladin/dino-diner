@@ -5,7 +5,7 @@ using System.Text;
 /*Entree.cs
  * Author: Thomas Paul
  */
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// Framework for each entree
