@@ -14,7 +14,7 @@ namespace DinoDiner.Menu
         
 
 
-        public string Discription
+        public string Description
         {
 
             get

@@ -14,6 +14,15 @@ namespace DinoDiner.Menu
         private List<string> ingredients;
 
 
+        public string Description
+        {
+
+            get
+            {
+                return this.ToString();
+            }
+        }
+
 
         public override double Price
         {

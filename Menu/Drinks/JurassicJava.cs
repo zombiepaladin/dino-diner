@@ -12,7 +12,7 @@ namespace DinoDiner.Menu
 
         private List<string> ingredients;
 
-        public string Discription
+        public string Description
         {
 
             get

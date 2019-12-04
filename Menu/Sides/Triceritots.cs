@@ -17,7 +17,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Shows discription in a tostring
         /// </summary>
-        public string Discription
+        public string Description
         {
 
             get
