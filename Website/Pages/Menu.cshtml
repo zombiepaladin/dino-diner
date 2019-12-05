@@ -9,7 +9,7 @@
 
 
 
-            <h2>Combos</h2>
+            <h2 id="dis">Combos</h2>
 
             <p>
                 @Model.discriptionsBrw &nbsp;&nbsp;&nbsp; &nbsp;<b>Price: $@Model.comboPricesBrw</b>
@@ -384,34 +384,34 @@
         </div>
         <form method="post">
 
-            
-            <input type="text" name="search"  />
+
+            <input type="text" name="search" />
 
             <input type="submit" value="Apply Filter(s)" />
 
             <h4>Menu Category</h4>
             <label>
-                <input type="checkbox" value="Combos" name="cats"/>
+                <input type="checkbox" value="Combos" name="cats" />
                 Combo
             </label>
             <label>
-                <input type="checkbox" value="entree" name="cats"/>
+                <input type="checkbox" value="entree" name="cats" />
                 Entree
             </label>
             <label>
-                <input type="checkbox" value="side" name="cats"/>
+                <input type="checkbox" value="side" name="cats" />
                 Side
             </label>
             <label>
-                <input type="checkbox" value="drink" name="cats"/>
+                <input type="checkbox" value="drink" name="cats" />
                 Drink
             </label>
-          
+
 
             <h4>Price</h4>
             <label>
                 Min
-                <input type="number" min="0" max="10" step="0.1" name="minPrice"/>
+                <input type="number" min="0" max="10" step="0.1" name="minPrice" />
             </label>
             <label>
                 Max
@@ -419,13 +419,87 @@
             </label>
 
             <h4>Excluding Ingredients</h4>
-            <select name="order">
-                <option default>None</option>
-                <option value="title">Title</option>
-                <option value="director">Director</option>
-                <option value="year" >Year</option>
-                <option value="imdb" >IMDB Rating</option>
-            </select>
+
+            <label>
+                <input type="checkbox" value="Combos" name="cats" />
+                Bread
+            </label>
+            <label>
+                <input type="checkbox" value="entree" name="cats" />
+                Chicken
+            </label>
+            <label>
+                <input type="checkbox" value="side" name="cats" />
+                Brautwurst
+            </label>
+            <label>
+                <input type="checkbox" value="Combos" name="cats" />
+                Peanut Butter
+            </label>
+            <label>
+                <input type="checkbox" value="entree" name="cats" />
+                Jelly
+            </label>
+            <label>
+                <input type="checkbox" value="side" name="cats" />
+                Steakburger
+            </label>
+            <label>
+                <input type="checkbox" value="Combos" name="cats" />
+                Lettuce
+            </label>
+            <label>
+                <input type="checkbox" value="entree" name="cats" />
+                Tomato
+            </label>
+            <label>
+                <input type="checkbox" value="side" name="cats" />
+                Onion
+            </label>
+            <label>
+                <input type="checkbox" value="drink" name="cats" />
+                Ketchup
+            </label>
+            <label>
+                <input type="checkbox" value="Combos" name="cats" />
+                Pickle
+            </label>
+            <label>
+                <input type="checkbox" value="entree" name="cats" />
+                Mustard
+            </label>
+            <label>
+                <input type="checkbox" value="side" name="cats" />
+                Mayo
+            </label>
+            <label>
+                <input type="checkbox" value="drink" name="cats" />
+                Potato
+            </label>
+            <label>
+                <input type="checkbox" value="drink" name="cats" />
+                Ketchup
+            </label>
+            <label>
+                <input type="checkbox" value="Combos" name="cats" />
+                Salt
+            </label>
+            <label>
+                <input type="checkbox" value="entree" name="cats" />
+                Vegetable Oil
+            </label>
+            <label>
+                <input type="checkbox" value="side" name="cats" />
+                Water
+            </label>
+            <label>
+                <input type="checkbox" value="drink" name="cats" />
+                Natural Flavors
+            </label>
+            <label>
+                <input type="checkbox" value="drink" name="cats" />
+                Cane Sugar
+            </label>
 
 
         </form>
