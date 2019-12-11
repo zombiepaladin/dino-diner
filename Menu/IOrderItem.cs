@@ -10,7 +10,7 @@ namespace DinoDiner.Menu
         double Price { get; }
 
         string Description { get;  }
-
+        
          string[] Special { get;  }
 
 

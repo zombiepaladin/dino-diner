@@ -16,13 +16,15 @@ namespace DinoDiner.Menu
         /// </summary>
         uint Calories { get; }
 
-  
+        
 
-        /// <summary>
-        /// Gets the ingredients list
-        /// </summary>
-          
-        List<string> Ingredients { get; }
+        
+
+            /// <summary>
+            /// Gets the ingredients list
+            /// </summary>
+
+            List<string> Ingredients { get; }
 
         
     }
