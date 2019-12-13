@@ -1,10 +1,9 @@
+using DinoDiner.Menu;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using DinoDiner.Menu;
 
 namespace Website
 {
@@ -27,7 +26,7 @@ namespace Website
         public IEnumerable<IOrderItem> sr = null;
 
         public PrehistoricPBJ pbj = new PrehistoricPBJ();
- 
+
         public Brontowurst brt = new Brontowurst();
 
         public DinoNuggets dnn = new DinoNuggets();
@@ -35,17 +34,17 @@ namespace Website
         public PterodactylWings ptw = new PterodactylWings();
 
         public SteakosaurusBurger stb = new SteakosaurusBurger();
- 
+
         public TRexKingBurger trb = new TRexKingBurger();
 
         public VelociWrap vlw = new VelociWrap();
- 
+
         public CretaceousCombo brw = new CretaceousCombo(new Brontowurst());
-   
+
         public CretaceousCombo dinoNugs = new CretaceousCombo(new DinoNuggets());
 
         public CretaceousCombo phPJ = new CretaceousCombo(new PrehistoricPBJ());
- 
+
         public CretaceousCombo ptWings = new CretaceousCombo(new PterodactylWings());
 
         public CretaceousCombo stBurger = new CretaceousCombo(new SteakosaurusBurger());
@@ -55,21 +54,21 @@ namespace Website
         public CretaceousCombo vlWrap = new CretaceousCombo(new VelociWrap());
 
         public Fryceritops frt = new Fryceritops();
-        
+
         public MeteorMacAndCheese mmm = new MeteorMacAndCheese();
-        
+
         public MezzorellaSticks mzs = new MezzorellaSticks();
 
         public Triceritots tts = new Triceritots();
 
         public JurassicJava jrja = new JurassicJava();
-        
+
 
         public Sodasaurus sdr = new Sodasaurus();
- 
+
         public Tyrannotea trt = new Tyrannotea();
 
-       
+
 
         public IEnumerable<CretaceousCombo> allCombos = new List<CretaceousCombo>() {new CretaceousCombo(new Brontowurst()), new CretaceousCombo(new DinoNuggets()),new CretaceousCombo(new PrehistoricPBJ()),
             new CretaceousCombo(new PterodactylWings()),new CretaceousCombo(new SteakosaurusBurger()), new CretaceousCombo(new TRexKingBurger()),
@@ -82,18 +81,18 @@ namespace Website
         public IEnumerable<Side> allSide = new List<Side>() {
               new Fryceritops(), new MeteorMacAndCheese(), new MezzorellaSticks(), new Triceritots(), };
 
-               
+
         public IEnumerable<Drinks> allDrinks = new List<Drinks>() {
               new JurassicJava(), new Sodasaurus(), new Tyrannotea(), new Water() };
 
         public IEnumerable<string> titles = new List<string>() { "Combos", "Entree", "Sides", "Drinks" };
-             
+
 
         public void OnGet()
         {
-            
-          
-           
+
+
+
 
 
         }
@@ -101,13 +100,31 @@ namespace Website
 
         public void OnPost()
         {
+            
+            if (search != null)
+            {
+               
+               // allEntree = allEntree.Where(menu => menu.Description.Contains(search, StringComparison.OrdinalIgnoreCase));
+                allCombos = allCombos.Where(menu => menu.Description.Contains(search, StringComparison.OrdinalIgnoreCase));
+                // allEntree = allEntree.Where(menu => menu.Description.Contains(search, StringComparison.OrdinalIgnoreCase));
+                // allDrinks = allDrinks.Where(menu => menu.Description.Contains(search, StringComparison.OrdinalIgnoreCase));
+                //  allSide = allSide.Where(menu => menu.Description.Contains(search, StringComparison.OrdinalIgnoreCase));
+
+                
+
+
+
+
+
+            }
+
 
             if (cesd != null)
             {
 
                 cesd = cesd.Where(menu => menu.Contains(menu, StringComparison.OrdinalIgnoreCase));
             }
-           
+
             if (maxPrice != null)
             {
                 allCombos = allCombos.Where(menu => menu.Price != null && menu.Price <= maxPrice);
@@ -124,8 +141,14 @@ namespace Website
             }
             if (cats.Count() != 0)
             {
-                
-                allEntree = allEntree.Where(menu => cats.Contains(menu.Ingredients,StringComparison.OrdinalIgnoreCase));
+                foreach (string s in cats)
+                {
+                    allCombos = allCombos.Where(menu => !menu.Ingredients.Contains(s));
+                    allEntree = allEntree.Where(menu => !menu.Ingredients.Contains(s));
+                    allDrinks = allDrinks.Where(menu => !menu.Ingredients.Contains(s));
+                    allSide = allSide.Where(menu => !menu.Ingredients.Contains(s));
+                }
+
             }
 
 

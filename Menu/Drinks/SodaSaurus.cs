@@ -178,43 +178,53 @@ namespace DinoDiner.Menu
         /// <summary>
         /// The getter and setter that sets Price and Cal. based on size
         /// </summary>
-        public Size Size
+        public override Size Size
         {
-            get
-            {
-                return size;
-            }
+
             set
             {
 
                 size = value;
-                
-                if (size == Size.Small)
+
+                switch (size)
                 {
-                    Price = 1.50;
-                    this.Calories = 112;
+
+                    case Size.Large:
+                        // ToString("Large");
+                        NotifyOfPropertyChange("Special");
+                        NotifyOfPropertyChange("Size");
+                        base.Size = value;
+                        Price = 2.50;
+                        Calories = 208;
+                        break;
+                    case Size.Medium:
+                        // ToString() = "hello";
+                        NotifyOfPropertyChange("Special");
+                        NotifyOfPropertyChange("Price/Size");
+                        base.Size = value;
+                        Price = 2.00;
+                        Calories = 156;
+                        break;
+                    case Size.Small:
+                        // ToString("Small");
+                        NotifyOfPropertyChange("Special");
+                        NotifyOfPropertyChange("Price/Size");
+                        base.Size = value;
+                        Price = 1.50;
+                        Calories = 112;
+                        break;
                 }
-                else if (size == Size.Medium)
-                {
-                    Price = 2.00;
-                    this.Calories = 156;
-                }
-                else if (size == Size.Large)
-                {
-                    Price = 2.50;
-                    this.Calories = 208;
-                }
-                
             }
 
+
+
         }
-
-
-        /// <summary>
-        /// Hold the ice in the drink
-        /// </summary>
-        /// <returns>Returns false to show there is no ice</returns>
-        public override bool HoldIce()
+    
+    /// <summary>
+    /// Hold the ice in the drink
+    /// </summary>
+    /// <returns>Returns false to show there is no ice</returns>
+    public override bool HoldIce()
         {
             Ice = false;
             return false;

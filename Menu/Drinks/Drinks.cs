@@ -19,7 +19,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public virtual uint Calories { get; protected set; }
 
-        public Size Size;
+        public virtual Size Size { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -30,6 +30,8 @@ namespace DinoDiner.Menu
 
         public string Description { get; }
         public string[] Special { get; }
+
+       
         /// <summary>
         /// Holds the ice
         /// </summary>

@@ -22,12 +22,13 @@ namespace DinoDiner.Menu
         // <summary>
         /// gets and sets the description
         /// </summary>
-        public string Discription
+        public string Description
+
         {
 
             get
             {
-                return this.ToString();
+                return  this.ToString();
             }
         }
 

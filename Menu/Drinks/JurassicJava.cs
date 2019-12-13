@@ -33,6 +33,9 @@ namespace DinoDiner.Menu
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
+
+
+
         /// <summary>
         /// Gets any special preperatoin instruction
         /// </summary>
@@ -160,34 +163,45 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Getter and seter that sets price and calories based on size
         /// </summary>
-        public Size Size
+        public  override Size Size
         {
-            get
-            {
-                return size;
-            }
+
             set
             {
 
                 size = value;
 
-                if (size == Size.Small)
+                switch (size)
                 {
-                    Price = .59;
-                    this.Calories = 2;
-                }
-                else if (size == Size.Medium)
-                {
-                    Price = .99;
-                    this.Calories = 4;
-                }
-                else if (size == Size.Large)
-                {
-                    Price = 1.49;
-                    this.Calories = 8;
-                }
 
+                    case Size.Large:
+                        // ToString("Large");
+                        NotifyOfPropertyChange("Special");
+                        NotifyOfPropertyChange("Size");
+                        base.Size = value;
+                        Price = 1.49;
+                        Calories = 8;
+                        break;
+                    case Size.Medium:
+                        // ToString() = "hello";
+                        NotifyOfPropertyChange("Special");
+                        NotifyOfPropertyChange("Price/Size");
+                        base.Size = value;
+                        Price = .99;
+                        Calories = 4;
+                        break;
+                    case Size.Small:
+                        // ToString("Small");
+                        NotifyOfPropertyChange("Special");
+                        NotifyOfPropertyChange("Price/Size");
+                        base.Size = value;
+                        Price = 59;
+                        Calories = 2;
+                        break;
+                }
             }
+
+
 
         }
         /// <summary>

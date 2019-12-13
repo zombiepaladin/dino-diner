@@ -178,36 +178,45 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Getter and setter for Size and sets the calories and price for each size
         /// </summary>
-        public Size Size
+        public override Size Size
         {
-            get
-            {
-                return size;
-            }
+
             set
             {
 
                 size = value;
 
-                if (size == Size.Small)
+                switch (size)
                 {
-                    Price = 0.99;
-                    if (Sweet) Calories= 16;
-                    else this.Calories = 8;
 
+                    case Size.Large:
+                        // ToString("Large");
+                        NotifyOfPropertyChange("Special");
+                        NotifyOfPropertyChange("Size");
+                        base.Size = value;
+                        Price = 1.99;
+                        Calories = 32;
+                        break;
+                    case Size.Medium:
+                        // ToString() = "hello";
+                        NotifyOfPropertyChange("Special");
+                        NotifyOfPropertyChange("Price/Size");
+                        base.Size = value;
+                        Price = 1.49;
+                        Calories = 16;
+                        break;
+                    case Size.Small:
+                        // ToString("Small");
+                        NotifyOfPropertyChange("Special");
+                        NotifyOfPropertyChange("Price/Size");
+                        base.Size = value;
+                        Price = 0.99;
+                        Calories = 8;
+                        break;
                 }
-                else if (size == Size.Medium)
-                {
-                    Price = 1.49;
-                    this.Calories = 16;
-                }
-                else if (size == Size.Large)
-                {
-                    Price = 1.99;
-                    this.Calories = 32;
-                }
-
             }
+
+
 
         }
 

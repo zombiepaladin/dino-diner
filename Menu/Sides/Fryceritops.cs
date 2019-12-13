@@ -180,7 +180,7 @@ namespace DinoDiner.Menu
                     case Size.Large:
                         // ToString("Large");
                         NotifyOfPropertyChange("Special");
-                        NotifyOfPropertyChange("Price/Size");
+                        NotifyOfPropertyChange("Size");
                         base.Size = value;
                         Price = 1.95;
                         Calories = 480;
