@@ -24,6 +24,13 @@ namespace DinoDiner.Menu.Drinks
             this.Calories = 2;
             this.Ice = false;
         }
+        public override string Type
+        {
+            get
+            {
+                return "Jurassic Java";
+            }
+        }
 
         public override string[] Special
         {

@@ -6,6 +6,14 @@ namespace DinoDiner.Menu.Sides
 {
     public class MeteorMacAndCheese : Side
     {
+
+        public override string Type
+        {
+            get
+            {
+                return "Mezzorella Sticks";
+            }
+        }
         /// <summary>
         /// Represents the size of mac&cheese
         /// </summary>

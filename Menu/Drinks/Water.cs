@@ -18,8 +18,14 @@ namespace DinoDiner.Menu.Drinks
         /// private backing field
         /// </summary>
         private Size size;
+        public override string Type
+        {
+            get
+            {
+                return "Jurrasic Java";
+            }
+        }
 
-       
 
         public override Size Size
         {

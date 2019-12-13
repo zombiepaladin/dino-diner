@@ -11,7 +11,7 @@ namespace DinoDiner.Menu
     /// </summary>
     public abstract class Side : IMenuItem, IOrderItem, INotifyPropertyChanged
     {
-        
+        public abstract string Type { get; }
         
         /// <summary>
         /// Gets and sets the price

@@ -27,6 +27,7 @@ namespace DinoDiner.Menu
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
+        public abstract string Type { get; }
         /// <summary>
         /// Gets and sets the price
         /// </summary>

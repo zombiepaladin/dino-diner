@@ -12,7 +12,13 @@ namespace DinoDiner.Menu.Sides
         /// </summary>
         private Size size;
 
-       
+        public override string Type
+        {
+            get
+            {
+                return "Triceritots";
+            }
+        }
 
         /// <summary>
         /// Sets and gets the size of tots

@@ -32,7 +32,14 @@ namespace DinoDiner.Menu.Drinks
         }
         private Size size;
 
-        
+        public override string Type
+        {
+            get
+            {
+                return "Sodasaurus";
+            }
+        }
+
 
         public override Size Size
         {

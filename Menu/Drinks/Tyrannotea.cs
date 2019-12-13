@@ -9,7 +9,13 @@ namespace DinoDiner.Menu.Drinks
 {
     public class Tyrannotea : Drink
     {
-       
+        public override string Type
+        {
+            get
+            {
+                return "Tyrannotea";
+            }
+        }
 
         public bool lemon  = false;
 

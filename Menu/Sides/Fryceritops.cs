@@ -13,7 +13,14 @@ namespace DinoDiner.Menu.Sides
         /// </summary>
         private Size size;
 
-       
+        public override string Type
+        {
+            get
+            {
+                return "Fryceritops";
+            }
+        }
+
         /// <summary>
         /// gets and sets the size of frys
         /// </summary>
